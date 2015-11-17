@@ -23,7 +23,6 @@ def build(ctx):
 	www_source = ctx.path.ant_glob("*.txt")
 	img_source = [x.name for x in ctx.path.ant_glob('*.png')] + ["asciidoc.css"]
 
-
 	ctx(
 		target	= "www",
 		source	= www_source,
