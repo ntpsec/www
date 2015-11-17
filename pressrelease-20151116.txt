@@ -1,6 +1,6 @@
-FOR IMMEDIATE RELEASE: 2015-11-16
-
 = NTP Security Project announces public development release =
+
+FOR IMMEDIATE RELEASE: 2015-11-16
 
 Today, the NTP Security Project announced the first public development release of NTPsec.
 
