@@ -21,7 +21,7 @@ def configure(ctx):
 
 def build(ctx):
 	www_source = ctx.path.ant_glob("*.txt")
-	img_source = [x.name for x in ctx.path.ant_glob('*.png')]
+	img_source = [x.name for x in ctx.path.ant_glob('*.png')] + ["asciidoc.css"]
 
 
 	ctx(
@@ -29,7 +29,7 @@ def build(ctx):
 		source	= www_source,
 	)
 
-	# Copy images so pages can be viewed in build/
+	# Copy static data so pages can be viewed in build/
 	ctx(
 		features	= "subst",
 		is_copy		= True,
