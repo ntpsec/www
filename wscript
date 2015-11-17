@@ -17,7 +17,6 @@ class asciidoc(Task.Task):
 
 def configure(ctx):
 	ctx.find_program("asciidoc", var="BIN_ASCIIDOC", mandatory=True)
-	ctx.env.ASCIIDOC_FLAGS = ["-a", "stylesdir=%s" % ctx.srcnode.abspath()]
 
 
 def build(ctx):
