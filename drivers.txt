@@ -570,8 +570,11 @@ Susan Sons, acting as program manager, changed the timeout to seven
 years.  She endorsed the exception that obsolete drivers may be 
 reinstated if and when specific users demonstrate a need for them.
 
-To date, there has been one such reinstatement: the Hewlett Packard
-58503A (type 26), requested by Hal Murray.
+To date, there have been two such reinstatements:
+
+* the Hewlett Packard 58503A (type 26), requested by Hal Murray.
+
+* the Hopf 6021 Serial, requested by Martin Kotzan. 
 
 Accordingly, the list under "Potentially viable drivers" is the list
 to be retained in the cleanup release of NTP.  This list may be 
