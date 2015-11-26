@@ -5,13 +5,10 @@ Edit cycle:
 
 1. Modify the asciidoc.
 
-2. Run 'rebuild' to generate HTML from the masters.
+2. Commit everything, then push.
 
-3. Commit everything, then push.
+The repository push hook rebuilds the HTML.
 
-The github.io site ignores the .txt files and makes the HTML visible.
-
-The HTML is normally write-locked to remind you not to modify it.
 
 
 
