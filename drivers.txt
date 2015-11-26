@@ -5,10 +5,10 @@ Version 1.5, 2015-11-26
 == Summary ==
 
 ntpd contains support for 42 driver types.  Of these: 2 are IPC drivers
-which must be retained; 10 are for hardware that might, under very
-generous assumptions, still be of use; and 30 can be discarded.
+which must be retained; 12 are for hardware that might, under very
+generous assumptions, still be of use; and 28 can be discarded.
 
-Out of that 10, the actual utility of some remains dubious, but the
+Out of that 12, the actual utility of some remains dubious, but the
 cultural/political context of the project probably requires that we
 retain them.  I discuss related issues in a concluding section.
 
