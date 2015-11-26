@@ -84,7 +84,7 @@ We consider a refclock driver obsolete if it fails any of the
 following tests:
 
 1. It has been discontinued for seven or more years and cannot be
-   found for sale on the Web. Types 5, 9, 10, 26, 27, 35, 37, 38, 41.
+   found for sale on the Web. Types 5, 9, 10, 26, 27, 35, 37, 41.
 
 2. Duplicates capabilities of GPSD, which specializes in GPSes.
    Types 20, 29, 30, 31.
@@ -111,7 +111,6 @@ Thus, we plan to remove the following refclock drivers:
 |Type 31: Rockwell Jupiter GPS (GPS_JUPITER)
 |Type 33: Dumb Clock (DUMBCLOCK)
 |Type 35: Conrad Parallel Port Radio Clock (PCF)
-|Type 38: hopf GPS/DCF77 6021/komp for Serial Line (HOPF_S)
 |Type 41: TrueTime 560 IRIG-B Decoder (REFCLK_TT560)
 |==========================================================
 
@@ -128,6 +127,7 @@ This will leave the following drivers in place:
 |Type 22: PPS Clock Discipline (PPS)
 |Type 26: Hewlett Packard 58503A GPS Receiver (GPS_HP)
 |Type 28: Shared Memory Driver (SHM)
+|Type 38: hopf GPS/DCF77 6021/komp for Serial Line (HOPF_S)
 |Type 39: hopf GPS/DCF77 6039 for PCI-Bus (HOPF_P)
 |Type 40: JJY Receivers (JJY)
 |Type 42: Zyfer GPStarplus Receiver
