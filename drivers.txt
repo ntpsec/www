@@ -1,6 +1,6 @@
 = NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
-Version 1.4, 2015-06-30
+Version 1.5, 2015-11-26
 
 == Summary ==
 
@@ -408,18 +408,12 @@ Disposition: DISCONTINUED, INACCURATE; Remove.
 
 === Type 38: hopf GPS/DCF77 6021/komp for Serial Line (HOPF_S) ===
 
-The list of all Hopf products at 
+This was originally slated for removal, but in late November 2015 we
+were informed that the "Hopf 6021 Standard" protocol this handles is
+still emitted by several Hopf models in production ue in off-Internet
+applications.
 
-http://www.hopf.com/en/index_article_en.html
-
-does not list the Hopf 6021. Because the 6039 still shipping issued
-in 2001 or earlier it is almost certain that the 6021 was discontinued
-sooner yet.
-
-The manual for the 6039 mentions a 2ms accuracy limit for time radios
-synchronized to DCF77, so the DCF77 variant is also INACCURATE.
-
-Disposition: DISCONTINUED; Remove
+Disposition: Move to refclockd.
 
 === Type 39: hopf GPS/DCF77 6039 for PCI-Bus (HOPF_P) ===
 
@@ -516,7 +510,7 @@ be determined cetainly but was almost certainly in the last century.
 | 35 | DISCONTINUED (<2010), UNAVAILABLE
 | 36 | INACCURATE
 | 37 | DISCONTINUED (<2000), INACCURATE
-| 38 | DISCONTINUED (<2001).
+| 38 | -
 | 39 | -
 | 40 | -
 | 41 | DEPRECATED, DISCONTINUED
@@ -536,6 +530,7 @@ be determined cetainly but was almost certainly in the last century.
 |Type 18: NIST/USNO/PTB Modem Time Services (ACTS_MODEM)
 |Type 26: Hewlett Packard 58503A GPS Receiver (GPS_HP)
 |Type 28: Shared Memory Driver (SHM)
+|Type 38: hopf GPS/DCF77 6021/komp for Serial Line (HOPF_S) 
 |Type 39: hopf GPS/DCF77 6039 for PCI-Bus (HOPF_P)
 |Type 40: JJY Receivers (JJY)
 |Type 42: Zyfer GPStarplus Receiver
@@ -643,6 +638,9 @@ Version 1.4, 2015-06-30::
 	Add DEPRECATED tags to three refclocks because they are
 	undocumented. Note that driver 2 was already gone and that
 	13, 14, 17, 21, and 41 have already been removed.
+
+Version 1.5, 2015-11-26::
+	Take Type 38 off the removal list in response to user feedback.
 
 // end
 
