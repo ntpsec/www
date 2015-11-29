@@ -95,6 +95,9 @@ following tests:
 4. Accuracy an order of magnitude worse than a cheap 1PPS GPS. Types
    6, 7, 33.
 
+5. No user has soken up to report the device type is still in
+   production use.  We've had that report about type 38.
+
 Thus, we plan to remove the following refclock drivers:
 
 |==========================================================
