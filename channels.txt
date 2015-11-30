@@ -6,6 +6,8 @@ Mailing lists: http://lists.ntpsec.org/mailman/listinfo/
 
 Bugtracker: https://gitlab.com/NTPsec/ntpsec/issues
 
+Buildbot status page: https://buildbot.ntpsec.org/#/console
+
 IRC channel: irc://chat.freenode.net/#ntpsec[#ntpsec at freenode]
 
 Information and Press contact: mailto:contact@ntpsec.org[contact@ntpsec.org]
