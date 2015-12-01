@@ -411,7 +411,7 @@ Disposition: DISCONTINUED, INACCURATE; already removed.
 
 This was originally slated for removal, but in late November 2015 we
 were informed that the "Hopf 6021 Standard" protocol this handles is
-still emitted by several Hopf models in production ue in off-Internet
+still emitted by several Hopf models in production use in off-Internet
 applications.
 
 Disposition: Move to refclockd.
