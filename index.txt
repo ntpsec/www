@@ -42,6 +42,8 @@ link:security.html[Security Researchers and Vulnerability Reports]
 
 link:FAQ.html[The inevitable FAQ]
 
+https://docs.ntpsec.org/[The NTP Documentation]
+
 link:license.html[Project licenses]
 
 //link:history.html[How NTPsec came to be]
