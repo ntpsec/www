@@ -27,7 +27,7 @@ wrapper around ntpdig.
 
 We have removed the following refclock drivers, which were either
 broken and won't compile on modern systems (12, 21), or irretrievably
-obsolete due to the WWVB modulation change in 2013 (3, 19, 32, 34,
+obsolete due to the WWVB modulation change (3, 19, 32, 34,
 36), or had unfixable Y2K issues (37), or unfixable security issues
 (16, 43), or were deprecated in NTP Classic and had their
 documentation removed (13, 14, 17).

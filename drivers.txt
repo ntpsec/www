@@ -1,6 +1,6 @@
 = NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
-Version 1.6, 2015-11-28
+Version 1.7, 2015-12-09
 
 == Summary ==
 
@@ -28,9 +28,9 @@ plummeting.
 I think it is actually seriously questionable whether support for
 *any* of these legacy devices is worth maintaining.  No hardware
 drivers have been added since 2006, and possibly none since 2002.
-NIST's modulation change in 2013 laid waste to the U.S. time-radio
-industry. It may actually be the case that *all* the Stratum 1 sites
-running non-custom ntpd instances are using GPSes now.
+NIST's modulation change at 2012-10-29T15:00:00Z laid waste to the
+U.S. time-radio industry. It may actually be the case that *all* the
+Stratum 1 sites running non-custom ntpd instances are using GPSes now.
 
 However, political reality - especially for a federally-funded project
 with customers in a lot of .gov and .mil shops running very old iron -
@@ -140,7 +140,7 @@ INACCURATE; already removed.
 
 === Type 4: Spectracom WWVB/GPS Receivers (WWVB_SPEC) ===
 
-Since WWVB changed its modulation scheme in January 2013
+Since WWVB changed its modulation scheme at 2012-10-29T15:00:00Z
 Spectracom WWVB receivers from before that date no longer function.
 The models covered by this driver (Model 8170, Netclock/2 WWVB) are in
 this category.  Spectracom has not produced any new time-radio gear
@@ -648,6 +648,9 @@ Version 1.5, 2015-11-26::
 
 Version 1.6, 2015-11-28::
 	Properly mark removed drivers.
+
+Version 1.7, 2015-12-09:
+	Correct the date of the WWVB modulation change.
 
 // end
 
