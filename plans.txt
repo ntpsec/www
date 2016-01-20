@@ -13,7 +13,7 @@ levels and will apply that knowledge to NTPsec.
 
 Our team has a concentration of expertise in software testing.
 NTP Classic never had rigorous end-to-end tests that
-could be run out of the box to verify the correctness of the code.
+could be run out-of-the-box to verify the correctness of the code.
 Putting such a suite fully in place is one of our early goals.
 
 == Hammer the bug list flat ==
@@ -40,7 +40,7 @@ The NTP Classic project slid into decline, developing serious
 vulnerabilities it was unable to effectively address, because it made
 choices that closed it off from the wider open-source community.
 NTPSec was forked in large part to reverse those choices. We want
-more community participation, more open-source code review, and we'll
+more community participation, more open-source code review, and we
 even welcome drive-by patches to address point problems.
 
 == Build a hardware test lab ==
@@ -55,8 +55,7 @@ link:getting-involved.html[Getting Involved] for how you can help.
 
 The code can be further hardened by repartitioning it into smaller,
 more loosely coupled pieces. A prime opportunity is by divorcing clock
-management from the synchronization algorithms into a separate
-refclockd.
+management (into a separate refclockd) from the synchronization algorithms.
 
 == Get it all IPv6-ready ==
 
