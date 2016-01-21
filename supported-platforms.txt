@@ -5,7 +5,7 @@ Our primary development platforms are Linux and FreeBSD.
 We expect the NTPsec code to run with at most minor port changes on
 Unix-like operating systems conforming to POSIX.1-2001 and ISO/IEC
 9899:1999 (aka C99) and supporting ntp_gettime(2)/ntp_adjtime(2).
-Python 2.5 is also required.  We will fully support these platforms.
+Python2.x, x >=5, is also required.  We will fully support these platforms.
 
 We have an actively maintained port to Mac OS X. Basic testing has been
 performed and we are looking for people with OS X skill and interest to help
