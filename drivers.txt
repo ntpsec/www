@@ -135,7 +135,7 @@ I could not find any for sale on the Web.  This hardware
 would no longer work even if a specimen could be found, due to WWVB's
 modulation change as described in the next entry.
 
-Disposition: Fails tests INTRINSIC, DISCONTINUED, UNAVAILABLE, and 
+Disposition: Fails tests INTRINSIC, DISCONTINUED, UNAVAILABLE, and
 INACCURATE; already removed.
 
 === Type 4: Spectracom WWVB/GPS Receivers (WWVB_SPEC) ===
@@ -176,7 +176,7 @@ Disposition: INACCURATE; Remove.
 
 === Type 7: Radio CHU Audio Demodulator/Decoder (CHU) ===
 
-A very bad idea similarly wired to Type 6, using a Canadian analog 
+A very bad idea similarly wired to Type 6, using a Canadian analog
 of WWVB.  Cited as 1ms accuracy without GPS calibration.
 
 Disposition: INACCURATE; Remove.
@@ -190,7 +190,7 @@ Disposition: Move to refclockd.
 
 === Type 9: Magnavox MX4200 GPS Receiver (GPS_MX4200) ===
 
-A line of GPSes produced by Magnavox, discontinued in 1994, with 
+A line of GPSes produced by Magnavox, discontinued in 1994, with
 the surplus stock marketed by Leica Geosystems.  Leica no longer
 sells them.  They shipped 1PPS.  I could find none available for sale.
 
@@ -249,7 +249,7 @@ Disposition: Fails test DEPRECATED and DISCONTINUED; already removed.
 
 === Type 16: Bancomm GPS/IRIG Receiver (GPS_BANCOMM) ===
 
-A discontinued VME board for Sun 4 systems.  The last VME-based 
+A discontinued VME board for Sun 4 systems.  The last VME-based
 Sun 4 issued in 1989 to be replaced by SBus systems also now
 obsolete.
 
@@ -316,7 +316,7 @@ are available on eBay.
 
 I had this marked for removal in the 1.0 version of this document,
 but Hal Murray - who is credible when he says such things - reports
-that (a) these were heavily used in cell towers before being 
+that (a) these were heavily used in cell towers before being
 discontinued, so surplus units are easy to find, and (b) they're
 widely used in the time-hacker community.
 
@@ -464,8 +464,8 @@ Disposition: Move to refclockd.
 
 === Type 45: Spectracom TSync PCI ===
 
-Spectracom is a product line of of time sources that is still 
-available and supported by a vendor.  The TSync is a GPS clock 
+Spectracom is a product line of of time sources that is still
+available and supported by a vendor.  The TSync is a GPS clock
 with a specified accuracy of 100ns.
 
 Disposition: Move to refclockd.
@@ -479,7 +479,7 @@ IPC driver, to be retained.
 For hardware marked "<2000?" the date it was end-of-lifed cannot
 be determined cetainly but was almost certainly in the last century.
 
-.Hardware status summary 
+.Hardware status summary
 |===============================================================
 | 1  | DEPRECATED, INACCURATE
 | 2  | DEPRECATED, DISCONTINUED (<2000?), UNAVAILABLE
@@ -531,7 +531,7 @@ be determined cetainly but was almost certainly in the last century.
 |Type 18: NIST/USNO/PTB Modem Time Services (ACTS_MODEM)
 |Type 26: Hewlett Packard 58503A GPS Receiver (GPS_HP)
 |Type 28: Shared Memory Driver (SHM)
-|Type 38: hopf GPS/DCF77 6021/komp for Serial Line (HOPF_S) 
+|Type 38: hopf GPS/DCF77 6021/komp for Serial Line (HOPF_S)
 |Type 39: hopf GPS/DCF77 6039 for PCI-Bus (HOPF_P)
 |Type 40: JJY Receivers (JJY)
 |Type 42: Zyfer GPStarplus Receiver
@@ -542,7 +542,7 @@ be determined cetainly but was almost certainly in the last century.
 
 The Type 4 driver supports recent Spectracom GPS clocks, if I can
 believe their protocol documentation.  But Spectracom no longer
-makes WWVB receivers; this needs to be renamed "Spectracom Type 2 
+makes WWVB receivers; this needs to be renamed "Spectracom Type 2
 protocol".
 
 Types 28 and 46 are no-brainers to keep.  We will eventually want to
@@ -557,7 +557,7 @@ is an issue we need to keep an eye on.
 The 1.0 version of this document contained a technical policy proposal
 but no conclusions.  It was, essentially, to remove all drivers tagged
 INTRINSIC, DEPRECATED, OBSOLETE, REDUNDANT, and INACCURATE, but
-allow for reinstatement of merely OBSOLETE drivers on demonstration of 
+allow for reinstatement of merely OBSOLETE drivers on demonstration of
 a real-world use case.
 
 At that time the proposed obsolescence timeout was ten years.  I noted
@@ -568,17 +568,17 @@ on a parallel port means it is extremely likely to have been
 discontinued before 2008.
 
 Susan Sons, acting as program manager, changed the timeout to seven
-years.  She endorsed the exception that obsolete drivers may be 
+years.  She endorsed the exception that obsolete drivers may be
 reinstated if and when specific users demonstrate a need for them.
 
 To date, there have been two such reinstatements:
 
 * the Hewlett Packard 58503A (type 26), requested by Hal Murray.
 
-* the Hopf 6021 Serial, requested by Martin Kotzan. 
+* the Hopf 6021 Serial, requested by Martin Kotzan.
 
 Accordingly, the list under "Potentially viable drivers" is the list
-to be retained in the cleanup release of NTP.  This list may be 
+to be retained in the cleanup release of NTP.  This list may be
 revised as we receive new information.
 
 == Appendix: Test equipment available ==
