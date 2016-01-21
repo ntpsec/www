@@ -17,7 +17,7 @@ Please report discovered vulnerabiltites to mailto:security@ntpsec.org.
 This email alias forwards to a very small cadre of the internal NTPsec
 team.
 
-You may GPG encrypt your report. The GPG key can be found on the well
+You may GPG encrypt your report. Our GPG key can be found on the well
 known keyservers, and has the following id and fingerprint:
 
 ----------------------------------------------------------------
@@ -28,8 +28,8 @@ uid NTPsec Security Reporting <security@ntpsec.org>
 
 == Our Responsiveness Goals  ==
 
-Our goal is to ack receipt within 24 hours, verify each potential
-vulnerability within 3 days, and if the vulnerability is a significant
+Our goal is to ack receipt within 24 hours; verify each potential
+vulnerability within 3 days; and if the vulnerability is a significant
 network risk, such as remote execution, denial of service, network
 amplification, or corruption of time reporting, develop a fix within 7
 days.
@@ -66,7 +66,7 @@ existing development and release cadence, in our public issue tracker
 and on our public Git repositories.
 
 Once NTPsec is in production use, we will work towards an
-industry standard best practices Responsible Disclosure and Embargo
+industry-standard best-practices Responsible Disclosure and Embargo
 Policy.
 
 
