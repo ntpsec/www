@@ -28,16 +28,16 @@ Annoying but necessary legalese:
     redistributed under the project's license according to the normal
     forms and usages of the open-source community.
 
-The license of new code is to be BSD-2-clause and the license for new
-documentation is to be Creative Commons Attribute 4.0 License.
+The license of new code is to be BSD-2-clause. The license for new
+documentation is to be Creative Commons Attribution 4.0 International License.
 Contributions and patches with no license information will be assumed
-to be under those licenses.
+to be under these licenses.
 
 Please do *not* submit code under GPL or other licenses which place
 conditions on derived works; we cannot accept such code.  Please avoid
 submitting code under any license other than BSD-2-clause, and avoid
 submitting docs under any license other than the Creative Commons
-Attribute 4.0 License.
+Attribution 4.0 License.
 
 It is your responsibility to make sure you have all the necessary
 rights to contribute to the project.
