@@ -152,7 +152,7 @@ by this driver.
 
 Disposition: Move to refclockd.
 
-=== Type 5: TrueTime GPS/GOES/OMEGA Receivers (TRUETIME) ==
+=== Type 5: TrueTime GPS/GOES/OMEGA Receivers (TRUETIME) ===
 
 True Time was a product line of timer sources. The most recent manual
 I can find is from 1997:
