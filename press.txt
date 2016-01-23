@@ -31,7 +31,7 @@ wake of the "Heartbleed Bug".
 
 - Information Week: Linux Foundation Funds NTP (http://www.informationweek.com/cloud/infrastructure-as-a-service/linux-foundation-funds-ntps-father-time/d/d-id/1321775)
 - ZD Net: Saving NTP (http://www.zdnet.com/article/saving-time-the-funding-of-ntp)
-- Center for Trustworthy Scientific Cyberinfrastructure, Year Three Report, Section 4.11 - Network Time Protocol (https://www.scholarworks.iu.edu/dspace/bitstream/handle/2022/20401/CTSC%20Year%203%20Report_v3ASC.pdf)
+- Center for Trustworthy Scientific Cyberinfrastructure, Year Three Report, Section 4.11 - Network Time Protocol (https://scholarworks.iu.edu/dspace/bitstream/handle/2022/20401/CTSC%20Year%203%20Report_v3ASC.pdf)
 
 == Contact Information ==
 
