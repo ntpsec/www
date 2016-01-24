@@ -30,4 +30,6 @@ to working with active port maintainers who will take responsibility
 for specific target environments not fully conformant to the
 POSIX.1-2001/C99/Python-2.5 combination, or for exotic hardware.
 
+image::clocktower64.png[align="center"]
+
 // end

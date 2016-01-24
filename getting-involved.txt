@@ -36,5 +36,7 @@ donations through the https://icei.org[Internet Civil Engineering
 Institute].  Please give generously - the civilization you
 save may be your own.
 
+image::clocktower64.png[align="center"]
+
 // end
 

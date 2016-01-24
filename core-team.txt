@@ -134,4 +134,6 @@ over 20 years in the open-source community and long-term commitment to several
 projects he also enjoys spending his spare time in the garden, running,
 reading, and cooking.
 
+image::clocktower64.png[align="center"]
+
 //end
