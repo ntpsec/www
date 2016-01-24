@@ -21,7 +21,7 @@ def configure(ctx):
 
 def build(ctx):
 	www_source = ctx.path.ant_glob("*.txt")
-	img_source = [x.name for x in ctx.path.ant_glob('*.png')] + ["asciidoc.css", "favicon.ico"]
+	img_source = [x.name for x in ctx.path.ant_glob('*.png')] + ["asciidoc.js", "asciidoc.css", "favicon.ico"]
 
 	ctx(
 		target	= "www",
