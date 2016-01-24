@@ -142,4 +142,6 @@ This will leave the following drivers in place:
 For details on the technical considerations, see our
 link:drivers.html[NTPD driver retention analysis].
 
+image::clocktower64.png[align="center"]
+
 //end

@@ -49,8 +49,6 @@ who is himself visually impaired.  Dr. Mills has very particular
 ideas about Web visuals, and this site is carefully styled to
 resemble his NTP documentation pages.
 
+image::clocktower64.png[align="center"]
+
 //end
-
-
-
-

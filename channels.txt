@@ -14,6 +14,8 @@ Information and Press contact: mailto:contact@ntpsec.org[contact@ntpsec.org]
 
 Security reporting contact: mailto:security@ntpsec.org[security@ntpsec.org]
 
+image::clocktower64.png[align="center"]
+
 
 // end
 

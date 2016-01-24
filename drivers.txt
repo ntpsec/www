@@ -652,5 +652,7 @@ Version 1.6, 2015-11-28::
 Version 1.7, 2015-12-09:
 	Correct the date of the WWVB modulation change.
 
+image::clocktower64.png[align="center"]
+
 // end
 

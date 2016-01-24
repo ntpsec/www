@@ -81,4 +81,6 @@ shipped on Nov 21st.
 
 The rest of the story has yet to be written.
 
+image::clocktower64.png[align="center"]
+
 //end
