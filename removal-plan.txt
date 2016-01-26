@@ -125,6 +125,8 @@ These are for equipment that has not been available at least since
 2003, and probably earlier.
 
 |==========================================================
+|Mode  3: ELV DCF7000
+|Mode  4: Walter Schmid DCF receiver Kit
 |Mode  9: Trimble SVeeSix GPS Receiver TAIP Protocol
 |Mode 10: Trimble SVeeSix GPS Receiver
 |==========================================================
