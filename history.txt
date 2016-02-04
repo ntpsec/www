@@ -65,7 +65,7 @@ the Network Time Foundation board and joined our team.
 
 Through the late summer and fall of 2015 the team worked on the
 massive cleanup required to remove obsolete code, fix documentation,
-and live-rest the results.  We removed over half the bulk of the
+and live-test the results.  We removed over half the bulk of the
 NTP Classic codebase and significantly security-hardened what was
 left.  We changed build systems from autoconf to waf for a dramatic
 improvement in build times and repeatability.
