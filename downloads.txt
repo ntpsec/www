@@ -1,0 +1,25 @@
+= Downloads =
+
+The ideal way to get the latest codebase is from our forge, GitLab.com.
+You can checkout from: https://gitlab.com/groups/NTPsec
+
+A read-only mirror is also available on GitHub:
+https://github.com/ntpsec/ntpsec
+
+== Tarballs ==
+
+Tarballs are available after every commit, in:
+ftp://ftp.ntpsec.org/pub/snapshots/
+
+We periodically tag and release versions, which are available at:
+ftp://ftp.ntpsec.org/pub/releases/
+
+== Reporting issues ==
+
+We welcome your contributions, please see:
+link:getting-involved.html[How you can help]
+
+
+image::clocktower64.png[align="center"]
+
+// end
