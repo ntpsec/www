@@ -21,6 +21,14 @@ You may GPG encrypt your report. Our GPG key can be found on the well
 known keyservers, and has the following id and fingerprint:
 
 ----------------------------------------------------------------
+pub   4096R/477C7528 2016-04-14 [expires: 2019-04-14]
+Key fingerprint = DA3F DF77 4CC7 0FA6 4729  EC45 05D9 B371 477C 7528
+uid NTPsec Security Reporting <security@ntpsec.org>
+----------------------------------------------------------------
+
+The following key was revoked on 2016-04-13:
+
+----------------------------------------------------------------
 pub 4096R/CC282DBE 2015-09-29 [expires: 2018-09-13]
 Key fingerprint = B09A 8CAB E180 EC66 4CC5  11D8 2A7C 3E36 CC28 2DBE
 uid NTPsec Security Reporting <security@ntpsec.org>
