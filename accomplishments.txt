@@ -60,8 +60,7 @@ We have applied Coverity scanning and fixed bugs where they were revealed::
 
 NTP Classic had occasionally been Coverity-checked in the past, but
 those warnings were not systematically fixed.  We found 40 unresolved
-defect reports and dealt with them appropriately.  We have a policy
-shipping only with zero Coverity defects.
+defect reports and dealt with them appropriately.
 
 We have fixed all compiler warnings::
 
