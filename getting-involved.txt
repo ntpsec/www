@@ -10,7 +10,8 @@ contribute:
 Open-source code review is the heart of our process. We welcome bug
 reports and fix patches. We'll be happy to work with casual contributors,
 casual contributors who want to become regulars, and regulars who aspire
-to join the core team.
+to join the core team.  See our link:channels.txt[Communications
+channels] page to find the bugtracker and mailing lists.
 
 == Sign up as a platform maintainer ==
 
