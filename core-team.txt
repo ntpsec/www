@@ -25,7 +25,8 @@ When he is not traveling, he makes his home in Seattle.
 
 == Daniel Fox Franke ==
 
-Daniel is our cryptographic specialist and code reviewer.
+Daniel is the team's InfoSec specialist and first responder for
+security issues, and is our cryptographic specialist and code reviewer.
 
 Daniel is a Principal Security Researcher at Akamai Technologies. His
 job is to help engineers write safer code, particularly when it
@@ -104,8 +105,7 @@ maintain the unofficial Elvis Costello fan site.
 
 == Susan Sons ==
 
-Susan is the team's InfoSec specialist and first responder for
-security issues.
+Susan is the team's InfoSec specialist emeritus.
 
 Susan is a Senior Systems Analyst at Indiana University's Center for
 Applied Cybersecurity Research, and is director of the Internet Civil
