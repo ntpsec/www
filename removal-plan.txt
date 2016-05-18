@@ -13,6 +13,17 @@ codebase.
 
 == Removals already complete ==
 
+The Autokey public-key-based authentication system feature has been
+removed.  It has been reported to have been broken for some time, and
+added a significant amount of complexity.
+
+Autokey-like functionality will be provided by implementing
+the "Network Time Security" protocol, soon after the IETF advances
+draft-ietf-ntp-network-time-security-NN,
+draft-ietf-ntp-cms-for-nts-message-NN, and
+draft-ietf-ntp-using-nts-for-ntp-NN
+to full RFC status.
+
 The ntpdc utility has been entirely removed.  (All its capabilities are
 available through ntpq with a similar user unterface.)  Support for
 Mode 7 packets in ntpd has been removed along with it, significantly
@@ -71,12 +82,6 @@ at us.  Likewise for VxWorks.
 
 While we have not removed the Windows code, we will not ship with
 Windows supported until that platform has an active port maintainer.
-
-An implementation of the Autokey public-key-based authentication
-system is still present in the codebase, but we don't support
-building with it. This feature is broken and has serious security
-vulnerabilities.  One of our longer-term projects is to re-engineer
-it.
 
 == Obsolete refclocks ==
 
