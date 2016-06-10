@@ -32,8 +32,8 @@ to remove:
 |   2.0 KLOC (1%)    | Replacement of ntpdate by a shell wrapper around ntpdig
 |   3.0 KLOC (1%)    | Removal of Autokey.
 |   4.5 KLOC (2%)    | Miscellaneous cruft
-| 132.0 KLOC (58%)   | _Total removed_
-|  96.0 KLOC (42%)   | _Total remaining_
+| 131.5 KLOC (58%)   | _Total removed_
+|  95.5 KLOC (42%)   | _Total remaining_
 | 227.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
