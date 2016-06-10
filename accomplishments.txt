@@ -112,6 +112,13 @@ relationships with some key players in the security community.  They
 have already learned to trust us to respond rapidly and effectively to
 vulnerability reports.
 
+We have achieved measurable gains in security::
+
+Since early 2016 and our 0.1 release it has become routine that, in
+public disclosures of batches of CVEs against NTP Classic, around
+75% fail to affect NTPsec at all because we had pre-hardened the
+code or removed the relevant attack surface.
+
 image::clocktower64.png[align="center"]
 
 You should probably read link:plans.html[What we plan to do] next.
