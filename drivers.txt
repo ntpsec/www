@@ -1,6 +1,6 @@
 = NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
-Version 1.7, 2015-12-09
+Version 1.8, 2016-16-12
 
 == Summary ==
 
@@ -390,8 +390,10 @@ Disposition: INTRINSIC, DISCONTINUED and INACCURATE; already removed.
 Obsolete port type, obsolete clock.  The vendor is still in business
 but this product has been discontinued.  All web references I found,
 except one 404, are pointers to ntpd documentation from before 2010.
+Not portable; relies on a BSD-only driver, with a former Linux one
+having apparewntly disappeared. Can only report to 0.5s accuracy.
 
-Disposition: DISCONTINUED, UNAVAILABLE; Remove.
+Disposition: DISCONTINUED, UNAVAILABLE, INACCURATE; already removed.
 
 === Type 36: Radio WWV/H Audio Demodulator/Decoder (WWV) ===
 
