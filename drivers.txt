@@ -1,6 +1,6 @@
 = NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
-Version 1.8, 2016-16-12
+Version 1.9, 2016-16-16
 
 == Summary ==
 
@@ -77,6 +77,10 @@ INACCURATE::
 	$75 in 2015; that is, about 5&micro;s.  (However, do not necessarily
 	remove poorer-performing GPS-conditioned *clocks*, as they continue
 	to supply time in holdover mode when the GPS cannot get satellite lock.)
+
+SECURITY::
+	As a policy choice, we do not support devices requiring
+	closed-source code to be linked to the OS kernel.
 
 We should certainly keep drivers such as SHM and GPSD-NG that are IPC
 methods for peer time-source programs in ntpd itself.
@@ -251,9 +255,9 @@ Disposition: Fails test DEPRECATED and DISCONTINUED; already removed.
 
 A discontinued VME board for Sun 4 systems.  The last VME-based
 Sun 4 issued in 1989 to be replaced by SBus systems also now
-obsolete.
+obsolete. Required a proprietary driver.
 
-Disposition: DISCONTINUED; already removed.
+Disposition: DISCONTINUED. SECURITY; already removed.
 
 === Type 17: Datum Precision Time System (GPS_DATUM) ===
 
@@ -468,7 +472,9 @@ Disposition: Move to refclockd.
 
 Spectracom is a product line of of time sources that is still
 available and supported by a vendor.  The TSync is a GPS clock
-with a specified accuracy of 100ns.
+with a specified accuracy of 100ns.  However, it required a
+proprietary driver and is therefore unacceptable as a matter
+of security policy.
 
 Disposition: Move to refclockd.
 
@@ -497,7 +503,7 @@ be determined cetainly but was almost certainly in the last century.
 | 12 | UNDOCUMENTED, DISCONTINUED (<2000?), UNAVAILABLE; REMOVED
 | 13 | DISCONTINUED (<2005), INACCURATE; REMOVED
 | 14 | DEPRECATED and DISCONTINUED (<2000?); REMOVED
-| 16 | DISCONTINUED (<2000?); REMOVED
+| 16 | DISCONTINUED (<2000?), SECURITY; REMOVED
 | 17 | UNDOCUMENTED, DEPRECATED, DISCONTINUED (<2000?), UNAVAILABLE; REMOVED
 | 19 | DISCONTINUED (<1992), UNAVAILABLE, INACCURATE; REMOVED
 | 20 | REDUNDANT
@@ -520,7 +526,7 @@ be determined cetainly but was almost certainly in the last century.
 | 42 | -
 | 43 | INTRINSIC; REMOVED
 | 44 | -
-| 45 | -
+| 45 | SECURITY; REMOVED
 |===============================================================
 
 == Second-round triage ==
@@ -651,8 +657,14 @@ Version 1.5, 2015-11-26::
 Version 1.6, 2015-11-28::
 	Properly mark removed drivers.
 
-Version 1.7, 2015-12-09:
+Version 1.7, 2015-12-09::
 	Correct the date of the WWVB modulation change.
+
+Version 1.8, 2015-06-12::
+	Remove Conrad Parallel Port radio (refclock 35).
+
+Version 1.9, 2016-06-16::
+	Remove Spectracom TSYNC PCI (refclock 45). Add SECURITY tag.
 
 image::clocktower64.png[align="center"]
 
