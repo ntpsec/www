@@ -42,7 +42,7 @@ obsolete due to the WWVB modulation change (3, 19, 32, 34, 36), or had
 unfixable Y2K issues (37), or unfixable security issues (16, 43, 45), or
 relied on hardware interfaces no longer found on modern systems (35),
 or were deprecated in NTP Classic and had their documentation removed
-(13, 14, 17).
+(13, 14, 17), or we have been advised by their maintainers should go (27).
 
 |==============================================================
 |Type 3: PSTI/Traconex 1020 WWV/WWVH Receiver (WWV_PST)
@@ -53,6 +53,7 @@ or were deprecated in NTP Classic and had their documentation removed
 |Type 17: Datum Precision Time System (GPS_DATUM)
 |Type 19: Heath WWV/WWVH Receiver (WWV_HEATH)
 |Type 21: TrueTime GPS-VME Interface (GPS_VME)
+|Type 27: Arcron MSF Receiver (MSF_ARCRON)
 |Type 32: Chrono-log K-series WWVB receiver (CHRONOLOG)
 |Type 34: Ultralink WWVB Receivers (ULINK)
 |Type 35: Conrad Parallel Port Radio Clock (PCF)
@@ -116,7 +117,6 @@ Thus, we plan to remove the following refclock drivers:
 |Type 9: Magnavox MX4200 GPS Receiver (GPS_MX4200)
 |Type 10: Austron 2200A/2201A GPS Receivers (GPS_AS2201)
 |Type 20: Generic NMEA GPS Receiver (NMEA)
-|Type 27: Arcron MSF Receiver (MSF_ARCRON)
 |Type 29: Trimble Navigation Palisade GPS (GPS_PALISADE)
 |Type 30: Motorola UT Oncore GPS (GPS_ONCORE)
 |Type 31: Rockwell Jupiter GPS (GPS_JUPITER)

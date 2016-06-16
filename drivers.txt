@@ -335,7 +335,9 @@ http://comp.protocols.time.ntp.narkive.com/0sT20Wjc/trimble-s-acutime-2000-compa
 to be "not very good" and inferior to a common Trimble GPS.  The
 vendor is gone.  Web searches do not find units for sale.
 
-Disposition: DISCONTINUED, UNAVAILABLE, INACCURATE; Remove.
+We got advice from the last maintainer of this driver to remove it.
+
+Disposition: DISCONTINUED, UNAVAILABLE, INACCURATE; already removed.
 
 === Type 28: Shared Memory Driver (SHM) ===
 

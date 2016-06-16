@@ -23,8 +23,8 @@ to remove:
 +
 |==============================================================================
 |  45.0 KLOC (20%)   | In-tree copy of libevent2
-|  23.5 KLOC (10%)   | Undocumented, deprecated, or broken refclock code
-                       (Types 3, 12, 13, 14, 17, 19, 32, 34, 36, 37, 43, 45)
+|  24.5 KLOC (10%)   | Undocumented, deprecated, obsolete, or broken refclock code
+                       (Types 3, 12, 13, 14, 17, 19, 27, 32, 34, 36, 37, 43, 45)
 |  24.0 KLOC (11%)   | Unused ISC library code
 |  12.5 KLOC (5%)    | libopts/autogen removal
 |   9.0 KLOC (4%)    | Code obsolete because we assume a POSIX.1-2001/C99 base
@@ -32,8 +32,8 @@ to remove:
 |   2.0 KLOC (1%)    | Replacement of ntpdate by a shell wrapper around ntpdig
 |   3.0 KLOC (1%)    | Removal of Autokey.
 |   4.0 KLOC (2%)    | Miscellaneous cruft
-| 132.0 KLOC (58%)   | _Total removed_
-|  95.0 KLOC (42%)   | _Total remaining_
+| 133.0 KLOC (59%)   | _Total removed_
+|  95.0 KLOC (41%)   | _Total remaining_
 | 227.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
