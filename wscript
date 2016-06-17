@@ -20,8 +20,8 @@ def configure(ctx):
 
 
 def build(ctx):
-	www_source = ctx.path.ant_glob("*.txt")
-	img_source = [x.name for x in ctx.path.ant_glob('*.png')] + ["asciidoc.js", "asciidoc.css", "favicon.ico"]
+	www_source = ctx.path.ant_glob("**/*.txt")
+	img_source = [x.name for x in ctx.path.ant_glob('**/*.png')] + ["asciidoc.js", "asciidoc.css", "favicon.ico"]
 
 	ctx(
 		target	= "www",
@@ -36,4 +36,4 @@ def build(ctx):
 		target		= img_source,
 	)
 
-	ctx.install_files(ctx.env.PREFIX, img_source + [x.change_ext(".html").name for x in www_source])
+	ctx.install_files(ctx.env.PREFIX, img_source + [x.change_ext(".html") for x in www_source], cwd=ctx.bldnode, relative_trick=True)
