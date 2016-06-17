@@ -11,9 +11,14 @@ We have an actively maintained port to Mac OS X. Basic testing has been
 performed and we are looking for people with OS X skill and interest to help
 support this platform and perform detailed testing.
 
+We regularly test not just on x86 but on the ARM processors in the Raspberry
+Pi 2 and 3. This gives us both a test for hidden platform-centric
+assumptions and useful pressure to stay friendly to small systems.
+
 We intend to port to Windows, but that may not land in early releases. The work
 requires we first sort out the threading code in NTPsec and then review the
-Windows support and how it is integrated into the code base.
+legacy Windows support and how it is integrated into the code base.
+Help with this would be welcome.
 
 Hardware with 32 or 64 bits and any endianness is supported.
 
