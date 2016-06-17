@@ -6,13 +6,13 @@ benchmarking NTPsec.
 == Test farm access ==
 
 Access is available to devteam members and serious contributors.
-Tests can be run from shell accounts on thyrsus.com, which has ssh
+Tests can be run from shell accounts on {farmhouse}, which has ssh
 access to the farm machines over fast local Ethernet. Because it
 might move in the future, the rest of this document refers to
 thyrsus.com as the 'farmhouse'.
 
 For access to the farmhouse, mail a preferred username and an
-ssh public key to esr@ntpsec.org.  Plain-text login to that machine
+ssh public key to {farmleeper}.  Plain-text login to that machine
 is not supported.
 
 Each farm machine has a setup account that is a sudoer; you will get
