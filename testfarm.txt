@@ -1,7 +1,7 @@
 = NTP Test Farm: access, procedures, tools =
 
-NTPsec maintains a test farm of machines dedicated to testing and
-benchmarking NTPsec.
+The NTPsec project maintains a test farm of machines dedicated to
+testing and benchmarking NTPsec.
 
 == Test farm access ==
 
@@ -12,7 +12,7 @@ might move in the future, the rest of this document refers to
 thyrsus.com as the 'farmhouse'.
 
 For access to the farmhouse, mail a preferred username and an
-ssh public key to {farmleeper}.  Plain-text login to that machine
+ssh public key to {farmkeeper}.  Plain-text login to that machine
 is not supported.
 
 Each farm machine has a setup account that is a sudoer; you will get
@@ -21,13 +21,14 @@ You should use it to create your own account and install public keys.
 
 == Test farm hardware ==
 
-The active test farm machines are as follows:
+The test farm machines in the current inventory are as follows:
 
 [options="header"]
 |=====================================================================
 | Hostname | Machine type   | Daughterboard  | On-board GPS
 | au.local | Raspberry Pi 2 | SKU 424254     | ublox 6
 | cu.local | Raspberry Pi 2 | Uputronics HAT | ublox 8
+| co.local | Raspberry Pi 3 | Uputronics HAT | ublox 8
 | fe.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 | nd.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 | ne.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
@@ -38,14 +39,14 @@ The active test farm machines are as follows:
 technical issues with configuring its kernel to accept 1PPS
 that haven't been solved yet.)
 
-These all have a full Raspbian development environment, all NTPsec and
+These all have a full Raspbian Linux development environment, all NTPsec and
 GPSD prerequisites, and git - but no X support, they're configured to
 run headless.  If there are additional tools you need, that is easily
 arranged.
 
 The farm machines are sited on the Official Windowsill of Mad Science
 in a mid-latitude suburban house with a good skyview. GPS outages are
-rare, normally occuring only after a machine has been power-cycled.
+rare, normally occurring only after a machine has been power-cycled.
 
 Additional farm nodes will be installed if there's demand.  Don't be
 shy about requesting this if you think you need to, as a new node
@@ -53,6 +54,11 @@ costs less than $100. Be aware however that costs go up at 8 and
 12-unit multiples due to power-distribution and network-switch costs.
 Also, without heroic measures the Official Windowsill of Mad Science is
 probably limited to supporting 16 machines.
+
+The farm nodes are named after chemical elements because that was a
+handy source of two-letter abbreviations, which are about all that will
+fit on an Avery 5412 gummed label, which will just fit on the
+non-electrode surface of a micro-SD.
 
 == Coordination ==
 
