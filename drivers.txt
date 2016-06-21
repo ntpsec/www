@@ -1,6 +1,6 @@
 = NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
-Version 1.9, 2016-16-16
+Version 1.10, 2016-16-21
 
 == Summary ==
 
@@ -422,7 +422,10 @@ were informed that the "Hopf 6021 Standard" protocol this handles is
 still emitted by several Hopf models in production use in off-Internet
 applications.
 
-Disposition: Move to refclockd.
+In 2016 it was removed anyway because it duplicates support in the
+parse driver.
+
+Disposition: already removed
 
 === Type 39: hopf GPS/DCF77 6039 for PCI-Bus (HOPF_P) ===
 
@@ -432,7 +435,7 @@ is 400 times less accurate than any common 1PPS device today and half
 the accuracy of a $30 USB timing GPS. However, as a clock rather than
 plain GPS the DCF77 variant evades the INACCURATE tag (just barely).
 
-Disposition: Move to refclockd.
+Disposition: SECURITY; already removed/
 
 === Type 40:  JJY Receivers (JJY) ===
 
@@ -478,7 +481,7 @@ with a specified accuracy of 100ns.  However, it required a
 proprietary driver and is therefore unacceptable as a matter
 of security policy.
 
-Disposition: Move to refclockd.
+Disposition: SECURITY; already removed.
 
 === Type 46: GPSD NG client protocol ===
 
@@ -521,8 +524,8 @@ be determined cetainly but was almost certainly in the last century.
 | 35 | DISCONTINUED (<2010), UNAVAILABLE; REMOVED
 | 36 | INACCURATE; REMOVED
 | 37 | DISCONTINUED (<2000), INACCURATE; REMOVED
-| 38 | -
-| 39 | -
+| 38 | REMOVED
+| 39 | SECURITY; REMOVED
 | 40 | -
 | 41 | DEPRECATED, DISCONTINUED
 | 42 | -

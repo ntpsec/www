@@ -39,10 +39,10 @@ wrapper around ntpdig.
 We have removed the following refclock drivers, which were either
 broken and won't compile on modern systems (12, 21), or irretrievably
 obsolete due to the WWVB modulation change (3, 19, 32, 34, 36), or had
-unfixable Y2K issues (37), or unfixable security issues (16, 43, 45), or
+unfixable Y2K issues (37), or unfixable security issues (16, 39, 43, 45), or
 relied on hardware interfaces no longer found on modern systems (35),
 or were deprecated in NTP Classic and had their documentation removed
-(13, 14, 17), or we have been advised by their maintainers should go (27).
+(13, 14, 17), or duplicate support in other dribers (38) or we have been advised by their maintainers should go (27).
 
 |==============================================================
 |Type 3: PSTI/Traconex 1020 WWV/WWVH Receiver (WWV_PST)
@@ -59,6 +59,8 @@ or were deprecated in NTP Classic and had their documentation removed
 |Type 35: Conrad Parallel Port Radio Clock (PCF)
 |Type 36: Radio WWV/H Audio Demodulator/Decoder (WWV)
 |Type 37: Forum Graphic GPS Dating station (FG)
+|Type 38: hopf GPS/DCF77 6021/komp for Serial Line (HOPF_S)
+|Type 39: hopf GPS/DCF77 6039 for PCI-Bus (HOPF_P)
 |Type 43: RIPE NCC interface for Trimble Palisade
 |Type 45: Spectracom TSync PCI
 |==============================================================
@@ -148,8 +150,6 @@ This will leave the following drivers in place:
 |Type 22: PPS Clock Discipline (PPS)
 |Type 26: Hewlett Packard 58503A GPS Receiver (GPS_HP)
 |Type 28: Shared Memory Driver (SHM)
-|Type 38: hopf GPS/DCF77 6021/komp for Serial Line (HOPF_S)
-|Type 39: hopf GPS/DCF77 6039 for PCI-Bus (HOPF_P)
 |Type 40: JJY Receivers (JJY)
 |Type 42: Zyfer GPStarplus Receiver
 |Type 44: NeoClock4X - DCF77 / TDF serial line
