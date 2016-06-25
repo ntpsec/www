@@ -28,16 +28,11 @@ The test farm machines in the current inventory are as follows:
 | Hostname | Machine type   | Daughterboard  | On-board GPS
 | au.local | Raspberry Pi 2 | SKU 424254     | ublox 6
 | cu.local | Raspberry Pi 2 | Uputronics HAT | ublox 8
-| co.local | Raspberry Pi 3 | Uputronics HAT | ublox 8
+| co.local | Raspberry Pi 3 | Adafruit HAT   | ublox 8
 | fe.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 | nd.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 | ne.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
-| xe.local | Odroid C2      | Adafruit HAT   | MTK3339
 |=====================================================================
-
-(Note: the Odroid is not yet available for general use. There are
-technical issues with configuring its kernel to accept 1PPS
-that haven't been solved yet.)
 
 These all have a full Raspbian Linux development environment, all NTPsec and
 GPSD prerequisites, and git - but no X support, they're configured to
