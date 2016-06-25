@@ -28,7 +28,7 @@ The test farm machines in the current inventory are as follows:
 | Hostname | Machine type   | Daughterboard  | On-board GPS
 | au.local | Raspberry Pi 2 | SKU 424254     | ublox 6
 | cu.local | Raspberry Pi 2 | Uputronics HAT | ublox 8
-| co.local | Raspberry Pi 3 | Adafruit HAT   | ublox 8
+| co.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 | fe.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 | nd.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 | ne.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
