@@ -45,7 +45,7 @@ implementation.  Numbers generated using David A. Wheeler's 'SLOCCount'.)
 These removals include nearly half of the bulk of ntpd, the most
 security-critical code.  And the numbers understate the size of the
 removals slightly because the way we counted "remaining" code includes
-some test code added since the repository conversion.
+some test code and features added since the repository conversion.
 
 We have improved the accuracy of time stepping with real hardware by x10::
 
@@ -56,6 +56,14 @@ representations we have made NTPsec able to use the full precision of
 modern clocks, which results in a factor 10 or more of accuracy
 improvement with real hardware such as GPSDOs and dedicated time
 radios.
+
+We have implemented a simpler refclock configuration syntax::
+
+The ntp.conf configuration syntax for declaring local reference
+clocks was notoriously odd and opaque. While we continue to support
+it for backward compatibility, we have implemented and documented
+a simpler and more comprehensible syntax. No more magic 127.127.t.u
+address or numeric driver types!
 
 We have applied Coverity scanning and fixed bugs where they were revealed::
 
