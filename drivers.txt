@@ -435,7 +435,7 @@ is 400 times less accurate than any common 1PPS device today and half
 the accuracy of a $30 USB timing GPS. However, as a clock rather than
 plain GPS the DCF77 variant evades the INACCURATE tag (just barely).
 
-Disposition: SECURITY; already removed/
+Disposition: SECURITY; already removed.
 
 === Type 40:  JJY Receivers (JJY) ===
 

@@ -4,7 +4,7 @@ More FAQs will be added here as we discover that they are FAQs.
 
 == Why NTPsec? ==
 
-NTPsec was forked from NTP Classic 4.3.34 in early 2015 after many
+NTPsec was forked from NTP Classic 4.3.34 in mid-2015 after many
 installations of NTP Classic were repeatedly exploited as amplifiers
 in distributed denial-of-service attacks.
 

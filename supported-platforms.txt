@@ -20,7 +20,9 @@ requires we first sort out the threading code in NTPsec and then review the
 legacy Windows support and how it is integrated into the code base.
 Help with this would be welcome.
 
-Hardware with 32 or 64 bits and any endianness is supported.
+Hardware with 32 or 64 bits and any endianness is supported.  However,
+we're optimizing for performance on modern 64-bit hardware and will
+sacrifice performance on older systems to tune for newere ones.
 
 NTP Classic kept legacy support for a lot of very ancient Unix big
 iron, and for other systems such as VMS.  But increasing security
