@@ -65,6 +65,15 @@ it for backward compatibility, we have implemented and documented
 a simpler and more comprehensible syntax. No more magic 127.127.t.u
 address or numeric driver types!
 
+We have added a statistics-file visualizer to help diagnose problems::
+
+Tuning the configuration of a time server is a subtle and sometimes
+tricky process. The causes of problems can range from misconfiguration
+through power outages to bad network weather and beyond.  NTP keeps
+logs of operating statistics that can be very helpful - if you know
+how to interpret them. NTPsec supplies a visualization tool that makes
+those numbers into graphs so you can (literally) see what's going on.
+
 We have applied Coverity scanning and fixed bugs where they were revealed::
 
 NTP Classic had occasionally been Coverity-checked in the past, but
