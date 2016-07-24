@@ -39,13 +39,19 @@ wrapper around ntpdig.
 We have removed the following refclock drivers, which were either
 broken and won't compile on modern systems (12, 21), or irretrievably
 obsolete due to the WWVB modulation change (3, 19, 32, 34, 36), or had
-unfixable Y2K issues (37), or unfixable security issues (16, 39, 43, 45), or
-relied on hardware interfaces no longer found on modern systems (35),
-or were deprecated in NTP Classic and had their documentation removed
-(13, 14, 17), or duplicate support in other dribers (38) or we have been advised by their maintainers should go (27).
+unfixable Y2K issues (37), or unfixable security issues (16, 39, 43,
+45), or relied on hardware interfaces no longer found on modern
+systems (6, 7, 35), or were deprecated in NTP Classic and had their
+documentation removed (13, 14, 17), or duplicate support in other
+dribers (38) or were EOLed more than 20 years ago without aftermarket
+activity or Web chatter in a decade, or we have been advised by their
+maintainers should go (27).
 
 |==============================================================
 |Type 3: PSTI/Traconex 1020 WWV/WWVH Receiver (WWV_PST)
+|Type 6: IRIG Audio Decoder (IRIG_AUDIO)
+|Type 7: Radio CHU Audio Demodulator/Decoder (CHU)
+|Type 10: Austron 2200A/2201A GPS Receivers (GPS_AS2201)
 |Type 12: KSI/Odetics TPRO/S IRIG Interface
 |Type 13: Leitch CSD 5300 Master Clock Controller (ATOM_LEITCH)
 |Type 14: EES M201 MSF Receiver (REFCLOCK_MSF_EES)
@@ -104,7 +110,7 @@ following tests:
    (type 1).
 
 4. Accuracy an order of magnitude worse than a cheap 1PPS GPS. Types
-   6, 7, 33.
+   33.
 
 5. No user has spoken up to report the device type is still in
    production use.  We've had that report about type 38.
@@ -114,10 +120,7 @@ Thus, we plan to remove the following refclock drivers:
 |==========================================================
 |Type 1: Undisciplined Local Clock
 |Type 5: TrueTime GPS/GOES Receivers (TRUETIME)
-|Type 6: IRIG Audio Decoder (IRIG_AUDIO)
-|Type 7: Radio CHU Audio Demodulator/Decoder (CHU)
 |Type 9: Magnavox MX4200 GPS Receiver (GPS_MX4200)
-|Type 10: Austron 2200A/2201A GPS Receivers (GPS_AS2201)
 |Type 20: Generic NMEA GPS Receiver (NMEA)
 |Type 29: Trimble Navigation Palisade GPS (GPS_PALISADE)
 |Type 30: Motorola UT Oncore GPS (GPS_ONCORE)

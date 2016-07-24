@@ -180,14 +180,22 @@ wiring to connect to a microphone or line-in port.  All for
 accuracy two orders of magnitude worse (500&micro;s) than a cheap 1PPS GPS
 and no holdover capability.
 
-Disposition: INACCURATE; Remove.
+We removed this one in July 2016 following a determination that
+the hardware required by audio-path drivers imposed serious
+precision limits and is now obsolete.
+
+Disposition: INACCURATE; already removed.
 
 === Type 7 (CHU): Radio CHU Audio Demodulator/Decoder ===
 
 A very bad idea similarly wired to IRIG, using a Canadian analog
 of WWVB.  Cited as 1ms accuracy without GPS calibration.
 
-Disposition: INACCURATE; Remove.
+We removed this one in July 2016 following a determination that
+the hardware required by audio-path drivers imposed serious
+precision limits and is now obsolete.
+
+Disposition: INACCURATE; already removed.
 
 === Type 8 (GENERIC): Generic Reference Driver ===
 
@@ -212,7 +220,10 @@ A few units were still in hobbyist use in 2006, but there don't
 seem to be more recent references even on the time-nuts list.
 I could find none available for sale.
 
-Disposition: Fails tests DISCONTINUED, UNAVAILABLE; Remove.
+Removed in July 2016 when our program manager decided it was too
+ancient to be worth keeping.
+
+Disposition: Fails tests DISCONTINUED, UNAVAILABLE; already removed.
 
 === Type 11 (ARBITER): Arbiter 1088A/B GPS Receiver ===
 
@@ -504,11 +515,11 @@ be determined cetainly but was almost certainly in the last century.
 | 3  | INTRINSIC, DISCONTINUED (<2000?), UNAVAILABLE, INACCURATE; REMOVED
 | 4  | -
 | 5  | DISCONTINUED (<2000?)
-| 6  | INACCURATE
-| 7  | INACCURATE
+| 6  | INACCURATE; REMOVED
+| 7  | INACCURATE; REMOVED
 | 8  | -
 | 9  | DISCONTINUED (1994), UNAVAILABLE
-| 10 | DISCONTINUED (1996), UNAVAILABLE
+| 10 | DISCONTINUED (1996), UNAVAILABLE; REMOVED
 | 11 | -
 | 12 | UNDOCUMENTED, DISCONTINUED (<2000?), UNAVAILABLE; REMOVED
 | 13 | DISCONTINUED (<2005), INACCURATE; REMOVED
