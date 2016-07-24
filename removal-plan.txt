@@ -129,9 +129,6 @@ Thus, we plan to remove the following refclock drivers:
 |Type 41: TrueTime 560 IRIG-B Decoder (REFCLK_TT560)
 |==========================================================
 
-Removing 6 and 7 means we will be able to remove all the
-hair for audio card support.
-
 We also plan to remove the following modes in the Type 8 (PARSE) driver.
 These are for equipment that has not been available at least since
 2003, and probably earlier.
