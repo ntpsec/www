@@ -106,19 +106,11 @@ following tests:
 2. Duplicates capabilities of GPSD, which specializes in GPSes.
    Types 20, 29, 30, 31.
 
-3. Deprecated by the NTP Classic documentation in favor of orphan mode
-   (type 1).
-
-4. Accuracy an order of magnitude worse than a cheap 1PPS GPS. Types
-   33.
-
-5. No user has spoken up to report the device type is still in
-   production use.  We've had that report about type 38.
+3. Accuracy an order of magnitude worse than a cheap 1PPS GPS. Type 33.
 
 Thus, we plan to remove the following refclock drivers:
 
 |==========================================================
-|Type 1: Undisciplined Local Clock
 |Type 5: TrueTime GPS/GOES Receivers (TRUETIME)
 |Type 9: Magnavox MX4200 GPS Receiver (GPS_MX4200)
 |Type 20: Generic NMEA GPS Receiver (NMEA)
@@ -143,6 +135,7 @@ These are for equipment that has not been available at least since
 This will leave the following drivers in place:
 
 |==========================================================
+|Type 1: Undisciplined Local Clock
 |Type 4: Spectracom GPS Receivers (SPECTRACOM)
 |Type 8: Generic Reference Driver (PARSE)
 |Type 11: Arbiter 1088A/B GPS Receiver (GPS_ARBITER)
