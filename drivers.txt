@@ -21,11 +21,11 @@ those classes are now obsolescent or semi-obsolescent.
 See http://www.catb.org/gpsd/time-service-intro.html["Introduction to
 Time Service"] for terminology, device classes, and accuracy.  The
 summary version is that inexpensive 1PPS-capable GPS devices have a
-nearly overwhelming cost-effectivenee advantage over older time source
+nearly overwhelming cost-effectiveness advantage over older time source
 types, and the utility of supporting those older types is accordingly
 plummeting.
 
-I think it is actually seriously questionable whether support for
+It is actually seriously questionable whether support for
 *any* of these legacy devices is worth maintaining.  No hardware
 drivers have been added since 2006, and possibly none since 2002.
 NIST's modulation change at 2012-10-29T15:00:00Z laid waste to the
@@ -65,7 +65,7 @@ DISCONTINUED::
 UNAVAILABLE::
 	Remove drivers for products which cannot be found for sale
 	with a web search. (I have noted when remaindered units are
-	available on e-Bay and second-hand sites.)
+	available on eBay and second-hand sites.)
 
 REDUNDANT::
 	Remove drivers that duplicate capabilities better provided by
@@ -167,7 +167,7 @@ I can find is from 1997:
 
 www.dtic.mil/cgi-bin/GetTRDoc?AD=ADA324042
 
-The devices can be found for sale, but only on e-Bay and electronics
+The devices can be found for sale, but only on eBay and electronics
 remainder sites.  The vendor seems to be long gone.
 
 Disposition: DISCONTINUED; Remove.
@@ -323,7 +323,7 @@ situations - the documentation mentions "the vicinity of Mars".
 However, Hal Murray reports that the PPS support in ntpd is "kludgy"
 and needs to be fixed.  That says to me that this driver is too
 broken to be worth saving. Should be replaced with the GPSD PPS
-xode, which is better tested.
+code, which is better tested.
 
 Disposition: INTRINSIC; Remove
 
@@ -604,7 +604,7 @@ To date, there have been two such reinstatements:
 
 * the Hopf 6021 Serial, requested by Martin Kotzan.
 
-The second one was later dropped again when it was duscovered
+The second one was later dropped again when it was discovered
 that a GENERIC mode supports this hardware.
 
 Accordingly, the list under "Potentially viable drivers" is the list
@@ -691,6 +691,9 @@ Version 1.9, 2016-06-16::
 
 Version 1.10, 2016-07-23::
 	We don't use magic numbers any more. Update accordingly.
+
+Version 1.11, 2016-08-22::
+	Minor typo fixes.
 
 image::clocktower64.png[align="center"]
 

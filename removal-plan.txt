@@ -25,7 +25,7 @@ draft-ietf-ntp-using-nts-for-ntp-NN
 to full RFC status.
 
 The ntpdc utility has been entirely removed.  (All its capabilities are
-available through ntpq with a similar user unterface.)  Support for
+available through ntpq with a similar user interface.)  Support for
 Mode 7 packets in ntpd has been removed along with it, significantly
 reducing total attack surface and code complexity.
 
@@ -43,7 +43,7 @@ unfixable Y2K issues (37), or unfixable security issues (16, 39, 43,
 45), or relied on hardware interfaces no longer found on modern
 systems (6, 7, 35), or were deprecated in NTP Classic and had their
 documentation removed (13, 14, 17), or duplicate support in other
-dribers (38) or were EOLed more than 20 years ago without aftermarket
+drivers (38) or were EOLed more than 20 years ago without aftermarket
 activity or Web chatter in a decade, or we have been advised by their
 maintainers should go (27).
 
