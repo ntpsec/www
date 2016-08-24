@@ -16,7 +16,7 @@ To prevent buffer overruns, we have replaced all unsafe string
 functions (strcpy/strcat/strtok/sprintf/vsprintf/gets) with safe
 versions that take a buffer bound.
 
-We have removed over a hundred thousand lines of obsolete code::
+We have removed over a hundred forty thousand lines of obsolete code::
 
 Less code means less attack surface.  Here are some things we've found
 to remove:
@@ -40,7 +40,7 @@ to remove:
 some old, unreliable crypto code by a newer and slightly bulkier
 implementation.  Numbers generated using David A. Wheeler's 'SLOCCount'.)
 +
-These removals include nearly half of the bulk of ntpd, the most
+These removals include most of the bulk of ntpd, the most
 security-critical code.  And the numbers understate the size of the
 removals slightly because the way we counted "remaining" code includes
 some test code and features added since the repository conversion.
