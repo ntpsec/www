@@ -52,10 +52,10 @@ mailto:outreach@icei.org[outreach@icei.org]
 
 and
 
-Emily Ratliff +
-Senior Director of Infrastructure Security +
+Marcus Streets +
+Programs Director, +
 The Linux Foundation, Core Infrastructure Initiative (https://www.coreinfrastructure.org/[CII]) +
-mailto:eratliff@linuxfoundation.org[eratliff@linuxfoundation.org]
+mailto:mstreets@linuxfoundation.org[mstreets@linuxfoundation.org]
 
 
 image::clocktower64.png[align="center"]
