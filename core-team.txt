@@ -55,6 +55,24 @@ including voice switching on the NATO AWACS.
 Chris lives with his wife and children, pretends to play tennis, and
 walks his dogs (which usually means a stroll to a cafe for breakfast).
 
+== Gary E. Miller ==
+
+Gary is our GPS and PPS guy.
+
+To pay it forward, he has worked on the gpsd project for over ten years,
+and so brings that wealth of experience to the NTPsec project.
+
+After graduating from Brown University with two degrees, GEM spent over
+20 years in Silicon Valley doing Automated Test Equipment, reverse
+engineering, and forward engineering for a wide range of tech companies.
+
+After moving to Bend, OR in 1998 Gary shifted more into the softer side
+of the internet.  Now he commutes and telecommutes all over the world to
+consult on a wide variety of projects.
+
+When the gravity of the world seems to build up, he takes to the skies,
+with his dog as co-pilot, in a small plane to commune with nature.
+
 == Hal Murray ==
 
 Hal is our voice of wisdom.
