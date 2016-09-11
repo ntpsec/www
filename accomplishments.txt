@@ -26,13 +26,14 @@ to remove:
 |  28.5 KLOC (13%)   | Undocumented, deprecated, obsolete, or broken refclocks
 |  24.0 KLOC (11%)   | Unused ISC library code
 |  12.5 KLOC (5%)    | libopts/autogen removal
+|  10.0 KLOC (4%)    | Removal of legacy Windows code
 |   9.0 KLOC (4%)    | Code obsolete because we assume a POSIX.1-2001/C99 base
 |   9.0 KLOC (4%)    | Removal of ntpdc
 |   2.0 KLOC (1%)    | Replacement of ntpdate by a shell wrapper around ntpdig
 |   3.0 KLOC (1%)    | Removal of Autokey.
 |   8.0 KLOC (2%)    | Miscellaneous cruft
-| 142.0 KLOC (63%)   | _Total removed_
-|  85.0 KLOC (37%)   | _Total remaining_
+| 152.0 KLOC (67%)   | _Total removed_
+|  75.0 KLOC (33%)   | _Total remaining_
 | 227.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
