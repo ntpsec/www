@@ -85,15 +85,14 @@ Platform-dependent kernel-space code that raised potential security
 issues has been removed.  No programs access /dev/kmem directly any
 longer, and STREAMS support for the parse driver has been deleted.
 
+Legacy Windows support has been removed.  If we support Windows again
+it will be via a POSIX/C99 emulation layer such as Cygwin or
+Microsoft's Windows 10 facility for execxuting Linux binaries.
+
 Support for VMS has been removed, and is unlikely to be restored
 unless that platform has achieved effectively full standards
 conformance and someone interested throws engineering time and money
 at us.  Likewise for VxWorks.
-
-== Suppressed code ==
-
-While we have not removed the Windows code, we will not ship with
-Windows supported until that platform has an active port maintainer.
 
 == Obsolete refclocks ==
 
