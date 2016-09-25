@@ -52,6 +52,6 @@ link:license.html[Project licenses]
 
 link:press.html[Press and Media Resources]
 
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/79/badge)](https://bestpractices.coreinfrastructure.org/projects/79)
+image:https://bestpractices.coreinfrastructure.org/projects/79/badge[CII Best Practices]
 
 //end
