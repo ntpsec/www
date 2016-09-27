@@ -1,0 +1,40 @@
+= Test Status =
+
+NTPsec builds cleanly on at least the following systems:
+
+* Fedora 23 and 24 (i686, x86_64)
+* CentOS 7.2.1511 and 6.8 (x86_64)
+* Debian jessie (amd64, i686, arm) and wheezy on amd64
+* Ubuntu 14.04.3 LTS and 16.04.1 LTS on x86_64
+* Raspbian jessie on ARM v6 and v7 (Pi, Pi 2, and Pi 3)
+* Debian wheezy on BeagleBone Black ARM v7
+* FreeBSD 10.2 and 9.3 on amd64 and 10.3 on i386
+* NetBSD 7.0.1 and 6.1.5 on x86_64 and 7.0.1 on i386
+* 10.11.x (El Capitan) on x86_64
+
+Some of these systems have minor build quirks; see the INSTALL file
+in the distribution root directory for details
+
+Normal time sync in client mode works correctly on all the listed
+systems.  Server mode has been well tested under Debian and Raspbian,
+less so on other variants and *BSD.
+
+However, platform dependencies other than adjtime(2) and adjtimex(2)
+are minimal.  Experience with the codebase suggests it will run
+correctly anywhere it builds correctly.
+
+The following refclocks are known to work under Linux:
+
+|===========================================================
+| 20 |  NMEA GPS Receiver
+| 22 |  PPS Clock Discipline
+| 26 |  Hewlett Packard 58503A GPS Receiver
+| 28 |  Shared Memory Driver
+| 29 |  Trimble Navigation Palisade GPS (with Thunderbolt)
+| 46 |  GPSD NG client protocol
+|===========================================================
+
+The best-tested refclock on non-Linux systems is SHM,
+especially in combination with GPSD.
+
+// end
