@@ -142,7 +142,7 @@ disappears into forests for extended periods.
 
 == Amar Takhar ==
 
-Amar is our testing and infrastructure specialist.
+Amar is our testing and infrastructure specialist emeritus.
 
 Amar has worked on both software and hardware testing for 18 years.  He has
 designed several complete testing systems for Continuous Integration,
