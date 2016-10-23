@@ -40,6 +40,8 @@ link:contributor.html[Contribution policies, workflows, and conventions]
 
 link:channels.html[Communications channels]
 
+link:test-status.html[Test Status]
+
 link:security.html[Security Researchers and Vulnerability Reports]
 
 link:FAQ.html[The inevitable FAQ]
