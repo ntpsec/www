@@ -52,6 +52,8 @@ link:license.html[Project licenses]
 
 link:press.html[Press and Media Resources]
 
+link:http://www.spi-inc.org/projects/ntpsec[Help fund NTPsec. Donation via Software in the Public Interest]
+
 image:https://bestpractices.coreinfrastructure.org/projects/79/badge[CII Best Practices]
 
 //end
