@@ -54,6 +54,16 @@ management (into a separate refclockd) from the synchronization algorithms.
 Network Time Protocol is unhealthily entangled with IPv4.  As address
 exhaustion forces the world towards IPv6, this needs to be fixed.
 
+== Long-term: Out of C entirely? ==
+
+Languages which may seriously challenge C as the lingua franca of
+systems work are beginning to appear.  Their most important advantage
+is they they enforce code-correctness properties that eliminate large
+classes of the low-level bugs C is prone to.  The codebase we
+inherited was so large and grotty that moving to any of these would
+have been impractical, but the codebase we have now is a different
+story. It may be worth trying...
+
 == Recruit and educate a new generation ==
 
 NTP Classic came altogether too close to becoming a black hole of
