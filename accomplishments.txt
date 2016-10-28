@@ -115,7 +115,7 @@ since 1998.  It had a serious problem with different documents telling
 different stories.  We've fixed all that; every command-line switch
 and every configuration entity now has a single point of truth, also
 the manual pages and Web documentation are generated from the same
-master files.
+master files.  Archaisms have been removed and much has been updated.
 
 We have earned trust in the InfoSec research community::
 

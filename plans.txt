@@ -1,21 +1,5 @@
 = What we plan to do =
 
-== Improve the documentation ==
-
-NTP Classic's documentation is an untidy, confusing heap of details
-that is intimidating to novices and confusing even to experts.  We
-know how to do better at both
-http://catb.org/gpsd/time-service-intro.html[Introductory] and
-http://catb.org/gpsd/gpsd-time-service-howto.html[Intermediate]
-levels and will apply that knowledge to NTPsec.
-
-== Create a real end-to-end test suite ==
-
-Our team has a concentration of expertise in software testing.
-NTP Classic never had rigorous end-to-end tests that
-could be run out-of-the-box to verify the correctness of the code.
-Putting such a suite fully in place is one of our early goals.
-
 == Hammer the bug list flat ==
 
 The NTP Classic codebase had accumulated serious
