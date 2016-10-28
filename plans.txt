@@ -18,6 +18,14 @@ will have.  There are many opportunities here; see our
 link:removal-plan.html[removal plans], and holler if we're removing
 something you need.
 
+== Move code that doesn't need to be in C out of C ==
+
+We've already made major gains in maintainability and code re-use by
+moving all our production scripting to Python.  One of our goals is to
+move all code that isn't realtime-critical out of C to improve
+maintainability and decrease vulnerability to overrun bugs and other
+classic C snafus.
+
 == Broaden community participation ==
 
 The NTP Classic project slid into decline, developing serious

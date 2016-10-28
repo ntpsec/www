@@ -16,7 +16,7 @@ To prevent buffer overruns, we have replaced all unsafe string
 functions (strcpy/strcat/strtok/sprintf/vsprintf/gets) with safe
 versions that take a buffer bound.
 
-We have removed over a hundred forty thousand lines of obsolete code::
+We have removed over a hundred fifty thousand lines of obsolete code::
 
 Less code means less attack surface.  Here are some things we've found
 to remove:
@@ -116,6 +116,14 @@ different stories.  We've fixed all that; every command-line switch
 and every configuration entity now has a single point of truth, also
 the manual pages and Web documentation are generated from the same
 master files.  Archaisms have been removed and much has been updated.
+
+We have reduced the set of languages used in the suite to C and Python::
+
+The code we inherited used way too many languages - there were scripts
+lurking in Perl, awk, and S.  By discarding or replacing this stuff we
+have increased its maintainability, leaving fewer dark corners for
+bugs to lurk in. All the scripting we install is now Python, creating
+opportunities for code reuse across programs that didn't exist before.
 
 We have earned trust in the InfoSec research community::
 
