@@ -9,6 +9,13 @@ Edit cycle:
 
 The repository push hook rebuilds the HTML.
 
+To preview your changes:
+
+Run 'rebuild' to generate pages, then point your browser at index.html.
+
+A trivial Makefile  allows 'make' and 'make clean' to work.
+
+
 
 
 
