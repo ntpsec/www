@@ -46,7 +46,7 @@ link:security.html[Security Researchers and Vulnerability Reports]
 
 link:FAQ.html[The inevitable FAQ]
 
-{project-docs}[The NTP Documentation]
+link:documentation.html[Documentation]
 
 link:license.html[Project licenses]
 
