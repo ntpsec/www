@@ -1,0 +1,65 @@
+= RFCs =
+
+
+== NTP ==
+
+link:https://tools.ietf.org/html/rfc7822[RFC 7822, March 2016]
+Network Time Protocol Version 4 (NTPv4) Extension Fields
+
+link:https://tools.ietf.org/html/rfc5906[RFC 5906, June 2010]
+Network Time Protocol Version 4: Autokey Specification
+
+link:https://tools.ietf.org/html/rfc5905[RFC 5905, June 2010]
+Network Time Protocol Version 4: Protocol and Algorithms Specification
+
+link:https://tools.ietf.org/html/rfc1305[RFC 1305, March 1992]
+Network Time Protocol (Version 3) Specification, Implementation and Analysis
+
+link:https://tools.ietf.org/html/rfc1119[RFC 1119, Postscript only]
+Network Time Protocol (Version 2) Specification and Implementation
+
+link:https://tools.ietf.org/html/rfc1059[RFC 1059, July 1988]
+Network Time Protocol (Version 1) Specification and Implementation
+
+link:https://tools.ietf.org/html/rfc958[RFC 958, September 1985]
+Network Time Protocol (NTP)
+
+== Kernel ==
+
+link:https://tools.ietf.org/html/rfc2783[RFC 2783, March 2000]
+Pulse-Per-Second API for UNIX-like Operating Systems, Version 1.0
+
+link:https://tools.ietf.org/html/rfc1589[RFC 1589, March 1994]
+A Kernel Model for Precision Timekeeping
+
+== SNTP ==
+
+link:https://tools.ietf.org/html/rfc4330[RFC 4330, January 2006]
+Simple Network Time Protocol (SNTP) Version 4 for IPv4, IPv6 and OSI
+
+link:https://tools.ietf.org/html/rfc2030[RFC 2030, October 1996]
+Simple Network Time Protocol (SNTP) Version 4 for IPv4, IPv6 and OSI
+
+link:https://tools.ietf.org/html/rfc1769[RFC 1769, March 1995]
+Simple Network Time Protocol (SNTP)
+
+link:https://tools.ietf.org/html/rfc1361[RFC 1361, August 1992]
+Simple Network Time Protocol (SNTP)
+
+== Ancillary Protocols ==
+
+link:https://tools.ietf.org/html/rfc5908[RFC 5908, June 2010]
+Network Time Protocol (NTP) Server Option for DHCPv6
+
+link:https://tools.ietf.org/html/rfc5907[RFC 5907, June 2010]
+Definitions of Managed Objects for Network Time Protocol Version 4 (NTPv4)
+
+== Ancient History ==
+
+link:https://tools.ietf.org/html/rfc868[RFC 958, May 1983]
+Time Protocol
+
+
+image::clocktower64.png[align="center"]
+
+// end

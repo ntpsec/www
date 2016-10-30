@@ -1,0 +1,38 @@
+= Documentation =
+
+== man and html pages as included in source code ==
+
+{project-docs}[NTPsec Documentation]
+
+
+== RFCs ==
+
+link:rfcs.html[RFCs]
+
+
+== Other NTP Projects ==
+
+link:http://www.ntp.org/[NTP Classic]
+
+link:http://chrony.tuxfamily.org/[Chrony]
+
+link:http://www.openntpd.org/[OpenNTP]
+
+link:http://www.pool.ntp.org/en/[Pool]
+
+link:http://lists.ntp.org/listinfo/ntpwg[IETF ntpwg]
+
+
+== Official National Sources of Time ==
+
+link:official.html[Official Sources of Time]
+
+
+== NTP Misuse and Abuse ==
+
+link:http://en.wikipedia.org/wiki/NTP_server_misuse_and_abuse[Wikipedia: NTP server misuse and abuse]
+
+
+image::clocktower64.png[align="center"]
+
+// end
