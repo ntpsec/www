@@ -23,6 +23,23 @@ the co-owner of an industrial-art makerspace.
 
 When he is not traveling, he makes his home in Seattle.
 
+== John D. Bell ==
+
+John is our systems administrator and infrastructure gnome.
+
+John has been using, programming, and administering Unix and
+Linux systems for more than 30 years, and at a glance could
+be confused with User Friendly's "Sid".  He has previously
+consulted to AT&T Information Systems and the Ford Motor
+Company, and currently works at The University of Toledo
+(Ohio).  He prefers to operate Chinese-stagehand-style, quietly
+and unobtrusively keeping all the widgets lubricated and wheels
+turning.
+
+When not working on open source systems and projects, John
+hacks on Victorian houses with his wife and aspires to write
+science fiction.
+
 == Daniel Fox Franke ==
 
 Daniel is the team's InfoSec specialist and first responder for
