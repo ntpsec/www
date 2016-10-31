@@ -124,18 +124,6 @@ her mini-hacker in Bloomington, IN.
 Known vulnerabilities: can be bribed with dark chocolate, occasionally
 disappears into forests for extended periods.
 
-== Amar Takhar ==
-
-Amar is our testing and infrastructure specialist emeritus.
-
-Amar has worked on both software and hardware testing for 18 years.  He has
-designed several complete testing systems for Continuous Integration,
-operational, and structured testing.  Amar has a strong passion for design
-conformance, quality assurance, big data and cross platform compatibility.  With
-over 20 years in the open-source community and long-term commitment to several
-projects he also enjoys spending his spare time in the garden, running,
-reading, and cooking.
-
 image::clocktower64.png[align="center"]
 
 //end
