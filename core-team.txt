@@ -56,22 +56,6 @@ Washington in February in 65mph winds. He tweets as
 https://twitter.com/dfranke[@dfranke] and blogs irregularly at
 https://www.dfranke.us[Indistinguishable from Random].
 
-== Chris Johns ==
-
-Chris is our expert on high-precision programming, threads, and SMP.
-
-Chris Johns is an embedded real-time software engineer working close
-to the hardware interfacing it to real-time software. Chris has been a
-constant contributor to the RTEMS project since it was opened in the
-early 1990s and is now a core developer of that project. Chris's work
-ranges from operating system support for aerospace flight software for
-satellites (including the Magnetospheric Multiscale Mission) and X-ray
-detectors for various beam lines, to various types of networking
-including voice switching on the NATO AWACS.
-
-Chris lives with his wife and children, pretends to play tennis, and
-walks his dogs (which usually means a stroll to a cafe for breakfast).
-
 == Gary E. Miller ==
 
 Gary is our GPS and PPS guy.
