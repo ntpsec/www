@@ -16,7 +16,7 @@ To prevent buffer overruns, we have replaced all unsafe string
 functions (strcpy/strcat/strtok/sprintf/vsprintf/gets) with safe
 versions that take a buffer bound.
 
-We have removed over a hundred fifty thousand lines of obsolete code::
+We have removed a hundred sixty thousand lines of obsolete code::
 
 Less code means less attack surface.  Here are some things we've found
 to remove:
@@ -31,9 +31,10 @@ to remove:
 |   9.0 KLOC (4%)    | Removal of ntpdc
 |   2.0 KLOC (1%)    | Replacement of ntpdate by a shell wrapper around ntpdig
 |   4.0 KLOC (1%)    | Removal of Autokey.
+|   7.0 KLOC (3%)    | Replacement of C ntpq in Python
 |   8.0 KLOC (2%)    | Miscellaneous cruft
-| 153.0 KLOC (68%)   | _Total removed_
-|  74.0 KLOC (32%)   | _Total remaining_
+| 160.0 KLOC (71%)   | _Total removed_
+|  67.0 KLOC (29%)   | _Total remaining_
 | 227.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
