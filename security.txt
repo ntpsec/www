@@ -12,7 +12,7 @@ relationship, and exchange keys.
 
 == Reporting Vulnerabilities ==
 
-Please report discovered vulnerabiltites to the [mailto:security@ntpsec.org|
+Please report discovered vulnerabiltites to the mailto:security@ntpsec.org[
 NTPsec security team].
 
 This team email forwards to a very small cadre of the internal NTPsec
@@ -48,7 +48,7 @@ Our experience so far is that we are much faster than that.
 == Our Responsible Disclosure Policy ==
 
 Our responsible disclosue policy is very closely modeled on the
-[https://www.cert.org/vulnerability-analysis/vul-disclosure.cfm|CERT
+https://www.cert.org/vulnerability-analysis/vul-disclosure.cfm[CERT
 Vulnerability Disclosure Policy]:
 
 Vulnerabilities reported to the [mailto:security@ntpsec.org|NTPsec
