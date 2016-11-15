@@ -1,4 +1,4 @@
-= Security Researchers and Vulnerability Reports =
+= Security Researchers, Vulnerability Reports and Disclosure Policy  =
 
 == Invitation to Responsible Security Researchers ==
 
@@ -12,10 +12,11 @@ relationship, and exchange keys.
 
 == Reporting Vulnerabilities ==
 
-Please report discovered vulnerabiltites to mailto:security@ntpsec.org.
+Please report discovered vulnerabiltites to the [mailto:security@ntpsec.org|
+NTPsec security team].
 
-This email alias forwards to a very small cadre of the internal NTPsec
-team.
+This team email forwards to a very small cadre of the internal NTPsec
+staff.
 
 You may GPG encrypt your report. Our GPG key can be found on the well
 known keyservers, and has the following id and fingerprint:
@@ -44,39 +45,36 @@ days.
 
 Our experience so far is that we are much faster than that.
 
-== Honoring Reporter Responsible Disclosure Policies ==
+== Our Responsible Disclosure Policy ==
 
-We honor responsible disclosure policies and embargos requested by
-responsible security researchers and security research organizations.
+Our responsible disclosue policy is very closely modeled on the
+[https://www.cert.org/vulnerability-analysis/vul-disclosure.cfm|CERT
+Vulnerability Disclosure Policy]:
 
-Vulnerabilities properly reported to us are tracked in a controlled
-access issue tracker.  Development of fixes is done in private Git
-repos.
+Vulnerabilities reported to the [mailto:security@ntpsec.org|NTPsec
+security team] will be disclosed to the public 45 days after the initial
+report, regardless of the existence or availability of patches or
+workarounds from affected vendors. Extenuating circumstances, such as
+active exploitation, threats of an especially serious (or trivial)
+nature, or situations that require changes to an established standard
+may result in earlier or later disclosure. Disclosures made by the
+NTPsec security team/CC will include credit to the reporter unless
+otherwise requested by the reporter. We will apprise any affected
+vendors of our publication plans and negotiate alternate publication
+schedules with the affected vendors when required.
 
-When the reasonable embargo period expires, we will promptly merge the
-fixes to our public repos, and will cut a new release.
+It is the goal of this policy to balance the need of the public to be
+informed of security vulnerabilities with vendors' need for time to
+respond effectively. The final determination of a publication schedule
+will be based on the best interests of the community overall.
 
-If a vulnerability becomes publically known before the embargo
-expires, we will notify the reporter, and then will promptly merge the
-fixes to our public repos, and will cut a new release.
-
-If we receive a vulnerability report that is a duplicate, we will put
-the reporters in contact with each other, and then will honor the
-shortest embargo.
-
-== Our Responsible Disclosure Policies ==
-
-As NTPsec is currently in developer pre-release and is not yet
-deployed in production, we currently have no responsible disclosure or
-embargo policies of our own.  As we find issues and vulnerabilities
-ourselves and by ordinary contributors, we will verify and fix on our
-existing development and release cadence, in our public issue tracker
-and on our public Git repositories.
-
-Once NTPsec is in production use, we will work towards an
-industry-standard best-practices Responsible Disclosure and Embargo
-Policy.
-
+Vulnerabilities reported to us will be forwarded to the affected vendors
+as soon as practical after we receive the report. The name and contact
+information of the reporter will be forwarded to the affected vendors
+unless otherwise requested by the reporter. We will advise the reporter
+of significant changes in the status of any vulnerability he or she
+reported to the extent possible without revealing information provided
+to us in confidence.
 
 image::clocktower64.png[align="center"]
 
