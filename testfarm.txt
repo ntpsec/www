@@ -30,6 +30,7 @@ The test farm machines in the current inventory are as follows:
 | cu.local | Raspberry Pi 2 | Uputronics HAT | ublox 8
 | co.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 | fe.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
+| na.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 | nd.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 | ne.local | Raspberry Pi 3 | Adafruit HAT   | MTK3339
 |=====================================================================
