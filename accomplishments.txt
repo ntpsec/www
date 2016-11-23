@@ -32,15 +32,16 @@ to remove:
 |   2.0 KLOC (1%)    | Replacement of ntpdate by a shell wrapper around ntpdig
 |   4.0 KLOC (1%)    | Removal of Autokey.
 |   7.0 KLOC (3%)    | Replacement of C ntpq in Python
-|   8.0 KLOC (2%)    | Miscellaneous cruft
-| 160.0 KLOC (71%)   | _Total removed_
+|  12.0 KLOC (3%)    | Miscellaneous cruft
+| 164.0 KLOC (71%)   | _Total removed_
 |  67.0 KLOC (29%)   | _Total remaining_
-| 227.0 KLOC (100%)  | _Total at conversion time_
+| 231.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
 (Totals will not sum exactly due to rounding errors and replacement of
 some old, unreliable crypto code by a newer and slightly bulkier
-implementation.  Numbers generated using David A. Wheeler's 'SLOCCount'.)
+implementation.  Numbers generated using
+https://gitlab.com/esr/loccount[loccount].)
 +
 These removals include most of the bulk of ntpd, the most
 security-critical code.  And the numbers understate the size of the
