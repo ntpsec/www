@@ -39,6 +39,7 @@ Configurations]
 
 == The project behind the code ==
 
+* link:https://blog.ntpsec.org/[NTP Project Blog]
 * link:plans.html[What we plan to do]
 * link:contributor.html[Contribution policies, workflows, and conventions]
 * link:supported-platforms.html[Platform Support Policy]
