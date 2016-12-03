@@ -10,6 +10,8 @@ Buildbot status page: https://buildbot.ntpsec.org/#/builders
 
 IRC channel: irc://chat.freenode.net/#ntpsec[#ntpsec at freenode]
 
+Project blog: https://blog.ntpsec.org
+
 Information and Press contact: mailto:contact@ntpsec.org[contact@ntpsec.org]
 
 Security reporting contact: mailto:security@ntpsec.org[security@ntpsec.org]
