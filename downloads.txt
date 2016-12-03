@@ -8,9 +8,6 @@ https://github.com/ntpsec/ntpsec
 
 == Tarballs ==
 
-Tarballs are available after every commit, in:
-ftp://ftp.ntpsec.org/pub/snapshots/
-
 We periodically tag and release versions, which are available at:
 ftp://ftp.ntpsec.org/pub/releases/
 
