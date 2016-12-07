@@ -5,7 +5,7 @@ Our primary development platforms are Linux and FreeBSD.
 We expect the NTPsec code to run with at most minor port changes on
 Unix-like operating systems conforming to POSIX.1-2001 and ISO/IEC
 9899:1999 (aka C99) and supporting ntp_gettime(2)/ntp_adjtime(2).
-Python2.x, x >=5, is also required.  We will fully support these platforms.
+Python2.x, x >=6, is also required.  We will fully support these platforms.
 
 We have an actively maintained port to Mac OS X. Basic testing has been
 performed and we are looking for people with OS X skill and interest to help
@@ -15,10 +15,10 @@ We regularly test not just on x86 but on the ARM processors in the Raspberry
 Pi 2 and 3. This gives us both a test for hidden platform-centric
 assumptions and useful pressure to stay friendly to small systems.
 
-We intend to port to Windows, but that may not land in early releases. The work
-requires we first sort out the threading code in NTPsec and then review the
-legacy Windows support and how it is integrated into the code base.
-Help with this would be welcome.
+The suppport for building under legacy Windows toolchains has been
+removed to reduce complexity.  Our intention to re-port to Windows
+using modern, more POSIX-conformant tools, but that may not land in
+early releases.  Help with this would be welcome.
 
 Hardware with 32 or 64 bits and any endianness is supported.  However,
 we're optimizing for performance on modern 64-bit hardware and will
