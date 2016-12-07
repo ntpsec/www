@@ -29,12 +29,13 @@ to remove:
 |  10.0 KLOC (4%)    | Removal of legacy Windows code
 |   9.0 KLOC (4%)    | Code obsolete because we assume a POSIX.1-2001/C99 base
 |   9.0 KLOC (4%)    | Removal of ntpdc
+|   3.0 KLOC (1%)    | Move of sntp/ntpdig to Python
 |   2.0 KLOC (1%)    | Replacement of ntpdate by a shell wrapper around ntpdig
 |   4.0 KLOC (1%)    | Removal of Autokey.
 |   7.0 KLOC (3%)    | Replacement of C ntpq in Python
 |  12.0 KLOC (3%)    | Miscellaneous cruft
-| 164.0 KLOC (71%)   | _Total removed_
-|  67.0 KLOC (29%)   | _Total remaining_
+| 168.0 KLOC (71%)   | _Total removed_
+|  63.0 KLOC (27%)   | _Total remaining_
 | 231.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
