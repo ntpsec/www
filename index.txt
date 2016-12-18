@@ -39,12 +39,12 @@ Configurations]
 
 == The project behind the code ==
 
-* link:https://blog.ntpsec.org/[NTP Project Blog]
+* link:accomplishments.html[What we've accomplished]
 * link:plans.html[What we plan to do]
+* link:https://blog.ntpsec.org/[NTP Project Blog]
 * link:contributor.html[Contribution policies, workflows, and conventions]
 * link:supported-platforms.html[Platform Support Policy]
 * link:getting-involved.html[How you can help]
-* link:accomplishments.html[What we've accomplished]
 * link:core-team.html[The core team]
 * link:announcement.html[Project announcement]
 * link:http://www.spi-inc.org/projects/ntpsec[Help fund NTPsec. Donation via Software in the Public Interest]
