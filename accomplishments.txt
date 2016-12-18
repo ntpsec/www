@@ -16,7 +16,7 @@ To prevent buffer overruns, we have replaced all unsafe string
 functions (strcpy/strcat/strtok/sprintf/vsprintf/gets) with safe
 versions that take a buffer bound.
 
-We have removed a hundred sixty thousand lines of obsolete code::
+We have removed about a hundred seventy thousand lines of obsolete code::
 
 Less code means less attack surface.  Here are some things we've found
 to remove:
@@ -148,6 +148,9 @@ public disclosures of batches of CVEs against NTP Classic, around
 code or removed the relevant attack surface.
 
 image::clocktower64.png[align="center"]
+
+You can read more https://docs.ntpsec.org/latest/ntpsec.html[details]
+about differences from NTP Classic.
 
 You should probably read link:plans.html[What we plan to do] next.
 
