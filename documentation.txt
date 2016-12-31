@@ -4,6 +4,9 @@
 
 {project-docs}[NTPsec Documentation]
 
+== White Papers ==
+
+{project-whitepapers}/stratum-1-microserver-howto/[Stratum-1-Microserver HOWTO]
 
 == RFCs ==
 
