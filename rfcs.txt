@@ -6,6 +6,9 @@
 link:https://tools.ietf.org/html/rfc7822[RFC 7822, March 2016]
 Network Time Protocol Version 4 (NTPv4) Extension Fields
 
+link:https://tools.ietf.org/html/rfc7821[RFC 7821, March 2016]
+UDP Checksum Complement in the Network Time Protocol (NTP)
+
 link:https://tools.ietf.org/html/rfc5906[RFC 5906, June 2010]
 Network Time Protocol Version 4: Autokey Specification
 
@@ -56,8 +59,14 @@ Definitions of Managed Objects for Network Time Protocol Version 4 (NTPv4)
 
 == Ancient History ==
 
-link:https://tools.ietf.org/html/rfc868[RFC 958, May 1983]
+link:https://tools.ietf.org/html/rfc868[RFC 868, May 1983]
 Time Protocol
+
+link:https://tools.ietf.org/html/rfc868[RFC 867, May 1983]
+Daytime Protocol
+
+link:https://tools.ietf.org/html/rfc778[RFC 778, April 1981]
+DCNET Internet Clock Service
 
 
 image::clocktower64.png[align="center"]
