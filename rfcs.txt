@@ -3,11 +3,17 @@
 
 == NTP ==
 
+link:https://tools.ietf.org/html/rfc8039[RFC 8039, December 2016]
+Multipath Time Synchronization
+
 link:https://tools.ietf.org/html/rfc7822[RFC 7822, March 2016]
 Network Time Protocol Version 4 (NTPv4) Extension Fields
 
 link:https://tools.ietf.org/html/rfc7821[RFC 7821, March 2016]
 UDP Checksum Complement in the Network Time Protocol (NTP)
+
+link:https://tools.ietf.org/html/rfc7384[RFC 7384, October 2014]
+Security Requirements of Time Protocols in Packet Switched Networks
 
 link:https://tools.ietf.org/html/rfc5906[RFC 5906, June 2010]
 Network Time Protocol Version 4: Autokey Specification
