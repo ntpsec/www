@@ -24,6 +24,9 @@ Network Time Protocol Version 4: Protocol and Algorithms Specification
 link:https://tools.ietf.org/html/rfc1305[RFC 1305, March 1992]
 Network Time Protocol (Version 3) Specification, Implementation and Analysis
 
+link:https://tools.ietf.org/pdf/rfc1129.pdf[RFC 1129, October 1989, PDF]
+Internet Time Synchronization: the Network Time Protocol
+
 link:https://tools.ietf.org/html/rfc1119[RFC 1119, Postscript only]
 Network Time Protocol (Version 2) Specification and Implementation
 
