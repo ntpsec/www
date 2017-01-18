@@ -1,11 +1,11 @@
 = Software licenses =
 
-For historical reasons the code in this distribition is issued under
+For historical reasons the code in this distribution is issued under
 several different but compatible licenses.  Each will generally be
 found near a year or years of copyright declaration.
 
 Much of the existing and historical code is licensed under the "NTP
-License".  Additionally, small portions of the code is licenced under
+License".  Additionally, small portions of the code is licensed under
 the BSD 3-clause and MIT licenses.
 
 Our preferred license for new code contributions is BSD 2-clause.
