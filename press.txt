@@ -19,10 +19,6 @@ of Delaware.  Dr. Mills was also the original architect of the
 original reference implementation, now called "NTP Classic", that the
 NTP Security Project is updating.
 
-Development of NTPsec is currently being funded by the Linux
-Foundation's Core Infrastructure Initiative, which was formed in the
-wake of the "Heartbleed Bug".
-
 == Press Releases ==
 
 - link:pressrelease-20151116.html[2015-11-16 NTP Security Project announces public development release]
@@ -49,14 +45,6 @@ Evangelism, Outreach, and Training Coordinator +
 Internet Civil Engineering Institute (https://icei.org[ICEI]) +
 +1-567-343-0164 +
 mailto:outreach@icei.org[outreach@icei.org]
-
-and
-
-Marcus Streets +
-Programs Director, +
-The Linux Foundation, Core Infrastructure Initiative (https://www.coreinfrastructure.org/[CII]) +
-mailto:mstreets@linuxfoundation.org[mstreets@linuxfoundation.org]
-
 
 image::clocktower64.png[align="center"]
 
