@@ -41,7 +41,7 @@ broken and won't compile on modern systems (12, 21), or irretrievably
 obsolete due to the WWVB modulation change (3, 19, 32, 34, 36), or had
 unfixable Y2K issues (37), or unfixable security issues (16, 39, 43,
 45), or relied on hardware interfaces no longer found on modern
-systems (6, 7, 35), or were deprecated in NTP Classic and had their
+systems (6, 7, 35, 41), or were deprecated in NTP Classic and had their
 documentation removed (13, 14, 17), or duplicate support in other
 drivers (38) or were EOLed more than 20 years ago without aftermarket
 activity or Web chatter in a decade, or we have been advised by their
@@ -67,6 +67,7 @@ maintainers should go (27).
 |Type 37: Forum Graphic GPS Dating station (FG)
 |Type 38: hopf GPS/DCF77 6021/komp for Serial Line (HOPF_S)
 |Type 39: hopf GPS/DCF77 6039 for PCI-Bus (HOPF_P)
+|Type 41: TrueTime 560 IRIG-B Decoder (REFCLK_TT560)
 |Type 43: RIPE NCC interface for Trimble Palisade
 |Type 45: Spectracom TSync PCI
 |==============================================================
@@ -118,7 +119,6 @@ Thus, we plan to remove the following refclock drivers:
 |Type 30: Motorola UT Oncore GPS (GPS_ONCORE)
 |Type 31: Rockwell Jupiter GPS (GPS_JUPITER)
 |Type 33: Dumb Clock (DUMBCLOCK)
-|Type 41: TrueTime 560 IRIG-B Decoder (REFCLK_TT560)
 |==========================================================
 
 We also plan to remove the following modes in the Type 8 (PARSE) driver.
