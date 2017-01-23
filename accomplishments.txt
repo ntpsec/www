@@ -126,6 +126,13 @@ have increased its maintainability, leaving fewer dark corners for
 bugs to lurk in. All the scripting we install is now Python, creating
 opportunities for code reuse across programs that didn't exist before.
 
+We have added an improved reporting tool for time service operators::
+
+We have collected on the gainss from Pythonizing all our scripting by
+adding ntpmon, an administrator's tool that can watch the status of
+a time server in near real time. It is especially useful for catching
+startup problems and traffic spikes that might indicate a DoS attempt.
+
 We have earned trust in the InfoSec research community::
 
 NTPSec was the first NTP implementation to respond to and develop a
