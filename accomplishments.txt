@@ -23,19 +23,19 @@ to remove:
 +
 |==============================================================================
 |  45.0 KLOC (20%)   | In-tree copy of libevent2
-|  28.5 KLOC (13%)   | Undocumented, deprecated, obsolete, or broken refclocks
+|  29.0 KLOC (13%)   | Undocumented, deprecated, obsolete, or broken refclocks
 |  24.0 KLOC (11%)   | Unused ISC library code
-|  12.5 KLOC (5%)    | libopts/autogen removal
+|  13.0 KLOC (5%)    | libopts/autogen removal
 |  10.0 KLOC (4%)    | Removal of legacy Windows code
 |   9.0 KLOC (4%)    | Code obsolete because we assume a POSIX.1-2001/C99 base
 |   9.0 KLOC (4%)    | Removal of ntpdc
 |   3.0 KLOC (1%)    | Move of sntp/ntpdig to Python
-|   2.0 KLOC (1%)    | Replacement of ntpdate by a shell wrapper around ntpdig
+|   2.0 KLOC (2%)    | Replacement of ntpdate by a shell wrapper around ntpdig
 |   4.0 KLOC (1%)    | Removal of Autokey.
 |   7.0 KLOC (3%)    | Replacement of C ntpq in Python
-|  14.0 KLOC (7%)    | Miscellaneous cruft
-| 169.0 KLOC (74%)   | _Total removed_
-|  61.0 KLOC (26%)   | _Total remaining_
+|  15.0 KLOC (7%)    | Miscellaneous cruft
+| 171.0 KLOC (74%)   | _Total removed_
+|  60.0 KLOC (26%)   | _Total remaining_
 | 231.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
