@@ -45,7 +45,8 @@ systems (6, 7, 35, 41), or were deprecated in NTP Classic and had their
 documentation removed (13, 14, 17), or duplicate support in other
 drivers (38) or were EOLed more than 20 years ago without aftermarket
 activity or Web chatter in a decade, or we have been advised by their
-maintainers should go (27).
+maintainers should go (27), or were obvious dorm-room stunts not
+corresponding to real hardware (33).
 
 |==============================================================
 |Type 3: PSTI/Traconex 1020 WWV/WWVH Receiver (WWV_PST)
@@ -61,6 +62,7 @@ maintainers should go (27).
 |Type 21: TrueTime GPS-VME Interface (GPS_VME)
 |Type 27: Arcron MSF Receiver (MSF_ARCRON)
 |Type 32: Chrono-log K-series WWVB receiver (CHRONOLOG)
+|Type 33: Dumb Clock (DUMBCLOCK)
 |Type 34: Ultralink WWVB Receivers (ULINK)
 |Type 35: Conrad Parallel Port Radio Clock (PCF)
 |Type 36: Radio WWV/H Audio Demodulator/Decoder (WWV)
@@ -118,7 +120,6 @@ Thus, we plan to remove the following refclock drivers:
 |Type 29: Trimble Navigation Palisade GPS (GPS_PALISADE)
 |Type 30: Motorola UT Oncore GPS (GPS_ONCORE)
 |Type 31: Rockwell Jupiter GPS (GPS_JUPITER)
-|Type 33: Dumb Clock (DUMBCLOCK)
 |==========================================================
 
 We also plan to remove the following modes in the Type 8 (PARSE) driver.

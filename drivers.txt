@@ -1,6 +1,6 @@
 = NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
-Version 1.10, 2016-06-21
+Version 1.11, 2017-01-30
 
 == Summary ==
 
@@ -162,10 +162,13 @@ Disposition: Move to refclockd.
 
 === Type 5 (TRUETIME): TrueTime GPS/GOES/OMEGA Receivers ===
 
-True Time was a product line of timer sources. The most recent manual
-I can find is from 1997:
+True Time was a product line of timer sources. The most recent
+relevant document I can find is is a military test report dated 1997:
 
 www.dtic.mil/cgi-bin/GetTRDoc?AD=ADA324042
+
+This implies that the device was still in production in 1996, and
+also that it does not receive PPS.
 
 The devices can be found for sale, but only on eBay and electronics
 remainder sites.  The vendor seems to be long gone.
@@ -393,7 +396,7 @@ I can find no evidence that non-GPS ASCII clocks of this kind still
 exist. It is not clear to me that they *ever* existed except as custom
 hobbyist rigs!  Precision 2000 times worse than a cheap serial GPS.
 
-Disposition: INACCURATE; Remove.
+Disposition: INACCURATE; Already removed.
 
 === Type 34 (ULINK): Ultralink WWVB Receivers ===
 
@@ -535,7 +538,7 @@ be determined cetainly but was almost certainly in the last century.
 | 30 | REDUNDANT
 | 31 | REDUNDANT
 | 32 | INTRINSIC, DISCONTINUED (<2000?), UNAVAILABLE, INACCURATE; REMOVED
-| 33 | INACCURATE
+| 33 | INACCURATE; REMOVED
 | 34 | INTRINSIC, DISCONTINUED (>2004,<2015) and INACCURATE; REMOVED
 | 35 | DISCONTINUED (<2010), UNAVAILABLE; REMOVED
 | 36 | INACCURATE; REMOVED
@@ -694,6 +697,9 @@ Version 1.10, 2016-07-23::
 
 Version 1.11, 2016-08-22::
 	Minor typo fixes.
+
+Version 1.12, 2016-01-30::
+        Remove DUMBCLOCK (refclock 33).
 
 image::clocktower64.png[align="center"]
 
