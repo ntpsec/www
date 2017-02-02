@@ -37,7 +37,7 @@ relies on the Internet, you rely on NTP.
 Please give generously - the civilization you save may be your own.
 
 We accept donations through the
-link:http://www.spi-inc.org/projects/ntpsec[Software in the Public Interest].
+link:https://www.spi-inc.org/projects/ntpsec[Software in the Public Interest].
 
 image::clocktower64.png[align="center"]
 
