@@ -55,6 +55,6 @@ Configurations]
 * link:press.html[Press and Media Resources]
 
 
-image:https://bestpractices.coreinfrastructure.org/projects/79/badge[CII Best Practices]
+// image:https://bestpractices.coreinfrastructure.org/projects/79/badge[CII Best Practices]
 
 //end
