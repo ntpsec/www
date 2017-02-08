@@ -51,7 +51,7 @@ Configurations]
 
 == Outreach ==
 * link:security.html[Security Researchers and Vulnerability Reports]
-//link:history.html[How NTPsec came to be]
+* link:history.html[How NTPsec came to be]
 * link:press.html[Press and Media Resources]
 
 
