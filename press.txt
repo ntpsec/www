@@ -25,6 +25,14 @@ NTP Security Project is updating.
 
 == Press Articles and Reports ==
 
+- LWN: A rift in the NTP world (https://lwn.net/Articles/713901/)
+- O'Reilly Security Conference: Saving Time by Susan Sons (http://slides.com/hedgemage/savingtime#/)
+- O’Reilly Media: The Internet is going to fall down if I don't fix this (https://www.oreilly.com/ideas/the-internet-is-going-to-fall-down-if-i-dont-fix-this-susan-sons)
+- Boingboing: The internet's core infrastructure is dangerously unsupported and could crumble by Cory Doctorow (https://boingboing.net/2016/11/11/the-Internets-core-infrastru.html)
+- The Observer: Too Big to Fail Open-Source Software Needs Hacker Help by Brady Dale (http://observer.com/2016/11/open-source-too-big-to-fail/)
+- Linode-cube: Why You Should Consider Moving From NTP to NTPsec by Steven J. Vaughan-Nichols (https://medium.com/linode-cube/why-you-should-consider-moving-from-ntp-to-ntpsec-edab616b6740#.827zogvkl)
+- Upguard: GOTTA GET BACK IN TIME: NEW NTP VULNERABILITIES AND NTPSEC (https://www.upguard.com/blog/gotta-get-back-in-time-new-ntp-vulnerabilities-and-ntpsec)
+- CircleID: NTP: The Most Neglected Core Internet Protocol by Gunter Ollmann (http://www.circleid.com/posts/20161205_ntp_the_most_neglected_core_Internet_protocol/)
 - Information Week: Linux Foundation Funds NTP (http://www.informationweek.com/cloud/infrastructure-as-a-service/linux-foundation-funds-ntps-father-time/d/d-id/1321775)
 - ZD Net: Saving NTP (http://www.zdnet.com/article/saving-time-the-funding-of-ntp)
 - Center for Trustworthy Scientific Cyberinfrastructure, Year Three Report, Section 4.11 - Network Time Protocol (https://scholarworks.iu.edu/dspace/bitstream/handle/2022/20401/CTSC%20Year%203%20Report_v3ASC.pdf)
