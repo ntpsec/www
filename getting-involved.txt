@@ -36,11 +36,12 @@ relies on the Internet, you rely on NTP.
 
 Please give generously - the civilization you save may be your own.
 
-We accept donations through the
+We accept donations via 
+link:https://co.clickandpledge.com/?wid=126142[Click and Pledge].
+
+We also accept donations via PayPal to the
 link:https://www.spi-inc.org/projects/ntpsec[Software in the Public Interest].
 
-The SPI has also set up a
-link:https://co.clickandpledge.com/?wid=126142[Click and Pledge].
 
 image::clocktower64.png[align="center"]
 
