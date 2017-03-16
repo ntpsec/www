@@ -25,7 +25,6 @@ NTP Security Project is updating.
 
 == Press Articles and Reports ==
 
-- LWN: A rift in the NTP world (https://lwn.net/Articles/713901/)
 - O'Reilly Security Conference: Saving Time by Susan Sons (http://slides.com/hedgemage/savingtime#/)
 - O’Reilly Media: The Internet is going to fall down if I don't fix this (https://www.oreilly.com/ideas/the-internet-is-going-to-fall-down-if-i-dont-fix-this-susan-sons)
 - Boingboing: The internet's core infrastructure is dangerously unsupported and could crumble by Cory Doctorow (https://boingboing.net/2016/11/11/the-Internets-core-infrastru.html)
