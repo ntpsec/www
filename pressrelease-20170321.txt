@@ -26,14 +26,26 @@ technical contributors.
 
 For this release, the NTPsec Project worked particularly closely with
 the Mozilla Foundation's "Secure Open Source" initiative, who funded
-an infosec audit, and with Cure53, who provided the audit.
+an infosec audit, and with Cure53.de, who provided the audit.
+
+All installations of NTPsec should upgrade, because this release fixes
+a number of security issues and CVEs that were discovered by Cure53.
+More information about these issues can be found in the NEWS file in
+the NTPsec git repository at
+(https://gitlab.com/NTPsec/ntpsec/blob/master/NEWS),
+and at the release announcement at
+(https://blog.ntpsec.org/2017/03/21/version-0-9-7.html).
+
+We also recommend that all users of the Network Time Foundation (NTF)
+implementation of NTP also upgrade, as the audit also discovered a
+number of security issues and CVEs in that codebase.
 
 == Additional Press and Media Information ==
 
-Additional press information about NTPsec is available at:
-(https://www.ntpsec.org/FAQ.html)
-and
+Additional press and media information about NTPsec is available at:
 (https://www.ntpsec.org/press.html)
+and
+(https://www.ntpsec.org/FAQ.html)
 
 The project blog is available at:
 (https://blog.ntpsec.org/)
@@ -41,7 +53,6 @@ The project blog is available at:
 == Contact Information ==
 
 The NTPsec Project can be contacted at:
-
 mailto:contact@ntpsec.org[contact@ntpsec.org] +
 (http://www.ntpsec.org/)
 
