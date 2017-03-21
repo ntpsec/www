@@ -1,9 +1,9 @@
-= NTPsec Project announces 0.9.7, with assistance from Mozilla Secure Open Source (MOSS) initiative
+= NTPsec Project announces 0.9.7, with assistance from Mozilla Secure Open Source (SOS) initiative
 
-FOR IMMEDIATE RELEASE: 2016-03-21
+FOR IMMEDIATE RELEASE: 2017-03-21
 
 Today, the NTPsec Project announced the 0.9.7 release of NTPsec, with
-assistance from the Mozilla Foundation's "Mozilla Secure Open Source"
+assistance from the Mozilla Foundation's "Secure Open Source"
 initiative.
 
 NTPsec is an implementation of the “Network Time Protocol” or
@@ -16,17 +16,17 @@ NTPsec 0.9.7 is offered to open source developers and to government,
 corporate, and academic IT labs for feedback and code contributions.
 The project uses modern open source community development practice,
 including Git distributed version control and permissive open source
-licensing.  Development will drive to a production-ready 1.0 release,
+licensing.  Development is driving to a production-ready 1.0 release,
 and beyond.
 
-NTPsec 0.9.7 incorporates signifiant improvements in security,
+NTPsec 0.9.7 incorporates significant improvements in security,
 accuracy, precision, visualization, and usability, with assistance,
-contributions, and audits provided by infosec researchers and
-other technical contributors.
+contributions, and audits provided by infosec researchers and other
+technical contributors.
 
 For this release, the NTPsec Project worked particularly closely with
-the Mozilla Foundation's "Mozilla Secure Open Source" initiative, who
-funded an infosec audit, and with Cure53, who provided the audit.
+the Mozilla Foundation's "Secure Open Source" initiative, who funded
+an infosec audit, and with Cure53, who provided the audit.
 
 == Additional Press and Media Information ==
 
@@ -46,6 +46,5 @@ mailto:contact@ntpsec.org[contact@ntpsec.org] +
 (http://www.ntpsec.org/)
 
 image::clocktower64.png[align="center"]
-
 
 //end
