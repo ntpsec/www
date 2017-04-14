@@ -34,8 +34,9 @@ to remove:
 |   4.0 KLOC (1%)    | Removal of Autokey.
 |   7.0 KLOC (3%)    | Replacement of C ntpq in Python
 |  15.0 KLOC (7%)    | Miscellaneous cruft
-| 171.0 KLOC (74%)   | _Total removed_
-|  60.0 KLOC (26%)   | _Total remaining_
+|   2.0 KLOC (1%)    | Simplification of async-DNS lookup.
+| 173.0 KLOC (74%)   | _Total removed_
+|  58.0 KLOC (25%)   | _Total remaining_
 | 231.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
