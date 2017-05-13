@@ -1,6 +1,6 @@
 = NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
-Version 1.11, 2017-01-30
+Version 1.13, 2017-05-13
 
 == Summary ==
 
@@ -376,9 +376,11 @@ Disposition: REDUNDANT; Remove.
 
 === Type 31 (JUPITER): Rockwell Jupiter GPS ===
 
-GPSD does this better.
+GPSD does this better.  Anyway, the driver turned out to rely on the
+assumption that it was in Epoch 0 and cannot have worked since the
+Epoch 1 turnover in 1999.
 
-Disposition: REDUNDANT; Remove.
+Disposition: INTRINSIC, REDUNDANT; Removed.
 
 === Type 32 (CHRONOLOG): Chrono-log K-series WWVB receiver ===
 
@@ -700,6 +702,9 @@ Version 1.11, 2016-08-22::
 
 Version 1.12, 2016-01-30::
         Remove DUMBCLOCK (refclock 33).
+
+Version 1.13, 2017-05-13:
+ 	Remove JUPITER - can't have worked since 1999.
 
 image::clocktower64.png[align="center"]
 
