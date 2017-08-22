@@ -8,16 +8,17 @@ In alphabetical order:
 
 Mark Atwood is our Project Manager pro-tem.
 
-Mark is the Director of Open Source Engagement at Hewlett Packard
-Enterprise. His experience includes working with and creating
-technology industry foundations, standards bodies, and conference
-organizing committees, usually because "it needs doing". He prefers to
-work behind the scenes. He describes his job as "learning amazing
-stuff and meeting amazing people, and then introducing them all to
-each other". His previous employment includes being the Open Source
-Advocate for Red Hat OpenShift, the Community Manager for Eucalyptus
-Systems, the Director of Community Development for Gear6 Memcached,
-and a Senior Technology Advisor for Network.com at Sun
+Mark is a Principal Open Source Architect in the Open Source Group at
+Amazon, and previously was the Director of Open Source Engagement at
+Hewlett Packard Enterprise. His experience includes working with and
+creating technology industry foundations, standards bodies, and
+conference organizing committees, usually because "it needs doing". He
+prefers to work behind the scenes. He describes his job as "learning
+amazing stuff and meeting amazing people, and then introducing them
+all to each other". His previous employment includes being the Open
+Source Advocate for Red Hat OpenShift, the Community Manager for
+Eucalyptus Systems, the Director of Community Development for Gear6
+Memcached, and a Senior Technology Advisor for Network.com at Sun
 Microsystems. He is a coauthor of the OAuth Core specification, and is
 the co-owner of an industrial-art makerspace.
 
