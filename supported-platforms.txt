@@ -7,9 +7,12 @@ Unix-like operating systems conforming to POSIX.1-2001 and ISO/IEC
 9899:1999 (aka C99) and supporting ntp_gettime(2)/ntp_adjtime(2).
 Python2.x, x >=6, is also required.  We will fully support these platforms.
 
-We have an actively maintained port to Mac OS X. Basic testing has been
-performed and we are looking for people with OS X skill and interest to help
-support this platform and perform detailed testing.
+We have an actively maintained port to Mac OS X 10.12
+footnote[Pre-10.12 versions of Mac OS X have a defective or
+nonexistent clock API; we are no longger attempting to support
+these.]. Basic testing has been performed and we are looking for
+people with OS X skill and interest to help support this platform and
+perform detailed testing.
 
 We regularly test not just on x86 but on the ARM processors in the Raspberry
 Pi 2 and 3. This gives us both a test for hidden platform-centric
