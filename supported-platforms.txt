@@ -4,12 +4,18 @@ Our primary development platforms are Linux and FreeBSD.
 
 We expect the NTPsec code to run with at most minor port changes on
 Unix-like operating systems conforming to POSIX.1-2001 and ISO/IEC
-9899:1999 (aka C99) and supporting ntp_gettime(2)/ntp_adjtime(2).
-Python2.x, x >=6, is also required.  We will fully support these platforms.
+9899:1999 (aka C99) and supporting both ntp_gettime(2)/ntp_adjtime(2)
+and the POSIX-1.2008 clock_gettime(2)/clock_settime(2) calls.  Either
+Python2.x:x >=6 or Python 3.x:x >= 3 are also required.  We will fully
+support these platforms.
+
+(Note: in the future it is possible we may
+http://www.curiousefficiency.org/posts/2015/04/stop-supporting-python26.html[drop
+support for Python 2.6], moving to a baseline of Python 2.7.2.)
 
 We have an actively maintained port to Mac OS X 10.12
 footnote[Pre-10.12 versions of Mac OS X have a defective or
-nonexistent clock API; we are no longger attempting to support
+nonexistent clock API; we are no longer attempting to support
 these.]. Basic testing has been performed and we are looking for
 people with OS X skill and interest to help support this platform and
 perform detailed testing.
