@@ -28,9 +28,9 @@ classic C snafus.
 
 == Support NTS ==
 
-The IETF has an effort under way to develop a srandard for secured NTP
+The IETF has an effort under way to develop a standard for secured NTP
 traffic: Network Time Security.  One of our developers is a key figure
-in that effort.  We will be first ofr second interop when NTS is fielded.
+in that effort.  We will be first or second interop when NTS is fielded.
 
 == Broaden community participation ==
 
