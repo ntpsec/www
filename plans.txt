@@ -26,6 +26,12 @@ move all code that isn't realtime-critical out of C to improve
 maintainability and decrease vulnerability to overrun bugs and other
 classic C snafus.
 
+== Support NTS ==
+
+The IETF has an effort under way to develop a srandard for secured NTP
+traffic: Network Time Security.  One of our developers is a key figure
+in that effort.  We will be first ofr second interop when NTS is fielded.
+
 == Broaden community participation ==
 
 The NTP Classic project slid into decline, developing serious
@@ -42,12 +48,6 @@ environment has limits. We aim to build a lab where we can
 remote-control refclocks and a network of ntpd instances for
 live testing.  This will take money: see
 link:getting-involved.html[Getting Involved] for how you can help.
-
-== Deep refactoring ==
-
-The code can be further hardened by repartitioning it into smaller,
-more loosely coupled pieces. A prime opportunity is by divorcing clock
-management (into a separate refclockd) from the synchronization algorithms.
 
 == Get it all IPv6-ready ==
 
