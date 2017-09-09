@@ -10,7 +10,7 @@ NTPsec builds cleanly on at least the following systems:
 * Debian wheezy on BeagleBone Black ARM v7
 * FreeBSD 10.2 and 9.3 on amd64 and 10.3 on i386
 * NetBSD 7.0.1 on x86_64 and 7.0.1 on i386
-* 10.11.x (El Capitan) on x86_64
+* macOS 10.12 on x86_64
 
 Some of these systems have minor build quirks; see the INSTALL file
 in the distribution root directory for details
