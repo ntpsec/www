@@ -44,7 +44,7 @@ issues (16, 39, 43, 45), or relied on hardware interfaces no longer
 found on modern systems (6, 7, 35, 41), or were deprecated in NTP
 Classic and had their documentation removed (13, 14, 17), or duplicate
 support in other drivers (38) or were EOLed more than 20 years ago
-without aftermarket activity or Web chatter in a decade, or we have
+without aftermarket activity or Web chatter in a decade (9), or we have
 been advised by their maintainers should go (27), or were obvious
 dorm-room stunts not corresponding to real hardware (33).
 
@@ -52,6 +52,7 @@ dorm-room stunts not corresponding to real hardware (33).
 |Type 3: PSTI/Traconex 1020 WWV/WWVH Receiver (WWV_PST)
 |Type 6: IRIG Audio Decoder (IRIG_AUDIO)
 |Type 7: Radio CHU Audio Demodulator/Decoder (CHU)
+|Type 9: Magnavox MX4200 GPS Receiver (GPS_MX4200)
 |Type 10: Austron 2200A/2201A GPS Receivers (GPS_AS2201)
 |Type 12: KSI/Odetics TPRO/S IRIG Interface
 |Type 13: Leitch CSD 5300 Master Clock Controller (ATOM_LEITCH)
@@ -110,7 +111,7 @@ following tests:
    found for sale on the Web. Types 5, 9, 10, 26, 27, 35, 37, 41.
 
 2. Duplicates capabilities of GPSD, which specializes in GPSes.
-   Types 20, 29, 30, 31.
+   Types 20, 29, 30.
 
 3. Accuracy an order of magnitude worse than a cheap 1PPS GPS. Type 33.
 
@@ -118,7 +119,6 @@ Thus, we plan to remove the following refclock drivers:
 
 |==========================================================
 |Type 5: TrueTime GPS/GOES Receivers (TRUETIME)
-|Type 9: Magnavox MX4200 GPS Receiver (GPS_MX4200)
 |Type 20: Generic NMEA GPS Receiver (NMEA)
 |Type 29: Trimble Navigation Palisade GPS (GPS_PALISADE)
 |Type 30: Motorola UT Oncore GPS (GPS_ONCORE)

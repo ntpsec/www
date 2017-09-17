@@ -1,6 +1,6 @@
 = NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
-Version 1.13, 2017-05-13
+Version 1.14, 2017-09-17
 
 == Summary ==
 
@@ -211,9 +211,10 @@ Disposition: Move to refclockd.
 
 A line of GPSes produced by Magnavox, discontinued in 1994, with
 the surplus stock marketed by Leica Geosystems.  Leica no longer
-sells them.  They shipped 1PPS.  I could find none available for sale.
+sells them.  They shipped 1PPS.  I ciuld find only two units at
+dodgy surplus houses; even eBay doesn't have them.
 
-Disposition: DISCONTINUED, UNAVAILABLE; Remove.
+Disposition: DISCONTINUED, UNAVAILABLE; already removed.
 
 === Type 10 (AUSTRON): Austron 2200A/2201A GPS Receivers ===
 

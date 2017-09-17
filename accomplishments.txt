@@ -16,7 +16,7 @@ To prevent buffer overruns, we have replaced all unsafe string
 functions (strcpy/strcat/strtok/sprintf/vsprintf/gets) with safe
 versions that take a buffer bound.
 
-We have removed about a hundred seventy thousand lines of obsolete code::
+We have removed about a hundred seventy five thousand lines of obsolete code::
 
 Less code means less attack surface.  Here are some things we've found
 to remove:
@@ -24,7 +24,7 @@ to remove:
 |==============================================================================
 |  45.0 KLOC (20%)   | In-tree copy of libevent2
 |  29.0 KLOC (13%)   | Undocumented, deprecated, obsolete, or broken refclocks
-|  24.0 KLOC (11%)   | Unused ISC library code
+|  25.0 KLOC (12%)   | Unused ISC library code
 |  13.0 KLOC (5%)    | libopts/autogen removal
 |  10.0 KLOC (4%)    | Removal of legacy Windows code
 |   9.0 KLOC (4%)    | Code obsolete because we assume a POSIX.1-2001/C99 base
@@ -36,7 +36,7 @@ to remove:
 |  15.0 KLOC (7%)    | Miscellaneous cruft
 |   2.0 KLOC (1%)    | Simplification of async-DNS lookup.
 | 173.0 KLOC (74%)   | _Total removed_
-|  58.0 KLOC (25%)   | _Total remaining_
+|  55.0 KLOC (24%)   | _Total remaining_
 | 231.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
