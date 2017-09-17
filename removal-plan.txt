@@ -75,8 +75,10 @@ dorm-room stunts not corresponding to real hardware (33).
 |Type 45: Spectracom TSync PCI
 |==============================================================
 
-In addition, support for WWVB and OMEGA has been removed from
-the Type 5 (TrueTime) driver. Support for GPS and GOES has been retained.
+In addition, support for WWVB (broken by the 2013 modulation change),
+OMEGA (shut down in 1997), and GOES (shut down in 2005) has been
+removed from the Type 5 (TrueTime) driver. Support for GPS has been
+retained.
 
 You may be unable to build NTPsec on a sufficiently archaic big-iron
 Unix platform.  Support for the native APIs of any version that last
