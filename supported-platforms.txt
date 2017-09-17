@@ -1,6 +1,6 @@
 = Platform support policy =
 
-Our primary development platforms are Linux and FreeBSD.
+== Scope ==
 
 We expect the NTPsec code to run with at most minor port changes on
 Unix-like operating systems conforming to POSIX.1-2001 and ISO/IEC
@@ -13,22 +13,6 @@ support these platforms.
 http://www.curiousefficiency.org/posts/2015/04/stop-supporting-python26.html[drop
 support for Python 2.6], moving to a baseline of Python 2.7.2.)
 
-We have an actively maintained port to Mac OS X 10.12
-footnote[Pre-10.12 versions of Mac OS X have a defective or
-nonexistent clock API; we are no longer attempting to support
-these.]. Basic testing has been performed and we are looking for
-people with OS X skill and interest to help support this platform and
-perform detailed testing.
-
-We regularly test not just on x86 but on the ARM processors in the Raspberry
-Pi 2 and 3. This gives us both a test for hidden platform-centric
-assumptions and useful pressure to stay friendly to small systems.
-
-The suppport for building under legacy Windows toolchains has been
-removed to reduce complexity.  Our intention to re-port to Windows
-using modern, more POSIX-conformant tools, but that may not land in
-early releases.  Help with this would be welcome.
-
 Hardware with 32 or 64 bits and any endianness is supported.  However,
 we're optimizing for performance on modern 64-bit hardware and will
 sacrifice performance on older systems to tune for newer ones.
@@ -40,11 +24,68 @@ completely removed legacy Unix support, and our direction is towards
 dropping the remainder (along with unused or rarely-used features) in
 order to achieve secure simplicity.
 
+The support for building under legacy Windows toolchains has been
+removed to reduce complexity. We may re-port to Windows using modern,
+more POSIX-conformant tools, but that is unlikely in early releases.
+Help with this would be welcome.
+
 If you are a stranded legacy user with security and reliability
 requirements strong enough that only NTPsec will do, our team is open
 to working with active port maintainers who will take responsibility
 for specific target environments not fully conformant to the
 POSIX.1-2001/C99/Python-2.6 combination, or for exotic hardware.
+
+== Test status ==
+
+Our primary development platforms are Linux and FreeBSD.
+
+NTPsec builds cleanly on at least the following systems:
+
+* Fedora 23 and 24 (i686, x86_64)
+* CentOS 7.2.1511 and 6.8 (x86_64)
+* Debian jessie (amd64, i686, arm) and wheezy on amd64
+* Ubuntu 14.04.3 LTS and 16.04.1 LTS on x86_64
+* Raspbian jessie on ARM v6 and v7 (Pi, Pi 2, and Pi 3)
+* Debian wheezy on BeagleBone Black ARM v7
+* FreeBSD 10.2 and 9.3 on amd64 and 10.3 on i386
+* NetBSD 7.0.1 on x86_64 and 7.0.1 on i386
+* Mac OS 10.12 on x86_64
+
+Some of these systems have minor build quirks; see the INSTALL file
+in the distribution root directory for details
+
+Normal time sync in client mode works correctly on all the listed
+systems.  Server mode has been well tested under Debian and Raspbian,
+less so on other variants and *BSD.
+
+However, platform dependencies other than adjtime(2) and adjtimex(2)
+are minimal.  Experience with the codebase suggests it will run
+correctly anywhere it builds correctly.
+
+The following refclocks are known to work under Linux:
+
+|===========================================================
+| 20 |  NMEA GPS Receiver
+| 22 |  PPS Clock Discipline
+| 26 |  Hewlett Packard 58503A GPS Receiver
+| 28 |  Shared Memory Driver
+| 29 |  Trimble Navigation Palisade GPS (with Thunderbolt)
+| 46 |  GPSD NG client protocol
+|===========================================================
+
+The best-tested refclock on non-Linux systems is SHM,
+especially in combination with GPSD.
+
+We have an actively maintained port to Mac OS X 10.12
+footnote[Pre-10.12 versions of Mac OS X have a defective or
+nonexistent clock API; we are no longer attempting to support
+these.]. Basic testing has been performed and we are looking for
+people with OS X skill and interest to help support this platform and
+perform detailed testing.
+
+We regularly test not just on x86 but on the ARM processors in the Raspberry
+Pi 2 and 3. This gives us both a test for hidden platform-centric
+assumptions and useful pressure to stay friendly to small systems.
 
 image::clocktower64.png[align="center"]
 
