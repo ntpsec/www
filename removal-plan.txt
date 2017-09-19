@@ -108,7 +108,7 @@ We consider a refclock driver obsolete if it fails any of the
 following tests:
 
 1. It has been discontinued for seven or more years and cannot be
-   found for sale on the Web. Types 5, 9, 10, 26, 27, 35, 37, 41.
+   found for sale on the Web. Types 5, 10, 26, 27, 35, 37, 41.
 
 2. Duplicates capabilities of GPSD, which specializes in GPSes.
    Types 20, 29, 30.
