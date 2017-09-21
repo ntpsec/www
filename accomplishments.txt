@@ -1,5 +1,9 @@
 = What we've accomplished =
 
+For a more complete of list fixes and new features, see
+https://docs.ntpsec.org/latest/ntpsec.html[this summary].
+This page partly overlaps with that, extracting some highlights.
+
 We have extracted the NTP codebase from BitKeeper::
 
 This was not a trivial achievement.  One of our team members has
@@ -57,6 +61,12 @@ representations we have made NTPsec able to use the full precision of
 modern clocks, which results in a factor 10 or more of accuracy
 improvement with real hardware such as GPSDOs and dedicated time
 radios.
+
+Our ntpd can run in a fully autonomous mode using local clocks only::
+
+Legacy versions of NTP required synchronization to network check peers
+before they could use local reference clocks.  Ours does not, providing
+the refclock driver returns 4-digit years.
 
 We have implemented a simpler refclock configuration syntax::
 
