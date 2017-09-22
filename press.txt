@@ -21,6 +21,7 @@ NTP Security Project is updating.
 
 == Press Releases ==
 
+- link:pressrelease-20170321.html[2017-03-21 NTPsec Project announces 0.9.7, with assistance from Mozilla Secure Open Source (SOS) initiative] 
 - link:pressrelease-20151116.html[2015-11-16 NTP Security Project announces public development release]
 
 == Press Articles and Reports ==
