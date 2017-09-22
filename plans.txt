@@ -71,6 +71,10 @@ unmaintainability because only one human being fully understood the
 Byzantine clock-synchronization algorithms at its core.  For
 sustainability, that knowledge needs to become more widely spread.
 
+As an link:https://icei.org/[ICEI] project NTPsec works with
+link:https://icei.org/newguard/[New Guard] to help train neophyte
+programmers in dissappearing techniques and domain knowledge.
+
 image::clocktower64.png[align="center"]
 
 //end
