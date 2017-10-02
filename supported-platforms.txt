@@ -41,13 +41,13 @@ Our primary development platforms are Linux and FreeBSD.
 
 NTPsec builds cleanly on at least the following systems:
 
-* Fedora 23 and 24 (i686, x86_64)
+* Fedora 26 and 25 (i686, x86_64)
 * CentOS 7.2.1511 and 6.8 (x86_64)
 * Debian jessie (amd64, i686, arm) and wheezy on amd64
 * Ubuntu 14.04.3 LTS and 16.04.1 LTS on x86_64
 * Raspbian jessie on ARM v6 and v7 (Pi, Pi 2, and Pi 3)
 * Debian wheezy on BeagleBone Black ARM v7
-* FreeBSD 10.2 and 9.3 on amd64 and 10.3 on i386
+* FreeBSD 11.0 and 10.3 on amd64 and 11.0 on i386
 * NetBSD 7.0.1 on x86_64 and 7.0.1 on i386
 * Mac OS 10.12 on x86_64
 
