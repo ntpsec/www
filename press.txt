@@ -21,6 +21,7 @@ NTP Security Project is updating.
 
 == Press Releases ==
 
+- link:pressrelease-20171010.html[2017-10-10 NTPsec Project announces 1.0.0] 
 - link:pressrelease-20170321.html[2017-03-21 NTPsec Project announces 0.9.7, with assistance from Mozilla Secure Open Source (SOS) initiative] 
 - link:pressrelease-20151116.html[2015-11-16 NTP Security Project announces public development release]
 
@@ -36,6 +37,10 @@ NTP Security Project is updating.
 - Information Week: Linux Foundation Funds NTP (http://www.informationweek.com/cloud/infrastructure-as-a-service/linux-foundation-funds-ntps-father-time/d/d-id/1321775)
 - ZD Net: Saving NTP (http://www.zdnet.com/article/saving-time-the-funding-of-ntp)
 - Center for Trustworthy Scientific Cyberinfrastructure, Year Three Report, Section 4.11 - Network Time Protocol (https://scholarworks.iu.edu/dspace/bitstream/handle/2022/20401/CTSC%20Year%203%20Report_v3ASC.pdf)
+
+== Blog and Social Media ==
+
+The NTPsec Project Blog is at (http://blog.ntpsec).
 
 == Contact Information ==
 

@@ -1,0 +1,43 @@
+= NTP Security Project announces 1.0 release =
+
+FOR IMMEDIATE RELEASE: 2017-10-10
+
+Today, the NTPsec Project announced the 1.0 release of NTPsec.
+
+NTPsec is an implementation of the “Network Time Protocol” or
+“NTP”. NTP is how the internet keeps correct time, which is critically
+important for cybersecurity and for auditing, and is necessary for
+online finance, cloud computing, media streaming, data storage, email,
+calendaring, and for keeping the clock on your desktop set.
+
+NTPsec is based on the original reference implementation created by
+Dr. David L. Mills, now Professor Emeritus at the University of
+Delaware and one of the original creators of the Internet itself.
+
+As a “first production release”, NTPsec 1.0 is offered to open source
+developers and to government, corporate, and academic internet and
+compute infrastructure, to provide local and network remote time
+synchronization via the standard NTPv4 protocol.
+
+The goal of the project is to harden against security vulnerabilities
+and especially against “amplification attacks” that threaten the
+stability of the entire Internet.  The project welcomes the
+participation of information security researchers, and practices
+Responsible Disclosure.
+
+The project uses modern open source community development practice,
+including the Git distributed version control, permissive open source
+licensing, and a community centric development model, where all
+contributors are welcome.
+
+== Contact Information ==
+
+The NTP Security Project can be contacted at:
+
+mailto:contact@ntpsec.org[contact@ntpsec.org] +
+(http://www.ntpsec.org/)
+
+image::clocktower64.png[align="center"]
+
+
+//end
