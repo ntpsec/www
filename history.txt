@@ -80,26 +80,29 @@ In early October we began planning for an 0.90 beta release, which
 shipped on November 21st 2015.
 
 Over the next two years, we released 9 more tagged versions.  Over
-that time, we had successes and failures, we drained many swamps of bad
-code, and we discovered many more.  Some team members dropped out for
-other pursuites, or were awarded emeritus status, and new team members
-joined us.
-
-We had two annual f2f meetings hosted at the Penguicon conference near
-the city of Detroit, where the core team was able to meet, socialize,
-exchange GPG keys, and plan for more work.
-
-We released a step by step howto on how to run NTPsec on a Raspberry
-Pi single board computer with a GPS receiver, allowing hackers and
-hobbyiests to easily build and run their very own Stratum 1 NTP
-server.
+that time, we had successes and failures, we drained many swamps of
+bad code, and we discovered many more.  Some team members dropped out
+for other pursuits, or were awarded emeritus status, and new talented
+team members have joined us.
 
 Working with the Internet Civil Engineering Institute, we were able to
 keep working due generous grant support from the Thiel Foundation, for
 which we are very grateful.
 
+We wrote a step by step HOWTO on how to run NTPsec on a Raspberry Pi
+single board computer with a GPS receiver, allowing hackers and
+hobbyiests to easily build and run their very own Stratum 1 NTP
+server.  Talented volunteers have stepped up to maintain that document
+as the Raspberry Pi platform has evolved.
+
+We had two annual face to face meetings hosted at the Penguicon
+conference near the city of Detroit Michigan, where the core team was
+able to meet, socialize, exchange GPG keys, and plan for more work.
+We plan on having the next face to face meeting in June 2018 at South
+East Linux Fest conference in Charlotte North Carolina.
+
 Finally, on October 10th 2017, as the team gathered and watch on IRC,
-we finally released 1.0.0.
+we finally released version 1.0.0.
 
 The rest of the story has yet to be written.
 
