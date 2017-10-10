@@ -40,7 +40,7 @@ NTP Security Project is updating.
 
 == Blog and Social Media ==
 
-The NTPsec Project Blog is at (http://blog.ntpsec).
+The NTPsec Project Blog is at (http://blog.ntpsec.org).
 
 == Contact Information ==
 
