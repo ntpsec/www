@@ -37,10 +37,10 @@ to remove:
 |   2.0 KLOC (2%)    | Replacement of ntpdate by a shell wrapper around ntpdig
 |   4.0 KLOC (1%)    | Removal of Autokey.
 |   7.0 KLOC (3%)    | Replacement of C ntpq in Python
-|  19.0 KLOC (11%)   | Miscellaneous cruft
+|  17.0 KLOC (11%)   | Miscellaneous cruft
 |   2.0 KLOC (1%)    | Simplification of async-DNS lookup.
-| 173.0 KLOC (74%)   | _Total removed_
-|  55.0 KLOC (24%)   | _Total remaining_
+| 171.0 KLOC (74%)   | _Total removed_
+|  57.0 KLOC (24%)   | _Total remaining_
 | 231.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
