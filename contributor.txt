@@ -48,7 +48,7 @@ rights to contribute to the project.
 == Development Practice ==
 
 Before starting significant work, please propose it and discuss it
-first in the mailto:devel@ntpsec.org mailing list.  Other people may
+first in the mailto:devel@ntpsec.org[devel@ntpsec.org] mailing list.  Other people may
 have suggestions, will want to collaborate, and will wish to review
 your code.
 
@@ -69,9 +69,9 @@ fix and "drive by" patches submitted by email.
 Create the patch with git format-patch against the tip of master of
 the main public repo.
 
-You can email your patch to mailto:devel@ntpsec.org if you are a
+You can email your patch to mailto:devel@ntpsec.org[devel@ntpsec.org] if you are a
 member of that mailing list, or you can email your patch to
-mailto:contact@ntpsec.org if you are not.
+mailto:contact@ntpsec.org[contact@ntpsec.org] if you are not.
 
 When we merge in your patch we will use the git parameter ---author
 with the contents of the From header from your email and the git
