@@ -91,17 +91,17 @@ which we are very grateful.
 
 We wrote a step by step HOWTO on how to run NTPsec on a Raspberry Pi
 single board computer with a GPS receiver, allowing hackers and
-hobbyiests to easily build and run their very own Stratum 1 NTP
+hobbyists to easily build and run their very own Stratum 1 NTP
 server.  Talented volunteers have stepped up to maintain that document
 as the Raspberry Pi platform has evolved.
 
 We had two annual face to face meetings hosted at the Penguicon
-conference near the city of Detroit Michigan, where the core team was
+conference near the city of Detroit, Michigan, where the core team was
 able to meet, socialize, exchange GPG keys, and plan for more work.
-We plan on having the next face to face meeting in June 2018 at South
+We plan on having the next face to face meeting in June 2018 at the South
 East Linux Fest conference in Charlotte North Carolina.
 
-Finally, on October 10th 2017, as the team gathered and watch on IRC,
+Finally, on October 10th 2017, as the team gathered and watched on IRC,
 we finally released version 1.0.0.
 
 The rest of the story has yet to be written.
