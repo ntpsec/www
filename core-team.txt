@@ -125,6 +125,14 @@ her mini-hacker in Bloomington, IN.
 Known vulnerabilities: can be bribed with dark chocolate, occasionally
 disappears into forests for extended periods.
 
+== Ian Bruene ==
+
+Ian is our Python gnome.
+
+Ian works as a developer/trainee for the http://icei.org/[Internet Civil Engineering Institure]. Since mid-2017 he has been the primary maintainer of the python parts of the codebase, and is slowly getting to know the C side.
+
+In his free time he is usually procrastinating on immersive sim design or herding cats.
+
 image::clocktower64.png[align="center"]
 
 //end
