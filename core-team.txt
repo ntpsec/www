@@ -41,6 +41,18 @@ When not working on open source systems and projects, John
 hacks on Victorian houses with his wife and aspires to write
 science fiction.
 
+== Ian Bruene ==
+
+Ian is our Python gnome.
+
+Ian works as a developer/trainee for the
+http://icei.org/[Internet Civil Engineering Institute].
+Since mid-2017 he has been the primary maintainer of the Python
+parts of the codebase, and is slowly getting to know the C side.
+
+In his free time he is usually procrastinating on immersive sim
+design or herding cats.
+
 == Daniel Fox Franke ==
 
 Daniel is the team's InfoSec specialist and first responder for
@@ -124,6 +136,7 @@ her mini-hacker in Bloomington, IN.
 
 Known vulnerabilities: can be bribed with dark chocolate, occasionally
 disappears into forests for extended periods.
+
 
 image::clocktower64.png[align="center"]
 
