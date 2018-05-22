@@ -85,12 +85,12 @@ bad code, and we discovered many more.  Some team members dropped out
 for other pursuits, or were awarded emeritus status, and new talented
 team members have joined us.
 
-Working with Software in the Public Interest we were able to keep
-working due generous grant support from multiple doners and companies.
+Working with Software in the Public Interest, we were able to keep
+working due to generous grant support from multiple donors and companies.
 
-Working with the Mozilla Foundation Secure Open Source, we were
+Working with the Mozilla Foundation Secure Open Source project, we were
 subject to one of several security audits, and then we were supported
-with a grant to remediate the handful of problems that audit found.
+with a grant to remediate the handful of problems that the audit found.
 
 Working with the Internet Civil Engineering Institute, we were able to
 keep working due generous grant support from the Thiel Foundation, for
