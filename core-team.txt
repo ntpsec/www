@@ -6,7 +6,7 @@ In alphabetical order:
 
 == Mark Atwood ==
 
-Mark Atwood is our Project Manager pro-tem.
+Mark Atwood is our Project Manager.
 
 Mark is a Principal Open Source Architect in the Open Source Group at
 Amazon, and previously was the Director of Open Source Engagement at
@@ -58,12 +58,12 @@ science fiction.
 
 == Ian Bruene ==
 
-Ian is our Python gnome.
+Ian is our Python prodigy.
 
-Ian works as a developer/trainee for the
-http://icei.org/[Internet Civil Engineering Institute].
-Since mid-2017 he has been the primary maintainer of the Python
-parts of the codebase, and is slowly getting to know the C side.
+Ian works as a developer/trainee for the http://icei.org/[Internet
+Civil Engineering Institute].  Since mid-2017 he has been the primary
+maintainer of the Python parts of the NTPsec codebase, and is slowly
+getting to know the C side.
 
 In his free time he is usually procrastinating on immersive sim
 design or herding cats.
@@ -99,8 +99,8 @@ After moving to Bend, OR in 1998 Gary shifted more into the softer side
 of the internet.  Now he commutes and telecommutes all over the world to
 consult on a wide variety of projects.
 
-When the gravity of the world seems to build up, he takes to the skies,
-with his dog as co-pilot, in a small plane to commune with nature.
+When the gravity of the world seems to build up, he takes to the skies
+in a small plane, with his dog as co-pilot, to commune with nature.
 
 == Hal Murray ==
 
@@ -114,7 +114,7 @@ PARC were set from his watch.
 
 == Eric S. Raymond ==
 
-Eric is our architecture and protocols guru.
+Eric is our architecture and protocols guru, and the project tech lead.
 
 Eric S. Raymond has been the technical lead of GPSD, a close peer
 project of NTP and one of its principal time sources, since 2004. GPSD
