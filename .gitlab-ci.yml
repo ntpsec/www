@@ -1,0 +1,13 @@
+pages:
+  stage: build
+  image: alpine
+  script:
+    - apk update && apk add asciidoc
+    - python ./waf configure --prefix=`pwd`/public/ build install
+  artifacts:
+    paths:
+       - public
+  only:
+    - master
+  tags:
+    - gitlab-org
