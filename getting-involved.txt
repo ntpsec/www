@@ -37,7 +37,9 @@ relies on the Internet, you rely on NTP.
 Please give generously - the civilization you save may be your own.
 
 We accept donations via 
-link:https://co.clickandpledge.com/?wid=126142[Click and Pledge].
+link:https://co.clickandpledge.com/?wid=126142[Click and Pledge]
+and via
+link:https://liberapay.com/NTPsec/donate[Liberapay].
 
 We also accept donations via PayPal to the
 link:https://www.spi-inc.org/projects/ntpsec[Software in the Public Interest].
