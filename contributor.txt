@@ -21,7 +21,7 @@ Please do not use GitHub issues or GitHub pull requests.
 
 == Hacking guide ==
 
-Please read and obey the .../devel/hacking.txt file.
+Please read and obey the https://gitlab.com/NTPsec/ntpsec/blob/master/devel/hacking.txt[devel/hacking.txt] file.
 
 == License of contributions ==
 
