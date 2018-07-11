@@ -1,0 +1,1309 @@
+= Stratum-1-Microserver HOWTO =
+:description: Building and configuring a tiny Stratum 1 timeserver
+:keywords: Raspberry Pi, BeagleBone, NTP, NTPsec, time service
+:home: http://www.ntpsec.org/white-papers/stratum-1-microserver-howto/
+:adahat: https://learn.adafruit.com/adafruit-ultimate-gps-hat-for-raspberry-pi
+:upuhat: https://store.uputronics.com/index.php?route=product/product&path=60_64&product_id=81
+:dxhat: http://www.dx.com/p/add-on-gps-module-gps-hat-module-for-raspberry-pi-2-model-b-b-424254
+by Eric S. Raymond
+v1.4, October 2017
+
+== Introduction ==
+
+This HOWTO gives complete instructions for building a headless Stratum
+1 timeserver using a Raspberry Pi or workalike SBC (= Single Board
+Computer), a GPS HAT (= daughterboard designed for the Pi and
+workalikes), and NTPsec <<NTPSEC>>.  Total parts cost should be about
+$80.  Beginner-level light soldering may be required.
+
+Why do it?  It's cheap, fun, and because your NTP server is running on
+a dedicated machine you won't have so much jitter due to variable
+load.
+
+A GPS daughterboard (what Pi folks call a HAT after the Pi's interface
+specification, Hardware Attached on Top) is a better idea than an
+external GPS because a HAT uses an internal RS-232 interface that cuts
+latency and jitter compared to a USB GPS, and provides the 1PPS signal
+required for precision time service.  Generic USB GPSes do not deliver
+this signal and therefore cannot be used for Stratum 1 service
+footnote:[There is one line of USB GPSes, the Navisys
+GR601-W/GR701-W/GR801-W, that provides 1PPS.].
+
+Most of this build is actually independent of any one daughterboard's
+hardware idiosyncrasies.  The build may also generalize to other
+HAT-compatible Unix SBCs such as the BeagleBone, though details of
+those remain to be filled in.  To emphasize which parts of the build
+won't vary versus those that will, we will refer to the main board as
+"SBC" for the invariant parts and as "Pi", "Pi 2", or "Pi 3"
+for the board-specific parts.
+
+Where this HOWTO says "I" it refers to the author's direct experience;
+"we" includes both the author and various technical experts who
+assisted in the preparation of this document.
+
+This tutorial assumes some basic Unix competence.  You will not need to
+be a programmer or an expert system administrator; you will need to
+know your way around the command line a little and how to edit files.
+
+Final note: if you're looking for instructions on setting up time
+service with a conventional PC and cable-attached GPS, see <<GPSD-SERVICE>>.
+
+== Parts list and hardware assembly ==
+
+You will need:
+
+* One Raspberry Pi or workalike SBC.  I used a
+  Raspberry Pi 3: these instructions cover older variants as well.
+
+* One compatible GPS HAT.  Possibilities are:
++
+[width="50%",frame="topbot",options="header"]
+|=======================================================================
+| HAT type                                 | Battery | Build status
+| {adahat}[Adafruit GPS HAT]               | CR1220  | Tested
+| {upuhat}[Uputronics GPS Expansion Board] | CR2032  | Tested
+| {dxhat}[SKU 424254]                      |    -    | Tested
+|=======================================================================
++
+Special note about the SKU 424254: despite vendor claims, the trace
+that should have connected GPIO5 to the GPS 1PPS was absent the
+revision of the board I received.  To use it for time-service,
+link:bluewire.jpg[patch-wire the pad marked 'GPS' to physical pin 29 (GPIO05)].
++
+Of these three, I prefer the Uputronics board.  The combination of a
+u-blox 8 and solderless assembly is tough to beat.
+
+* One 3.3-volt lithium button cell (except the SKU 424254, which is
+  powered by an on-board supercap, included).  The CR1220 is cheapest
+  ordered from Adafruit along with the HAT, but you can buy compatible
+  button cells at most places that carry hearing-aid batteries.
+
+* A micro-SD reader/writer for making bootable OS images.
+
+* A micro-SD card.  4GB is minimal.  8GB is plenty.
+
+* A Linux host machine and an Ethernet cable on which your Pi can
+  see your local network and the Internet.
+
+* Either a 5V, 2.5A power supply with a micro-USB outlet (same as the
+  standard charger for smartphones) or a USB-to-Micro-USB cable that
+  can take power from the host machine.
+
+* A USB keyboard and DVI-capable display display.  You'll do most of
+  the software installation and configuration via ssh from your host
+  machine, but you need to be off-net for the next step.
+
+* (Optional) A case to protect your hardware from dust and curious
+  felines.
+
+* (Optional) 2 hex standoffs, 11mm with M2.5 threading, compatible
+  screws.  Adafruit sells these <<STANDOFFS>>.  They are very
+  similar to the standard spacers used in PC cases; if you keep the small
+  parts from old PCs around you'll have a dozen of them and probably
+  the screws to match.
+
+The Adafruit and Uputronics HATs are shipped as two parts each, a circuit
+board and a 40-pin header.  The SKU 424254 comes presoldered.  The
+header on the Uputronics board snugs into an on-board fitting and does
+not require soldering.
+
+Note that if you're going to use a CR2032 with the Uputronics HAT, a
+jumper on the board needs to be desoldered.  It lives in a white box
+outline near the + pole of the battery cradle.  As shipped, it is
+covered by a small dome of solder.  The latest version of the Uputronics HAT
+uses a supercapacitor instead of a battery, so no soldering is required.
+
+The header on the assembled HAT will fit down over the double row of pins
+on one edge of the SBC, such that when fully assembled the SBC and HAT will
+make a neat stack with all four pairs of corner holes vertically aligned.
+
+. Find "north" on the HAT.  It's the edge the GPS module is
+closest to and has a rectangular notch in it (a cutout for a ribbon
+cable).  The GPIO header will be 90 degrees clockwise.  If this isn't
+clear enough, see link:bluewire.jpg[this photograph].
+
+. If you have them, screw the the two hex standoffs to the corner
+holes on the west side of the SBC, female end up.  These will
+support the HAT.
+
+. Mate the female side of the detached 40-pin header with the
+40-pin GPIO connector on the east edge of the SBC.  If your HAT
+is pre-soldered, your boards are now stacked and you skip the next step.
+
+. Lay the HAT over the board in such a way that the two sets of 4
+corner holes line up and the header pins poke through a matching 40
+holes in the HAT.  The GPS module and battery clip should face
+upwards.  If you added standoffs, they should match the corner holes of
+the HAT.  Solder each header pin into its through-hole.  This is the last
+bit of hardware hacking absolutely required.
+
+. If you added standoffs, now secure the HAT to their
+female-threaded upper ends using the screws.  This will help
+protect the headers and pins from mechanical stress if the
+assembly is dropped or has something sat on it.
+
+. Optional: fit the SBC into a case bottom before plugging in the HAT.
+Anything sold as a "Raspberry Pi" case ought to do for the Adafruit
+HAT, because a single HAT doesn't project above the USB & Ethernet
+connectors on the SBC.  The Raspberry Pi Foundation Case qualifies, but
+for functional reasons we recommend a transparent case.  The Adafruit
+2258 case <<2258>>, for example, should do nicely.  The Uputronics and
+SKU 424254 HATs, alas, have projecting SMA antenna jacks that won't
+fit in a stock case.  A bit of work with a Dremel tool will fix that.
+Alternatively, if you use the Uputronics HAT, both Uputronics and ModMyPi
+sell a case <<MODMYPI-CASE>> specifically designed for it.
+
+== Understanding the GPIO connector ==
+
+The pins you'll plug the HAT into are the SBC's primary GPIO
+(General Purpose I/O) header.
+
+The Pi 3 and other recent Pi variants have 40 pins in the
+GPIO header.  Older variants, the original Pi A and B, have only 26
+pins.  The assignments for those pins on later versions are
+backward-compatible.
+
+The GPIO pins are sometimes referenced by physical pin location on the
+header (1-26 or 1-40), and sometimes as the GPIO line connected to the
+CPU.  This can cause confusion, especially since some kit-builders use
+variant GPIO numberings.  All GPIO numbers in this HOWTO reference
+<<PI-PINOUT>>.
+
+Physical pins are best referred to as P-[1-40] or as
+GPIO[0-31].  Some are typically pre-configured for specific functions
+(serial, i2c, etc.)  Two that will be important for this build are the
+TX and RX serial lines attached to the SBC's UART.
+
+== Configuration overview ==
+
+The steps in this configuration sequence have been carefully ordered
+to commit you to as few changes that are difficult to reverse as
+possible before you are certain you can make the hardware work as
+a dedicated timeserver.
+
+The work divides into the following phases:
+
+1. Early configuration
+
+2. Smoke-test the SBC/HAT combination
+
+3. Live-test the GPS
+
+4. Build and configure NTPsec
+
+5. Installation and boot-time setup
+
+6. Secure the machine.
+
+7. Performance tuning
+
+8. Simplification and optimization
+
+Within each phase, we try to indicate how difficult each operation is
+to back out.
+
+This recipe consists of a few commands run on your host machine, and
+more on your SBC.  A '#' before a command line means you need to be
+root to run it.  Some commands won't require root; those command lines
+will be marked with "$".  Remember that you go root with the command
+"sudo -s" or (after you haves set a root password) "su -".
+
+=== Making a bootable SD ===
+
+Download the latest Raspbian Stretch Lite from <<RASPBIAN>> to your host.
+
+Use sha256sum to verify the correctness of the image.  For example:
+
+------------------------------------------------------------------------
+$ sha256sum 2017-09-07-raspbian-stretch-lite.zip
+bd2c04b94154c9804cc1f3069d15e984c927b750056dd86b9d86a0ad4be97f12  2017-09-07-raspbian-stretch-lite.zip
+------------------------------------------------------------------------
+
+The hex string this command returns should match the checksum on
+the Raspbian download page.  If it doesn't, you have a corrupted image
+and should re-fetch it.
+
+Note that this is not the regular NOOBS image, but a 'light' one specifically
+designed to boot the Pi as a headless server, communicated with only
+by Ethernet.  By going this route we get to avoid some hardware
+prerequisites that would never be used after install, and skip a bunch
+of steps in removing unnecessary desktop software.
+
+Install dcfldd on your host machine:
+
+------------------------------------------------------------------------
+# apt install dcfldd
+------------------------------------------------------------------------
+
+Insert an SD card in the reader and, if it's a USB reader, plug the
+other end into a USB port on your host.
+
+Note: your host may automount the card if it has been set up for Linux
+before - whether this happens depends on what distribution and desktop
+environment you are using.  If your window manager pops up a
+file-browser view of the device, you should unmount it through that
+GUI.
+
+You can use the older 'dd' if you do the next step manually, but
+dfcldd is better about giving you progress messages during the
+operation.
+
+Better yet, we provide a script, link:ddimage[ddimage], to
+semi-automate the next step of the process; it's safer to use that,
+because it performs some sanity checks that should prevent you from
+scribbling on your disks.  Here's how to get it:
+
+[subs="attributes"]
+------------------------------------------------------------------------
+wget {home}ddimage
+------------------------------------------------------------------------
+
+Either way, automatic or manual, you'll need to know the device name
+of your SD card reader.  On a host running Debian or Ubuntu, the USB
+device will most likely be /dev/sdd, but could have a different last letter
+depending on how many hard drives you have and how your reader firmware
+is set up.  If you're using a built-in SD reader port, e.g. on a laptop, the
+devicename might be something like '/dev/mmcblk0'
+
+First, unpack the zip file to get an img file:
+
+------------------------------------------------------------------------
+$ unzip 2016-03-18-raspbian-stretch-lite.zip
+------------------------------------------------------------------------
+
+To proceed manually, follow the directions at <<INSTALLATION>>, using dfcldd.
+Your command will look something like this:
+
+------------------------------------------------------------------------
+# dcfldd statusinterval=16 sizeprobe=if bs=4M if=2016-03-18-raspbian-stretch-lite.img of=/dev/sdd
+------------------------------------------------------------------------
+
+For safety's sake, force pending I/O to the SD card before removing it.
+
+------------------------------------------------------------------------
+# sync
+------------------------------------------------------------------------
+
+To use ddimage, first read it.  You should always read any script that will
+run with root permissions, to check that it doesn't do anything
+nefarious.  Give it the basename of your SD reader (usually "sdd"). It
+will do some safety checks, then generate a dcfldd command
+like the above.
+
+You should make it executable so you can run it as a script:
+
+------------------------------------------------------------------------
+# chmod a+x ddimage
+------------------------------------------------------------------------
+
+Your ddimage command execution should look roughly like this:
+
+------------------------------------------------------------------------
+# ./ddimage sdd
+Checking /dev/sdd
+/dev/sdd exists as a storage device.
+/dev/sdd is not mounted
+Copying 2017-09-07-raspbian-stretch-lite.img...
+[97% of 1768Mb] 432 blocks (1728Mb) written. 00:00:00 remaining.
+442+1 records in
+442+1 records out
+Done
+------------------------------------------------------------------------
+
+with an animated progress line in the middle.
+
+Note: this can take a while, with lag between the "records out" line
+and the "Done".  Many USB SD readers have an activity light that
+blinks while accesses are going on; if yours does, watch for it to
+stop blinking.
+
+=== First boot ===
+
+Take the card out of the SD reader and insert it into your SBC.
+Ethernet should *not* be plugged in!  Attach the keyboard and
+display.  Power up.
+
+Log in as the default user, with the default password.  (On the
+Raspberry Pi this is 'pi' and 'raspberry'.
+
+Now run "sudo raspi-config".  Choose "Interfacing options"\->"SSH" and
+enable it. Without this step (not required on previous Raspbian
+releases) you will not be able to ssh into the device.
+
+Use 'passwd' to change the password of the default user.  Don't use
+anything obvious or cute.  Remember the password until, later in this
+process, the default user account is removed.
+
+You're now done with the keyboard and display.  You can unplug them, plug
+in your ethernet cable, and do the rest of this recipe via ssh.
+
+The reason this step had to be done off-net is because there are
+attack bots on the public Internet dedicated to using the combination of a
+known login and known password to try to subvert machines before
+they can be secured.  To see those hunting for Raspberry Pis, for
+example, do this on any Internet-facing machine:
+
+------------------------------------------------------------------------
+# lastb | grep -w pi
+------------------------------------------------------------------------
+
+You can't use anything obvious or cute as a password because those
+bots could very well run a specialized dictionary attack if they find
+a passworded SBC with one of the names they're expecting.
+
+You can skip the re-passwording step only if your network lives behind
+a firewall with both IPv4 and IPv6 forwarding rules.  If anyone on the
+public Internet can reach your SBC via ssh before you either change
+the default-account password or remove the default account altogether,
+your Pi could be enslaved by an attack bot within minutes.
+
+=== First ssh access ===
+
+Next, make sure your SBC has a live Ethernet cable plugged in and
+connected to the same network as your host (because it will also need
+to see the general Internet, direct-connecting to your PC is
+insufficient). Power it up and wait about 60 seconds (or, if you can
+see the Ethernet-port LEDs, wait for them to start flashing) then use
+the default machine name and login to ssh from your host.  For a
+Raspberry Pi, that looks like this:
+
+------------------------------------------------------------------------
+$ ssh pi@raspberrypi.local
+------------------------------------------------------------------------
+
+If ssh tells you it can't see any host with the expected name,
+either the SBC hasn't yet booted or your network can't see it.  Don't
+panic.  Check for a green light on the Pi's Ethernet port to be sure
+it's plugged in properly.  Make sure your SD card is electrode-side-up
+(unplugging the power before removing it, if you have to) and
+properly seated.  Wait 30 seconds and try again.
+
+Another possibility is that your host doesn't have a zeroconf
+implementation like Linux's 'avahi-daemon' installed.  Try to fix
+that.  This may work:
+
+------------------------------------------------------------------------
+# apt install libnss-mdns
+------------------------------------------------------------------------
+
+If that doesn't work, check the display connected to the SBC and
+figure out the assigned address with the "ip a" command.  If the output
+of "ip a" doesn't list "eth0", something else is wrong, which is outside
+the scope of this HOWTO; please investigate the many resources on the
+Internet that are available.  If "ip a" lists "eth0", ensure that the
+word "UP" is listed in the bracketed text immediately to the right of
+"eth0", and that the "inet" line lists a dotted-quad IP address.  If
+either or both are missing, this is also outside the scope of this
+HOWTO. Try rebooting the Pi; it can't hurt. 
+
+Persistent failure after you've tried these things mean you need
+to rebuild the SD card image.  Try with a different SD card, as sometimes
+older ones go flaky.
+
+You may see some warnings from ssh about an unknown host; tell it yes,
+you want to connect.  Then you should be asked for a login password.
+Use the spiffy, secure password you decided upon earlier.  You should 
+now see a shell prompt on your Pi.
+
+The hardest part is done; you may remove the keyboard and display now
+- you won't need them any more!
+
+=== Clockmaker ===
+
+Most of the remaining instructions do not have to be done by hand.  You can
+download link:clockmaker[clockmaker], a Python script which
+does much of this recipe for you.  Here's how to use it:
+
+1. As the pi user, copy clockmaker to your home directory with
+   this command:
++
+[subs="attributes"]
+------------------------------------------------------------------------
+wget {home}clockmaker
+------------------------------------------------------------------------
+
+2. Read it.  You should always read any script that will run with root
+   permissions, to check that it doesn't do anything nefarious.
+
+3. Make clockmaker executable with "chmod a+x clockmaker".
+
+4. Run "sudo clockmaker --config".  This will do most of the
+   tricky OS and hardware configuration; also system software
+   updates and prerequisites for the timeserver software
+
+5. Now as the pi user, run "clockmaker --build".  This will clone
+   and build the special timeserver software.  It also copies in the current
+   versions of the 'pinup' script, and several configuration files
+   used in the installation phase.
+
+Some further uses of clockmaker are discussed in later steps.
+
+The clockmaker script is intelligent about not redoing steps it has
+already done; it is safe to run each stage multiple times.  Redoing
+the --build step re-pulls from the software repositories.
+
+In the recipe that follows, steps marked "{--config}" or "{--build}"
+are parts clockmaker will do for you if you run it.  It is
+recommended that you read the steps to understand the process, then
+use clockmaker to avoid most of the typing.
+
+At this point the steps you can automate with clockmaker begin.  If
+you have not downloaded clockmaker, refer to "Using Clockmaker" above.
+
+=== Fully update your OS ===
+
+{--config} Fully update the Linux on your SBC.  The easiest way to do this is
+with these commands:
+
+------------------------------------------------------------------------
+$ sudo -s
+# apt update
+# apt dist-upgrade
+------------------------------------------------------------------------
+
+These changes are not reversible, but you'd want them for any other
+use of the SBC anyway.  You always want to be updated with security
+patches and other fixes.
+
+=== Enable the UART ===
+
+{--config} On the Pi, remove this from /boot/cmdline.txt in order to
+prevent it from spawning a login shell on the serial port your GPS
+will use.
+
+------------------------------------------------------------------------
+console=serial0,115200 
+------------------------------------------------------------------------
+
+{--config} On the Pi, edit /boot/config.txt to contain this option.
+
+------------------------------------------------------------------------
+enable_uart=1
+------------------------------------------------------------------------
+
+=== Pi 3 only: disable Bluetooth and remap console device ===
+
+The Raspberry Pi Foundation made a design decision on the Raspberry
+Pi 3 that ties the serial baud rate to the CPU clock rate (by
+default).  This was done because the normal lines that fed the serial
+port were used for the built-in Bluetooth.  This does not affect any
+other Pi variant.
+
+Your timeserver is not going to need Bluetooth, so you should
+disable it and remap the devices.  Our instructions come from
+<<DOREY>>, which explains the problem in more detail.  We don't use
+some of his steps because this build is designed to run headless.
+
+{--config} Edit the /boot/config.txt file to append these lines:
+
+------------------------------------------------------------------------
+# Disable Bluetooth so serial-tty speed is no longer tied to CPU speed
+dtoverlay=pi3-miniuart-bt
+------------------------------------------------------------------------
+
+This change restores the behavior of the Pi2 and earlier, in which the
+serial device attached to the UART is /dev/ttyAMA0 rather than /dev/ttyS0.
+
+This change can effectively be reversed by commenting out the
+dtoverlay line.
+
+{--config} To go with the disabling of Bluetooth, do:
+
+------------------------------------------------------------------------
+# systemctl disable hciuart
+------------------------------------------------------------------------
+
+=== Other root-mode configuration ===
+
+{--config} Create a symlink to the GPS device to make it easier to refer
+to.  Put the following in a new file /etc/udev/rules.d/10-pps.rules to
+accomplish this.  On the Pi:
+
+------------------------------------------------------------------------
+KERNEL=="ttyAMA0", SYMLINK+="gpsd0"
+------------------------------------------------------------------------
+
+=== Configure the 1PPS GPIO pin ===
+
+You'll need NTPsec to be able to see the high-precision PPS
+(pulse-per-second) signal from the GPS.  But the serial interface from
+a HAT only supplies TX/RX; the PPS signal is shipped on a different
+pin of the GPIO connector.
+
+The RX/TX signals are always expected on the same two pins of the GPIO
+(P8 and P10) which connect to the SBC's UART.  You can see them,
+labeled, near the north end of the connector.  Most other GPIO pins can
+be interpreted by the Pi in different ways, configured by software.
+Which pin is used for 1PPS is a variable of the HAT design.  Here is a
+table:
+
+[width="25%",frame="topbot",options="header"]
+|======================================================================
+| HAT        | Physical pin | RPi Logical pin   | Odroid C2 export pin
+| Adafruit   |      P-7     |   GPIO04          |    249
+| Uputronics |      P-12    |   GPIO18          |    238
+| SKU 424254 |      P-29    |   GPIO05          |    228
+|======================================================================
+
+There is a Linux kernel driver called pps-gpio which,
+given one of these pins, uses the signal from it to support an
+RFC2783 interface to PPS that NTPsec (and GPSD) can use.  To
+see 1PPS, you need to ensure that this driver is loaded
+and monitoring the correct logical pin.
+
+The procedure for declaring the GPIO pin varies by Raspbian version.
+We only give the formula for the current Raspbian here; you can
+find details about older versions at <<TAYLOR>>;
+
+{--config} On the Pi, edit /boot/config.txt to contain these options,
+replacing '4' with the logical pin number for your HAT if it's not an
+Adafruit:
+
+------------------------------------------------------------------------
+# Get 1PPS from HAT pin
+dtoverlay=pps-gpio,gpiopin=4
+------------------------------------------------------------------------
+
+You must reboot your SBC for this change to take effect.  The
+clockmaker script will do this for you, but not before
+installing some packages needed for the next step.
+
+Once you have fully configured, the last few lines of your
+/boot/config.txt file should look rather like this:
+
+------------------------------------------------------------------------
+gpu_mem=0
+enable_uart=1
+dtoverlay=pi3-disable-bt
+dtoverlay=pps-gpio,gpiopin=4
+------------------------------------------------------------------------
+
+The number after "gpiopin=" may be different.  The order of the lines is
+not important.  The gpu_mem=0 line is just an optimization.  If any of
+the others are missing, your setup will probably not work.
+
+== Optimize system performance ==
+
+An optimization that is convenient to apply at this point is telling
+the kernel not to run tickless (see <<TICKLESS>> for technical details).
+This can seriously reduce the jitter and offset in a GPS PPS time
+server.
+
+{--config} On the Pi, add this to the end of the kernel command-line in
+/boot/cmdline.txt:
+
+------------------------------------------------------------------------
+nohz=off
+------------------------------------------------------------------------
+
+Configuring the system to run at full performance uses more power, but
+results in more consistent timing.
+
+------------------------------------------------------------------------
+# apt -y install cpufrequtils
+# echo 'GOVERNOR="performance"' > /etc/default/cpufrequtils
+# systemctl restart cpufrequtils
+------------------------------------------------------------------------
+
+You can verify with the following command, which should print
+"performance" once for each CPU:
+------------------------------------------------------------------------
+$ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+------------------------------------------------------------------------
+
+If you want to run the system constantly at the lowest frequency
+instead (maybe to avoid thermal problems) you can use the governor
+"conservative".  Everything will run slower than with governor
+"performance", but consistently so and the system may stay cooler.
+
+== Disable the console ==
+
+{--config} At this point be need to disable the serial/USB console, so
+that later we can remove the default 'pi' user.  It would be better to
+change the startup sequence so the login process for the console
+is owned by some other privileged user than 'pi'.
+
+------------------------------------------------------------------------
+# rm /etc/systemd/system/autologin@.service /etc/systemd/system/getty.target.wants/getty@tty1.service"
+------------------------------------------------------------------------
+
+== Smoke-test the GPS/HAT combination ==
+
+To test that you can read data from the device, do this as root:
+
+------------------------------------------------------------------------
+# stty -F /dev/gpsd0 raw 9600 cs8 clocal -cstopb
+# cat /dev/gpsd0
+------------------------------------------------------------------------
+
+You should see NMEA0183 sentences issuing in bursts once per second -
+text lines usually beginning with "$GP", and possibly a "$PMTK"
+sentence.  These will issue whether or not the GPS has satellite lock.
+
+This is what the output should resemble:
+
+------------------------------------------------------------------------
+$GPRMC,205251.00,A,4002.10161,N,07531.20383,W,0.100,,240516,,,A*6D
+$GPVTG,,T,,M,0.100,N,0.186,K,A*2D
+$GPGGA,205251.00,4002.10161,N,07531.20383,W,1,07,1.16,177.1,M,-34.4,M,,*6B
+$GPGSA,A,3,11,13,17,08,07,28,01,,,,,,2.02,1.16,1.66*05
+$GPGSV,3,1,11,01,64,097,37,03,07,136,,07,37,183,25,08,21,061,30*73
+$GPGSV,3,2,11,11,58,063,39,13,11,288,21,17,37,260,12,19,09,249,25*75
+$GPGSV,3,3,11,22,14,111,19,28,57,320,34,30,58,217,*41
+$GPGLL,4002.10161,N,07531.20383,W,205251.00,A,A*71
+$GPRMC,205252.00,A,4002.10169,N,07531.20380,W,0.092,,240516,,,A*6F
+$GPVTG,,T,,M,0.092,N,0.171,K,A*2F
+------------------------------------------------------------------------
+
+It is not unusual for there to be an initial burst of baud barf before
+the first legible sentence, so wait a few seconds.
+
+If you see no output or continuing random baud barf, re-do the stty
+command being very careful that all the arguments are correct.  If you
+still don't see output, check that the HAT is correctly seated on the
+GPIO and powered up (a red light near the north edge should blink at
+least once per 10 seconds).
+
+If you don't see a light on the HAT, it might not be properly seated
+on the GPIO connector. Try powering off, popping the HAT off, and
+reseating it.
+
+Sometimes changing the baud rate may 'kickstart' communication with the
+device if it is balking. You can try this, for example:
+
+------------------------------------------------------------------------
+# stty -F /dev/gpsd0 raw 38400 cs8 clocal -cstopb
+# cat /dev/gpsd0
+------------------------------------------------------------------------
+
+Other rates may work as well - the adafruit HAT will happily communicate
+at 115200.
+
+If you still don't see legible output after checking these, you may
+have a problem this HOWTO can't solve - possibly dead or defective
+hardware.  However, it is far more likely that you have skipped
+a previous step or gotten one slightly wrong.  Recheck your work.
+
+This was not a full functional test of the GPS; we'll do that latter.
+It's what engineers call a "smoke test", just checking that the
+device is alive and doing something reasonably sane.
+
+=== 1PPS output ===
+
+To test 1PPS, use ppstest from the pps-tools package.  Note,
+this will produce a false negative if the GPS has no fix.
+
+If you are doing these steps by hand rather than with clockmaker,
+prepare with this step {--config}:
+
+------------------------------------------------------------------------
+# apt install pps-tools
+------------------------------------------------------------------------
+
+Then run this test:
+
+------------------------------------------------------------------------
+# ppstest /dev/pps0
+------------------------------------------------------------------------
+
+You should see repeated lines somewhat resembling this, until you interrupt:
+
+------------------------------------------------------------------------
+source 0 - assert 1461161753.267392352, sequence: 246 - clear  0.000000000, sequence: 0
+------------------------------------------------------------------------
+
+If you can see this, you have 1PPS and can do proper timekeeping.
+
+== Live-test the GPS ==
+
+Now build GPSD.  If you are using clockmaker, "./clockmaker --build"
+will automate the build steps (but not the test procedures).
+
+It's best to clone the GPSD repository and build from that rather than
+installing the Raspbian package.  This both guarantees you the latest
+fixes and avoids installing a start-on-boot script that you don't want
+in this build.
+
+The prerequisites not present in a stock Raspbian can be covered with
+this import {--config}:
+
+------------------------------------------------------------------------
+# apt install git scons ncurses-dev python-dev bc
+------------------------------------------------------------------------
+
+Then do this {--build}:
+
+------------------------------------------------------------------------
+$ git clone git://git.savannah.nongnu.org/gpsd.git
+$ cd gpsd
+$ scons timeservice=yes magic_hat=yes nmea0183=yes fixed_port_speed=9600 fixed_stop_bits=1
+------------------------------------------------------------------------
+
+This builds gpsd in a minimal, fixed-speed timeserver mode.
+
+Now we use GPSD tools to verify that the GPS works.  Put your
+SBC+HAT combination someplace, such as a windowsill, with a good sky
+view outside.  The HATs described in this HOWTO have very good
+weak-signal discrimination and are much less fussy about siting than
+older GPS receivers; all should work quite well at or near a window.
+
+Here's how to tell if your HAT has a fix.  The numbers are blink
+intervals for the fix LED; "off" means the LED does not blink.
+
+.Blink interval in seconds
+[width="50%",frame="topbot",options="header"]
+|=======================================================================
+| HAT type                        | No fix |  Fix
+| Adafruit GPS HAT                | 1      |  10
+| Uputronics GPS Expansion Board  | off    |  1
+| SKU 424254                      | 0.5    |  0.5
+|=======================================================================
+
+On first (cold) boot, the device may take 20-30 minutes to download a
+satellite almanac.  After that, time to get a fix should be much faster
+unless you live in a canyon (including the urban kind) or dense forest.
+I, living in a suburb with the front of my house half-screened by tall
+trees, typically get lock about 30 seconds from power up.  It will
+seem longer than it is first time: have patience.
+
+Then run this:
+
+------------------------------------------------------------------------
+# ./gpsd/gpsmon /dev/gpsd0
+------------------------------------------------------------------------
+
+Running gpsmon should give you a nice panel display with a scrolling
+window at the bottom showing the raw data and a top section showing
+the analyzed fix and time to the second.
+
+If you have a fix, you should also see bars denoting 1PPS once per
+second between sentence bursts.  If you have a fix and *don't* see
+these, most likely you have forgotten to go root before running
+gpsmon.
+
+Next, check that gpsd is shipping time notifications via the
+shared-memory interface required by ntpd.  If you run ntpshmmon, you
+should see time sample lines until you interrupt, looking something
+like this:
+
+------------------------------------------------------------------------
+# ./gpsd/gpsd /dev/gpsd0
+# ./gpsd/ntpshmmon
+ntpshmmon version 1
+#      Name   Seen@                Clock                Real               L Prec
+sample NTP0 1462725362.567068197 1462725362.475583880 1462725362.000000000 0  -1
+sample NTP1 1462725362.909592179 1462725362.908928852 1462725363.000000000 0 -20
+sample NTP0 1462725363.067835766 1462725362.475583880 1462725362.000000000 0  -1
+sample NTP1 1462725363.410437248 1462725362.908928852 1462725363.000000000 0 -20
+sample NTP0 1462725363.568646773 1462725363.440431209 1462725363.000000000 0  -1
+sample NTP1 1462725363.911264556 1462725363.908928951 1462725364.000000000 0 -20
+------------------------------------------------------------------------
+
+If this fails or hangs, check to make sure that you configured gpsd in
+time-service mode and your GPS has a fix.  If you see only "NTP2"
+lines, you forgot to go root before starting gpsd.
+
+Having run this step, you now know that both data and 1PPS from the
+HAT are fully visible on your SBC and gpsd collects them and provides
+them over its shared-memory interface.  You can now proceed with
+specializing your SBC to be a time server.
+
+== Build and configure NTPsec ==
+
+The stock ntpd shipped with your distribution is intended to be used as a
+client instance, not a server.  It doesn't do 1PPS, and therefore
+can't be used for precision timekeeping.  Thus, we're going to build a
+better version from source.  That version is NTPsec, which runs
+lighter and more securely and can do more accurate time stepping.
+
+Install the build prerequisites {--config}:
+
+------------------------------------------------------------------------
+# apt install bison libevent-dev libcap-dev libssl-dev libreadline-dev
+------------------------------------------------------------------------
+
+Build NTPsec {--build}.  The --refclock option says to include only
+shared-memory refclock support, excluding all other drivers
+footnote:[As a convenience for NTPsec's developers, the clockmaker
+script installs a slightly larger set of clock drivers].
+
+------------------------------------------------------------------------
+$ git clone https://gitlab.com/NTPsec/ntpsec.git
+$ cd ntpsec
+$ ./waf configure --refclock=shm
+$ ./waf build
+------------------------------------------------------------------------
+
+Create your own NTP configuration with these contents as ntp.conf, but
+don't copy it to /etc yet {--build}.  We're going to test this
+configuration in place before installing it.
+
+------------------------------------------------------------------------
+include::ntp.conf[]
+------------------------------------------------------------------------
+
+Here's what the parts mean:
+
+GPS Serial data reference (NTP0)::
+   The line beginning "refclock shm unit 0" tells it we're expecting fixes
+   via the shared-memory mailbox, unit 0.  These will be labeled GPS
+   because they are the GPS's in-band time reports.
+
+GPS Serial data reference (NTP1)::
+   The line beginning "refclock shm unit 1" tells it we're expecting fixes
+   via the shared-memory mailbox, unit 1.  These will be labeled PPS
+   because they come from the GPS's 1PPS.
+
+Internet time servers::
+   This section specifies some NTP servers to act as a sanity
+   check for our GPS time.
+
+=== Smoke-test NTPsec ===
+
+Turn off the default ntpd service running on your SBC
+
+------------------------------------------------------------------------
+# systemctl stop ntp
+------------------------------------------------------------------------
+
+Run gpsd, telling it to look at the GPS device
+
+------------------------------------------------------------------------
+# ./gpsd/gpsd /dev/gpsd0
+------------------------------------------------------------------------
+
+Run your newly built ntpd, telling it to step time if required:
+
+------------------------------------------------------------------------
+# ./ntpsec/build/main/ntpd/ntpd -g -c ntp.conf
+------------------------------------------------------------------------
+
+Run ./ntpsec/build/main/ntpclients/ntpq -p and look at what it
+returns.  Be patient, as it can sometimes take a few seconds to
+complete.
+
+------------------------------------------------------------------------
+$ ntpsec/build/main/ntpq/ntpq -p
+     remote           refid      st t when poll reach   delay   offset  jitter
+==============================================================================
+-SHM(0)          .GPS.            0 l   15   64    1    0.000  -515.07   0.002
+*SHM(1)          .PPS.            0 l   14   64    1    0.000   -0.656   0.002
++tock.usshc.com  .GPS.            1 u   10   64    3   37.408    0.200   1.767
++clock.isc.org   .GPS.            1 u    7   64    3   74.901   -2.051   1.255
+-tick.apple.com  .GPS.            1 u    6   64    3  479.285  204.508 109.733
+------------------------------------------------------------------------
+
+You're hoping for a display similar to the above, with two local devices and
+three check sources.  A nonzero "reach" column on a source line
+indicates that your ntp is getting time notifications from that
+source.
+
+If the value under "reach" for the SHM lines remains zero, check again that
+gpsd is running and ntpshmmon reports fix lines.
+
+=== Installation and boot-time setup ===
+
+This step can be automated with "./clockmaker --install" done as root.
+
+Uninstall the stock NTP - bear in mind that 'purge' will also remove any
+existing /etc/ntp.conf, so if you already have customizations there - back
+them up.
+
+------------------------------------------------------------------------
+# apt -y purge ntp
+# apt-get -y autoremove
+------------------------------------------------------------------------
+
+Change to the directory your gpsd and ntpsec repository clones live in
+and install both suites:
+
+------------------------------------------------------------------------
+# cd gpsd; scons install
+# cd ../ntpsec; ./waf install; cp ntp.conf /etc
+------------------------------------------------------------------------
+
+Install the link:pinup[pinup] script:
+
+------------------------------------------------------------------------
+# cp pinup /usr/local/bin
+------------------------------------------------------------------------
+
+Copy the following block of text into the file 'timeservice'; copy it to
+/etc/init.d/timeservice and make it executable:
+
+------------------------------------------------------------------------
+include::timeservice[]
+------------------------------------------------------------------------
+
+The commands to do this are:
+
+------------------------------------------------------------------------
+# cp timeservice /etc/init.d; chmod a+x /etc/init.d/timeservice
+------------------------------------------------------------------------
+
+Copy the following block of text to the file 'timesevice.service', then
+install it in the directory /etc/systemd/system/:
+
+------------------------------------------------------------------------
+include::timeservice.service[]
+------------------------------------------------------------------------
+
+The command to do this is:
+
+------------------------------------------------------------------------
+# cp timeservice.service /etc/systemd/system/
+------------------------------------------------------------------------
+
+Enable startup at boot with:
+
+------------------------------------------------------------------------
+# systemctl enable timeservice
+------------------------------------------------------------------------
+
+What's going on here: the file /etc/init.d/timeservice is a System V init
+script conforming to LSB conventions.  If you decide to ditch systemd
+you can make a link to it from, e.g. /etc/rc3.d and the right thing
+will happen.  The file /etc/systemd/system/timeservice.service is
+a systemd unit file that will call the System V init script to do the
+real work.
+
+Reboot.  Check that gpsd and ntpd are running, and watch ntpq -p to
+verify that you can see time samples coming in.
+
+=== Secure the machine ===
+
+Final parts of this step can be automated with "./clockmaker --mask"
+and "clockmaker --secure", both done as root.
+
+The fact that your SBC has a known default name and default user means
+that it is very vulnerable to being attacked and exploited by anyone
+who gets access to your network.  Here's how to fix this:
+
+. {--mask} On the SBC, create an account for "me" (whatever username you like)
+  using 'adduser' run as root.
+
+. {--mask} On the SBC, add yourself to the 'sudo' and 'dialout' groups.
+  The first is necessary; the second is optional but will make some
+  later test steps easier.  Replace 'me' with the username you desire.
++
+------------------------------------------------------------------------
+# usermod -a -G sudo,dialout me
+------------------------------------------------------------------------
+
+. {--mask} Optional step: In /etc/sudoers.d, create a file that
+  will give you permission to sudo without a password.  It should
+  look like this
++
+------------------------------------------------------------------------
+me ALL=(ALL) NOPASSWD: ALL
+------------------------------------------------------------------------
++
+but with 'me' replaced by your userid.  The name of the file doesn't
+matter, but must not end with a '~' or contain a '.'.
+
+. {--mask} Move the contents of the default-user home directory to
+  the home directory of the "me" account. Be sure to 'chown' the files
+  from the pi user to the new user.
+
+. From the host, verify that you can log in via ssh under your own
+  name and sudo to a root shell with "sudo bash"; you should see a "#"
+  prompt. Type 'exit', 'logout', or simply hit control-d to leave root.
+
+. From the host, export an ssh key from the "me" account to the
+  SBC.  If you don't understand this instruction, search for "ssh
+  tutorial on the web and learn.  The
+  http://www.catb.org/~esr/sshexport/[sshexport] tool may be useful.
+
+. Reboot the SBC.  Verify that you can login via ssh from your host
+  machine to the "me" account on the SBC without giving a password.
+  Then go root.
+
+. {--secure} On the SBC, disable root login and password tunneling.  To
+  do this, edit its /etc/ssh/sshd_config file.  Change the
+  "PermitRootLogin" and "PasswordAuthentication" lines so the second
+  token is "no".
+
+. {--secure} On the SBC, disable the default-user login (on the RPi
+  "deluser pi" as root).
+
+== Final configuration ==
+
+Now, before you change the hostname, would be a good time to use
+"ddimage -b" to back up your customized Raspbian image.  Having done
+that, you can later use ddimage to set up more servers without having to
+go through the entire configuration process.
+
+Change your hostname to something entertaining by editing
+/etc/hostname.  Note, this should just be a local name without a
+domain part.
+
+If you skipped to this step after making your SD image from a
+backup, don't forget to run "pinup -p" to set the GPIO pin
+for your daughterboard type.
+
+== Performance tuning ==
+
+Don't be overly concerned if ntpq -p initially shows large jitter.
+This probably just means your clock was off by a few seconds - not
+uncommon on SBCs without a battery-backed real-time clock.  Initially,
+ntpd has no way to separate actual jitter from the clock offset
+This will probably fix itself in a few hours of operation once ntpd
+has pulled your system clock close to the PPS time.
+
+For more about performance tuning and how to fudge your configuration,
+see
+http://www.catb.org/gpsd/gpsd-time-service-howto.html#_performance_tuning[the
+GPSD Time Service HOWTO's section on tuning].
+
+== Simplification and optimization ==
+
+=== Thin out the system processes ===
+
+The Raspbian default is to install a lot of background processes that
+exist to support a graphical desktop.  Installing from the Lite image
+eliminates most of these.  This reduces load variability on the
+processor, which will decrease your time jitter.  It will also cut
+your power draw and heat dissipation, increasing the Pi's expected
+lifetime.  Most importantly, it will reduce the number of ways for
+things to go wrong.
+
+You can strip down a bit further with these commands:
+
+------------------------------------------------------------------------
+# apt -y purge bluez triggerhappy
+# apt -y autoremove
+------------------------------------------------------------------------
+
+This step can be done conveniently with "clockmaker --strip" run as root.
+
+The resulting configuration is pretty minimal, as you can verify by
+running "pstree -paul" (or the older-school "ps ax") and noticing that
+most of the background processes are kernel threads.
+
+Note that triggerhappy is required for raspi-config; after you remove
+it, 'apt autoremove' will remove raspi-config.  This is easily
+reversed by reinstalling raspi-config.
+
+WiFi is deliberately not removed, in order to give
+you a fallback TCP/IP access when a cable is inconvenient.
+If you want to banish WiFi, this will do:
+
+------------------------------------------------------------------------
+# apt -y remove wpasupplicant
+------------------------------------------------------------------------
+
+=== Configuring for a static IP address ===
+
+If you're only going to use the SBC as a time service for your local
+network, you can cite its zeroconf (.local) address in other ntp.conf
+files.  If you want to expose it as a public server you'll need to
+configure the SBC to use a fixed, static IP address.  That process is
+described in <<EAT-STATIC>>.
+
+If you do this, and verify that it works, you can remove avahi-daemon
+and dhcpd5, further cutting the number of service processes running.
+
+------------------------------------------------------------------------
+# apt -y purge avahi-daemon dhcpd5
+------------------------------------------------------------------------
+
+Once you do this, the SBC will no longer be accessible at a ".local"
+address.
+
+== Using pinup ==
+
+We provide a script called link:pinup[pinup] that makes it easy to
+query the configuration of your timeserver, and change its 1PPS
+GPIO pin when required.
+
+Call "pinup" without arguments to query the configuration:
+
+------------------------------------------------------------------------
+$ ./pinup
+Raspberry Pi 3 Model B, configured for the Adafruit HAT.
+------------------------------------------------------------------------
+
+Calling "pinup -p" as root allows you to choose a GPIO pin for 1PPS
+from a menu of daughterboard types.
+
+== Technical notes for advanced users ==
+
+=== The --update mode ===
+
+After first configuring and building your server software, you can use
+the --update mode of clockmaker to update your software without
+re-generating ntp.conf (this replaces --build).  This may be useful if
+you have put local customizations in ntp.conf.
+
+=== Why GPSD? ===
+
+If you are already familiar with ntpd and wonder why this recipe uses
+gpsd through SHM rather than ntpd's native refclock 20 GPS driver, the
+answer is this: when refclock 20 is configured to use 1PPS, it mixes
+in-band time data with 1PPS in a way that causes it to behave badly,
+and possibly get rejected as a falseticker, when 1PPS is only
+occasionally available.
+
+=== Edge-detection issues and new HATs ===
+
+The pps-gpio module as of April 2016 has a flaw.  It catches only
+one edge of the PPS.  You have a 50/50 chance you are seeing the
+falling edge rather than the assert edge (which is the actual top of
+second).  A patch to fix this has been submitted to the Linux kernel
+maintainers but not merged.
+
+Which edge the kernel will see, and the pulse width, are constant
+depending on the GPS type and firmware (and if you can find a real
+datasheet for the GPS engine it will tell you the pulse width).  If the
+kernel sees the falling edge, the width of the pulse emitted by your
+GPS will introduce a fixed lag from top of second to the time when you
+actually see the PPS.
+
+Pulse widths (and the induced lag) range from so fast the serial
+driver can't see them to, worst case, 0.5s.  The worst case is rare;
+typical pulse widths are 50 to 200ms.  Because the error is constant,
+you can compensate it out with an offset if you know what it is.
+HATs marked "assert edge" below do not require compensation.
+
+[width="25%",frame="topbot",options="header"]
+|===========================================================
+|Type           | Chipset    | 1PPS width  | pps-gpio detects
+|Adafruit HAT   | MTK3339    |   100ms     | assert edge
+|Uputronics HAT | Ublox 8    |   100ms     | assert edge
+|SKU 424254     | Ublox 6    |   100ms     | assert edge
+|===========================================================
+
+These details will become relevant whenever we qualify a new HAT
+for coverage in this HOWTO.  The important thing to check is whether
+the pps-gpio driver triggers on assert or falling edge.
+
+== Adequate power is important ==
+
+Hackerboards like the Pi and BeagleBone are picky about
+getting clean power at the full specified level because they're
+designed for lowest cost.  Power regulation is expensive compared to
+logic gates, and this is one of the corners they cut.  Under-voltage
+or under-wattage can cause failures to boot, lockups, or mystery
+crashes.
+
+You're generally safe if you use a vendor's wall wart matched to the
+device.  But there are a lot of crappy power supplies that don’t come
+close to putting out the volts/amps/watts that they are rated for.
+The power supplies, too, are made with extreme cost cutting measures -
+and worse, false marketing/advertising.
+
+It's best to buy a power supply from a board reseller that the
+reseller “qualifies” or recommends for the board.  Even then you
+may run into problems, because the board builders might underestimate
+current draw with peripherals attached.  The RasPi foundation was
+selling and recommending 2A power supplies for a while before they
+figured out that the actual draw with all ports active was close to 2.5A
+
+Problems may arise if you try powering from a USB hub that isn't quite
+up to snuff, or have lossy USB cables.  I've had good results with a
+powered hub from Anker, the class act in USB equipment, and I'm told
+Tronsmart is also a pretty reliable brand.  Beware of going cheap here.
+
+Unless your USB cable is really short (1 foot, or less) you also need
+20AWG USB cables (the nominal standard gauge for USB), not the 28AWG
+or smaller "thin" USB cables often shipped to cut prices.  28AWG is
+0.064 ohms per foot.  Double that for out and back to 0.128 ohms/ft of
+USB cable.
+
+Anecdotal evidence says you can run a Pi 3 on 4.8V but less is a
+problem.  Running headless (without a mouse, keyboard or display) and
+without a HAT, a Pi 3 will draw about 700mA, but peripherals rapidly
+drive up power consumption to where even 2A isn't enough; the Pi
+Foundation recommends 2.5A.
+
+On a Raspberry Pi B+, 2 & 3, the red Power LED will turn off to
+indicate if voltage drops below 4.63V.  If it's not staying on solid,
+the power supply or power cable is not adequate.  Also, I'm told that
+before the power LED flickers, or goes out, there will be a rainbow
+colored box on the top left of the HDMI output screen.
+
+There are a lot of really bad USB cables on the market, and it is wise
+to avoid the price basement here too.  I've had good results with
+bulk-pack 3-foot cables from Monoprice.  When in doubt, apply a USB V/A
+meter; Newegg has them for less than $10.  Be sure your meter can do 9V
+for the new Quick Charge standard.
+
+== Future Direction ==
+
+Future versions of this HOWTO will broaden the hardware base to
+include some BeagleBone variant.
+
+We tried making this recipe work with the Odroid C2 but found it too
+unstable to hand to newbies.  We may try again when it has matured.
+
+== References ==
+
+[bibliography]
+
+- [[[GPSD-SERVICE]]] http://www.catb.org/gpsd/gpsd-time-service-howto.html[GPSD Time Service HOWTO]
+
+- [[[STANDOFFS]]] https://www.adafruit.com/product/2336[Brass M2.5 Standoffs for Pi]
+
+- [[[2258]]] https://www.adafruit.com/product/2258[Adafruit Raspberry Pi B+ / Pi 2 / Pi 3 Case - Smoke Base - w/ Clear Top]
+
+- [[[MODMYPI-CASE]]] https://store.uputronics.com/index.php?route=product/product&product_id=90[ModMyPi Pi GPS Case (Matte Black)] also available direct from ModMyPi in https://www.modmypi.com/raspberry-pi/cases/modmypi-single-colour/gps-case-black[Matte Black] or https://www.modmypi.com/raspberry-pi/cases/modmypi-single-colour/gps-case[Clear]
+
+- [[[PI-PINOUT]]] https://www.element14.com/community/docs/DOC-73950/l/raspberry-pi-3-model-b-gpio-40-pin-block-pinout[Raspberry Pi 3 Model B GPIO 40 Pin Block Pinout]
+
+- [[[UART-ISSUE]]] https://www.raspberrypi.org/forums/viewtopic.php?uid=191178&f=28&t=148218&start=0[UART Issue]
+
+- [[[RASPBIAN]]] https://www.raspberrypi.org/downloads/raspbian/[Raspbian downloads]
+
+- [[[INSTALLATION]]]
+  https://www.raspberrypi.org/documentation/installation/installing-images/linux.md[Installing Operating System Images Under Linux]
+
+- [[[NTPSEC]]] https://www.ntpsec.org/[The NTPsec project]
+
+- [[[DOREY]]] http://www.briandorey.com/post/Raspberry-Pi-3-UART-Overlay-Workaround[Raspberry Pi 3 UART Overlay Workaround]
+
+- [[[ADAFRUIT-SETUP]]] https://learn.adafruit.com/adafruit-ultimate-gps-hat-for-raspberry-pi/pi-setup[Pi GPS Setup]
+
+- [[[ADAFRUIT-TEST]]] https://learn.adafruit.com/adafruit-ultimate-gps-hat-for-raspberry-pi/basic-test[Basic Test]
+
+- [[[TAYLOR]]] http://www.satsignal.eu/ntp/Raspberry-Pi-quickstart.html[RPi quick start]
+
+- [[[EAT-STATIC]]] http://www.modmypi.com/blog/tutorial-how-to-give-your-raspberry-pi-a-static-ip-address[Tutorial - How to give your Raspberry Pi a Static IP Address]
+
+- [[[ODROID]]] http://forum.odroid.com/viewtopic.php?f=111&t=7660[GPS
+  unit for odroid c1]
+
+- [[[TICKLESS]]] https://www.kernel.org/doc/Documentation/timers/NO_HZ.txt
+
+// Not referenced in text yet.
+- [[[GPIO]]] http://spellfoundry.com/2016/05/29/configuring-gpio-serial-port-raspbian-jessie-including-pi-3/[Configuring The GPIO Serial Port On Raspbian Jessie Including Pi 3]
+
+== Revision history:
+
+1.0: 2016-12-01::
+     First official release.
+
+1.1: 2016-12-11::
+     Use pool keyword in configuration.  /dev/gpsd0 -> /dev/gps0.
+
+1.2: 2016-12-21::
+     /dev/gps0 back to /dev/gpsd0; previous change hurt GPSD compatibility
+
+1.3: 2017-01-02::
+     Track an incompatible change in GPSD configuration.
+
+1.4: 2017-10-03::
+     Update for Debian Stretch version of Raspbian.  We no longer need
+     an enire raspi-config phase.
+
+== Acknowledgements ==
+
+Various devteam members and friends of the GPSD and NTPsec projects
+assisted with this HOWTO, including: Gary E. Miller, Hal Murray,
+Phil Salkie, and Richard Laager. Paul Theodoropolous contributed
+to the 1.4 version.
+
+== Other resources ==
+
+http://ava.upuaut.net/?p=726[Not quite 5 minute guide to making an NTP Server]
+
+//end
