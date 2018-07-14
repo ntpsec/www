@@ -5,7 +5,10 @@ from waflib.TaskGen import extension
 @extension('.txt')
 def run_asciidoc(self, node):
 	out = node.change_ext(".html")
-	tsk = self.create_task("asciidoc", node, [out])
+	if 'white-papers' in node.abspath():
+		tsk = self.create_task("asciidoc_simple", node, [out])
+	else:
+		tsk = self.create_task("asciidoc", node, [out])
 	tsk.cwd = node.parent.get_bld().abspath()
 
 
@@ -15,13 +18,20 @@ class asciidoc(Task.Task):
 	ext_out = ".html"
 
 
+class asciidoc_simple(Task.Task):
+	color   = "BLUE"
+	run_str = '${BIN_ASCIIDOC} -o ${TGT[0].name} ${SRC[0].abspath()}'
+	ext_out = ".html"
+
+
 def configure(ctx):
 	ctx.find_program("asciidoc", var="BIN_ASCIIDOC", mandatory=True)
 
 
 def build(ctx):
 	www_source = ctx.path.ant_glob("**/*.txt")
-	img_source = [x.name for x in ctx.path.ant_glob('**/*.png')] + ["asciidoc.js", "asciidoc.css", "favicon.ico"]
+	img_source = [x.name for x in ctx.path.ant_glob('**/*.png')] + ["asciidoc.js", "asciidoc.css", "favicon.ico"] \
+		+ [x.relpath() for x in ctx.path.find_node('white-papers').ant_glob('**', excl=['**/*.txt','**/TODO'])]
 
 	ctx(
 		target	= "www",
