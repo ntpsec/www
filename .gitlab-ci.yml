@@ -4,6 +4,7 @@ pages:
   script:
     - apk update && apk add asciidoc
     - python ./waf configure --prefix=`pwd`/public/ build install
+    - find public -type f -iregex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -execdir gzip -f --keep {} \;
   artifacts:
     paths:
        - public
