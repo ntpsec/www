@@ -2,13 +2,11 @@ pages:
   stage: build
   image: alpine
   script:
-    - apk update && apk add asciidoc
+    - apk update && apk add asciidoc findutils gzip
     - python ./waf configure --prefix=`pwd`/public/ build install
     - find public -type f -iregex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -execdir gzip -f --keep {} \;
   artifacts:
     paths:
        - public
-  only:
-    - master
   tags:
     - gitlab-org
