@@ -75,8 +75,9 @@ u-blox 8 and solderless assembly is tough to beat.
 
 * One 3.3-volt lithium button cell (except the SKU 424254, which is
   powered by an on-board supercap, included).  The CR1220 is cheapest
-  ordered from Adafruit along with the HAT, but you can buy compatible
-  button cells at most places that carry hearing-aid batteries.
+  ordered from Adafruit along with the HAT, but note that this may slow
+  delivery, as button cells prevent shipment by air. Alternatively you can
+  buy compatible button cells at most places that carry hearing-aid batteries.
 
 * A micro-SD reader/writer for making bootable OS images.
 
@@ -371,6 +372,9 @@ Raspberry Pi, that looks like this:
 $ ssh pi@raspberrypi.local
 ------------------------------------------------------------------------
 
+You may see some warnings from ssh about an unknown host; tell it yes,
+you want to connect.  Then you should be asked for a login password.
+
 If ssh tells you it can't see any host with the expected name,
 either the SBC hasn't yet booted or your network can't see it.  Don't
 panic.  Check for a green light on the Pi's Ethernet port to be sure
@@ -399,11 +403,6 @@ HOWTO. Try rebooting the Pi; it can't hurt.
 Persistent failure after you've tried these things mean you need
 to rebuild the SD card image.  Try with a different SD card, as sometimes
 older ones go flaky.
-
-You may see some warnings from ssh about an unknown host; tell it yes,
-you want to connect.  Then you should be asked for a login password.
-Use the spiffy, secure password you decided upon earlier.  You should 
-now see a shell prompt on your Pi.
 
 The hardest part is done; you may remove the keyboard and display now
 - you won't need them any more!
@@ -618,13 +617,13 @@ instead (maybe to avoid thermal problems) you can use the governor
 
 == Disable the console ==
 
-{--config} At this point be need to disable the serial/USB console, so
+{--config} At this point we need to disable the serial/USB console, so
 that later we can remove the default 'pi' user.  It would be better to
 change the startup sequence so the login process for the console
 is owned by some other privileged user than 'pi'.
 
 ------------------------------------------------------------------------
-# rm /etc/systemd/system/autologin@.service /etc/systemd/system/getty.target.wants/getty@tty1.service"
+# systemctl disable autologin@.service && systemctl disable getty@tty1.service
 ------------------------------------------------------------------------
 
 == Smoke-test the GPS/HAT combination ==
@@ -677,7 +676,9 @@ device if it is balking. You can try this, for example:
 ------------------------------------------------------------------------
 
 Other rates may work as well - the adafruit HAT will happily communicate
-at 115200.
+at 115200. If you decide to stay with a speed other than 9600, you will
+need to adjust the "fixed-port-speed=" scons value when building gpsd below,
+as well as the "stty" declaration in /etc/init.d/timeservice.
 
 If you still don't see legible output after checking these, you may
 have a problem this HOWTO can't solve - possibly dead or defective
@@ -728,7 +729,7 @@ The prerequisites not present in a stock Raspbian can be covered with
 this import {--config}:
 
 ------------------------------------------------------------------------
-# apt install git scons ncurses-dev python-dev bc
+# apt install git scons ncurses5-dev python-dev bc
 ------------------------------------------------------------------------
 
 Then do this {--build}:
@@ -863,7 +864,8 @@ Internet time servers::
 Turn off the default ntpd service running on your SBC
 
 ------------------------------------------------------------------------
-# systemctl stop ntp
+# systemctl stop systemd-timesyncd.service
+# systemctl disable systemd-timesyncd.service
 ------------------------------------------------------------------------
 
 Run gpsd, telling it to look at the GPS device
@@ -941,7 +943,7 @@ The commands to do this are:
 # cp timeservice /etc/init.d; chmod a+x /etc/init.d/timeservice
 ------------------------------------------------------------------------
 
-Copy the following block of text to the file 'timesevice.service', then
+Copy the following block of text to the file 'timeservice.service', then
 install it in the directory /etc/systemd/system/:
 
 ------------------------------------------------------------------------
@@ -1104,7 +1106,7 @@ If you do this, and verify that it works, you can remove avahi-daemon
 and dhcpd5, further cutting the number of service processes running.
 
 ------------------------------------------------------------------------
-# apt -y purge avahi-daemon dhcpd5
+# apt -y purge avahi-daemon dhcpcd5
 ------------------------------------------------------------------------
 
 Once you do this, the SBC will no longer be accessible at a ".local"
@@ -1294,6 +1296,9 @@ unstable to hand to newbies.  We may try again when it has matured.
 1.4: 2017-10-03::
      Update for Debian Stretch version of Raspbian.  We no longer need
      an enire raspi-config phase.
+
+1.5: 2018-07::
+     Add recognition code for RasPi version 3B+.
 
 == Acknowledgements ==
 

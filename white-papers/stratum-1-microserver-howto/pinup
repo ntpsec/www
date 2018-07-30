@@ -54,6 +54,7 @@ class RaspberryPi:
             "a02082" : "Pi 3 Model B",
             "a22082" : "Pi 3 Model B",
             "900032" : "Model B+",
+            "a020d3" : "Pi 3 Model B+",
         }
     @staticmethod
     def identify_me():

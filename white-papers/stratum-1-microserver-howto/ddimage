@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Copy a good Raspbian image to an SD writer
-# Alternatively, back up or copy a gzipped image
+# Copy a good Raspbian .img or Beaglebone img.xz to an SD writer
+# Alternatively, back up or copy an image
 #
 # Usage: ddimage [-b] [-c] [-i imgname ]  [device-tag]
 
@@ -63,6 +63,7 @@ then
     esac
 fi
 
+OPTIONS="bs=4M statusinterval=16" 
 case $mode in
     copy)
 	if [ -f $image ]
@@ -71,10 +72,14 @@ case $mode in
 	    if [[ $file =~ \.gz$ ]]
 	    then
 		# Previously-made backup
-		gunzip $file | dcfldd bs=4M of=$target
+		gunzip $file | dcfldd $OPTIONS of=$target
+	    elif [[ $file =~ \.xz$ ]]
+	    then
+		# Beaglebone image?
+		xz --decompress --stdout $file | dcfldd $OPTIONS of=$target
 	    else
-		# This is the arm for uncompressed Raspbian .img files
-		dcfldd statusinterval=16 sizeprobe=if bs=4M if=$image of=$target
+		# This is the arm for decompressed .img files
+		dcfldd $OPTIONS sizeprobe=if if=$image of=$target
 	    fi
 	else
 	    echo "No .img file, bailing out!"
