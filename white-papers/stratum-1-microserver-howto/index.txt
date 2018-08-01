@@ -864,7 +864,7 @@ Internet time servers::
 
 === Smoke-test NTPsec ===
 
-Sudo to root and turn off the default ntpd service running on your SBC
+Sudo to root and turn off the default time sync service running on your SBC
 
 ------------------------------------------------------------------------
 # systemctl stop systemd-timesyncd.service
