@@ -335,9 +335,6 @@ Use 'passwd' to change the password of the default user.  Don't use
 anything obvious or cute.  Remember the password until, later in this
 process, the default user account is removed.
 
-You're now done with the keyboard and display.  You can unplug them, plug
-in your ethernet cable, and do the rest of this recipe via ssh.
-
 The reason this step had to be done off-net is because there are
 attack bots on the public Internet dedicated to using the combination of a
 known login and known password to try to subvert machines before
