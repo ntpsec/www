@@ -829,6 +829,8 @@ shared-memory refclock support, excluding all other drivers
 footnote:[As a convenience for NTPsec's developers, the clockmaker
 script installs a slightly larger set of clock drivers].
 
+Exit root, and run this:
+
 ------------------------------------------------------------------------
 $ git clone https://gitlab.com/NTPsec/ntpsec.git
 $ cd ntpsec
@@ -862,7 +864,7 @@ Internet time servers::
 
 === Smoke-test NTPsec ===
 
-Turn off the default ntpd service running on your SBC
+Sudo to root and turn off the default ntpd service running on your SBC
 
 ------------------------------------------------------------------------
 # systemctl stop systemd-timesyncd.service
@@ -872,6 +874,7 @@ Turn off the default ntpd service running on your SBC
 Run gpsd, telling it to look at the GPS device
 
 ------------------------------------------------------------------------
+# cd /home/pi
 # ./gpsd/gpsd /dev/gpsd0
 ------------------------------------------------------------------------
 
@@ -886,7 +889,7 @@ returns.  Be patient, as it can sometimes take a few seconds to
 complete.
 
 ------------------------------------------------------------------------
-$ ntpsec/build/main/ntpq/ntpq -p
+# ntpsec/build/main/ntpq/ntpq -p
      remote           refid      st t when poll reach   delay   offset  jitter
 ==============================================================================
 -SHM(0)          .GPS.            0 l   15   64    1    0.000  -515.07   0.002
