@@ -14,7 +14,7 @@ This HOWTO gives complete instructions for building a headless Stratum
 1 timeserver using a Raspberry Pi or workalike SBC (= Single Board
 Computer), a GPS HAT (= daughterboard designed for the Pi and
 workalikes), and NTPsec <<NTPSEC>>.  Total parts cost should be about
-$80.  Beginner-level light soldering may be required.
+$110.  Beginner-level light soldering may be required.
 
 Why do it?  It's cheap, fun, and because your NTP server is running on
 a dedicated machine you won't have so much jitter due to variable
