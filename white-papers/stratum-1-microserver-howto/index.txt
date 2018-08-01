@@ -613,7 +613,7 @@ $ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 
 If you want to run the system constantly at the lowest frequency
 instead (maybe to avoid thermal problems) you can use the governor
-"conservative".  Everything will run slower than with governor
+"powersave".  Everything will run slower than with governor
 "performance", but consistently so and the system may stay cooler.
 
 == Disable the console ==
