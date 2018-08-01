@@ -14,7 +14,7 @@ This HOWTO gives complete instructions for building a headless Stratum
 1 timeserver using a Raspberry Pi or workalike SBC (= Single Board
 Computer), a GPS HAT (= daughterboard designed for the Pi and
 workalikes), and NTPsec <<NTPSEC>>.  Total parts cost should be about
-$110.  Beginner-level light soldering may be required.
+$110.  Beginner-level light soldering  may be required.
 
 Why do it?  It's cheap, fun, and because your NTP server is running on
 a dedicated machine you won't have so much jitter due to variable
@@ -66,7 +66,7 @@ You will need:
 |=======================================================================
 +
 Special note about the SKU 424254: despite vendor claims, the trace
-that should have connected GPIO5 to the GPS 1PPS was absent the
+that should have connected GPIO5 to the GPS 1PPS was absent on the
 revision of the board I received.  To use it for time-service,
 link:bluewire.jpg[patch-wire the pad marked 'GPS' to physical pin 29 (GPIO05)].
 +
@@ -118,8 +118,8 @@ The header on the assembled HAT will fit down over the double row of pins
 on one edge of the SBC, such that when fully assembled the SBC and HAT will
 make a neat stack with all four pairs of corner holes vertically aligned.
 
-. Find "north" on the HAT.  It's the edge the GPS module is
-closest to and has a rectangular notch in it (a cutout for a ribbon
+. Find "north" on the HAT.  It's the edge that the GPS module is
+closest to, and has a rectangular notch in it (a cutout for a ribbon
 cable).  The GPIO header will be 90 degrees clockwise.  If this isn't
 clear enough, see link:bluewire.jpg[this photograph].
 
@@ -236,7 +236,7 @@ Install dcfldd on your host machine:
 # apt install dcfldd
 ------------------------------------------------------------------------
 
-Insert an SD card in the reader and, if it's a USB reader, plug the
+Insert an SD card into the reader and, if it's a USB reader, plug the
 other end into a USB port on your host.
 
 Note: your host may automount the card if it has been set up for Linux
@@ -304,7 +304,7 @@ Your ddimage command execution should look roughly like this:
 Checking /dev/sdd
 /dev/sdd exists as a storage device.
 /dev/sdd is not mounted
-Copying 2017-09-07-raspbian-stretch-lite.img...
+Copying 2018-06-27-raspbian-stretch-lite.img...
 [97% of 1768Mb] 432 blocks (1728Mb) written. 00:00:00 remaining.
 442+1 records in
 442+1 records out
@@ -325,7 +325,7 @@ Ethernet should *not* be plugged in!  Attach the keyboard and
 display.  Power up.
 
 Log in as the default user, with the default password.  (On the
-Raspberry Pi this is 'pi' and 'raspberry'.
+Raspberry Pi this is 'pi' and 'raspberry'.)
 
 Now run "sudo raspi-config".  Choose "Interfacing options"\->"SSH" and
 enable it. Without this step (not required on previous Raspbian
@@ -428,7 +428,7 @@ wget {home}clockmaker
 
 4. Run "sudo clockmaker --config".  This will do most of the
    tricky OS and hardware configuration; also system software
-   updates and prerequisites for the timeserver software
+   updates and prerequisites for the timeserver software.
 
 5. Now as the pi user, run "clockmaker --build".  This will clone
    and build the special timeserver software.  It also copies in the current
@@ -1295,7 +1295,7 @@ unstable to hand to newbies.  We may try again when it has matured.
 
 1.4: 2017-10-03::
      Update for Debian Stretch version of Raspbian.  We no longer need
-     an enire raspi-config phase.
+     an entire raspi-config phase.
 
 1.5: 2018-07::
      Add recognition code for RasPi version 3B+.
@@ -1304,7 +1304,7 @@ unstable to hand to newbies.  We may try again when it has matured.
 
 Various devteam members and friends of the GPSD and NTPsec projects
 assisted with this HOWTO, including: Gary E. Miller, Hal Murray,
-Phil Salkie, and Richard Laager. Paul Theodoropolous contributed
+Phil Salkie, and Richard Laager. Paul Theodoropoulos contributed
 to the 1.4 version.
 
 == Other resources ==
