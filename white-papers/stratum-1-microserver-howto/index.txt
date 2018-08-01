@@ -571,15 +571,16 @@ Once you have fully configured, the last few lines of your
 /boot/config.txt file should look rather like this:
 
 ------------------------------------------------------------------------
-gpu_mem=0
+gpu_mem=16
 enable_uart=1
 dtoverlay=pi3-disable-bt
 dtoverlay=pps-gpio,gpiopin=4
 ------------------------------------------------------------------------
 
 The number after "gpiopin=" may be different.  The order of the lines is
-not important.  The gpu_mem=0 line is just an optimization.  If any of
-the others are missing, your setup will probably not work.
+not important.  The gpu_mem=16 line is just an optimization - this is the
+minimum GPU ram necessary to boot the Pi.  If any of the others are missing,
+your setup will probably not work.
 
 == Optimize system performance ==
 
