@@ -911,15 +911,6 @@ gpsd is running and ntpshmmon reports fix lines.
 
 This step can be automated with "./clockmaker --install" done as root.
 
-Uninstall the stock NTP - bear in mind that 'purge' will also remove any
-existing /etc/ntp.conf, so if you already have customizations there - back
-them up.
-
-------------------------------------------------------------------------
-# apt -y purge ntp
-# apt-get -y autoremove
-------------------------------------------------------------------------
-
 Change to the directory your gpsd and ntpsec repository clones live in
 and install both suites:
 
