@@ -230,7 +230,7 @@ by Ethernet.  By going this route we get to avoid some hardware
 prerequisites that would never be used after install, and skip a bunch
 of steps in removing unnecessary desktop software.
 
-Install dcfldd on your host machine:
+sudo to root and install dcfldd on your host machine:
 
 ------------------------------------------------------------------------
 # apt install dcfldd
@@ -252,12 +252,7 @@ operation.
 Better yet, we provide a script, link:ddimage[ddimage], to
 semi-automate the next step of the process; it's safer to use that,
 because it performs some sanity checks that should prevent you from
-scribbling on your disks.  Here's how to get it:
-
-[subs="attributes"]
-------------------------------------------------------------------------
-wget {home}ddimage
-------------------------------------------------------------------------
+scribbling on your disks. ddimage instructions are further below.
 
 Either way, automatic or manual, you'll need to know the device name
 of your SD card reader.  On a host running Debian or Ubuntu, the USB
@@ -285,7 +280,14 @@ For safety's sake, force pending I/O to the SD card before removing it.
 # sync
 ------------------------------------------------------------------------
 
-To use ddimage, first read it.  You should always read any script that will
+To use ddimage, first download it:
+
+[subs="attributes"]
+------------------------------------------------------------------------
+# wget {home}ddimage
+------------------------------------------------------------------------
+
+Now read it. You should always read any script that will
 run with root permissions, to check that it doesn't do anything
 nefarious.  Give it the basename of your SD reader (usually "sdd"). It
 will do some safety checks, then generate a dcfldd command
