@@ -497,7 +497,7 @@ some of his steps because this build is designed to run headless.
 
 ------------------------------------------------------------------------
 # Disable Bluetooth so serial-tty speed is no longer tied to CPU speed
-dtoverlay=pi3-miniuart-bt
+dtoverlay=pi3-disable-bt
 ------------------------------------------------------------------------
 
 This change restores the behavior of the Pi2 and earlier, in which the
