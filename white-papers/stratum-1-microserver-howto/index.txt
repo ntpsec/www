@@ -729,7 +729,7 @@ The prerequisites not present in a stock Raspbian can be covered with
 this import {--config}:
 
 ------------------------------------------------------------------------
-# apt install git scons ncurses5-dev python-dev bc
+# apt install git scons libncurses-dev python-dev bc
 ------------------------------------------------------------------------
 
 Then do this {--build}:
