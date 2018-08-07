@@ -81,7 +81,10 @@ u-blox 8 and solderless assembly is tough to beat.
 
 * A micro-SD reader/writer for making bootable OS images.
 
-* A micro-SD card.  4GB is minimal.  8GB is plenty.
+* A micro-SD card. 4GB will suffice, but note that the current "sweet spot"
+  in pricing is actually 16GB. A high-quality name-brand micro-SD card, such
+  as a SanDisk Ultra, can be had for less than $10. Avoid unknown brands;
+  performance and longevity are likely to be poor.
 
 * A Linux host machine and an Ethernet cable on which your Pi can
   see your local network and the Internet.
