@@ -528,7 +528,7 @@ enter this:
 
 {--config} Create a symlink to the GPS device to make it easier to refer
 to.  Put the following in a new file /etc/udev/rules.d/10-pps.rules to
-accomplish this.  On the Pi:
+accomplish this. A reboot will be required for this to take effect.
 
 ------------------------------------------------------------------------
 KERNEL=="ttyAMA0", SYMLINK+="gpsd0"
@@ -555,6 +555,9 @@ table:
 | Uputronics |      P-12    |   GPIO18          |    238
 | SKU 424254 |      P-29    |   GPIO05          |    228
 |======================================================================
+
+A handy resource with a display of the pin locations and ID's for the Adafruit
+and Uputronics HATs can be found here: https://pinout.xyz/boards#type=GPS[pinout.xyz]
 
 There is a Linux kernel driver called pps-gpio which,
 given one of these pins, uses the signal from it to support an
