@@ -706,21 +706,21 @@ device if it is balking. You can try this, for example:
 Other rates may work as well - the adafruit HAT will happily communicate
 at 115200. If you decide to stay with a speed other than 9600, you will
 need to adjust the "fixed-port-speed=" scons value when building gpsd below,
-as well as the "stty" declaration in /etc/init.d/timeservice.
+as well as the "stty" declaration in /etc/init.d/timeservice, also detailed
+below.
 
 If you still don't see legible output after checking these, you may
 have a problem this HOWTO can't solve - possibly dead or defective
 hardware.  However, it is far more likely that you have skipped
 a previous step or gotten one slightly wrong.  Recheck your work.
 
-This was not a full functional test of the GPS; we'll do that latter.
+This was not a full functional test of the GPS; we'll do that later.
 It's what engineers call a "smoke test", just checking that the
 device is alive and doing something reasonably sane.
 
 === 1PPS output ===
 
-To test 1PPS, use ppstest from the pps-tools package.  Note,
-this will produce a false negative if the GPS has no fix.
+To test 1PPS, use ppstest from the pps-tools package.
 
 If you are doing these steps by hand rather than with clockmaker,
 prepare with this step {--config}:
@@ -740,6 +740,10 @@ You should see repeated lines somewhat resembling this, until you interrupt:
 ------------------------------------------------------------------------
 source 0 - assert 1461161753.267392352, sequence: 246 - clear  0.000000000, sequence: 0
 ------------------------------------------------------------------------
+
+Note, this will produce a false negative for PPS if the GPS has no fix yet -
+if you have not had your SBC powered-up for very long, wait a while,
+perhaps even up to fifteen minutes, and check again.
 
 If you can see this, you have 1PPS and can do proper timekeeping.
 
