@@ -735,17 +735,16 @@ Then run this test:
 # ppstest /dev/pps0
 ------------------------------------------------------------------------
 
-You should see repeated lines somewhat resembling this, until you interrupt:
+You should see repeated lines somewhat resembling this, one per second,
+until you interrupt:
 
 ------------------------------------------------------------------------
 source 0 - assert 1461161753.267392352, sequence: 246 - clear  0.000000000, sequence: 0
 ------------------------------------------------------------------------
 
 Note, this will produce a false negative for PPS if the GPS has no fix yet -
-if you have not had your SBC powered-up for very long, wait a while,
-perhaps even up to fifteen minutes, and check again.
-
-If you can see this, you have 1PPS and can do proper timekeeping.
+if you have not had your SBC powered-up for very long, that is not unusual.
+Don't worry overly if you do not have PPS output yet. 
 
 == Live-test the GPS ==
 
@@ -757,14 +756,13 @@ installing the Raspbian package.  This both guarantees you the latest
 fixes and avoids installing a start-on-boot script that you don't want
 in this build.
 
-The prerequisites not present in a stock Raspbian can be covered with
-this import {--config}:
+Install the following GPSD build prerequisites as follows {--config}:
 
 ------------------------------------------------------------------------
 # apt install git scons libncurses-dev python-dev bc
 ------------------------------------------------------------------------
 
-Then do this {--build}:
+Then do this (as user pi) {--build}:
 
 ------------------------------------------------------------------------
 $ git clone git://git.savannah.nongnu.org/gpsd.git
