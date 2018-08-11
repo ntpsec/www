@@ -570,7 +570,7 @@ The procedure for declaring the GPIO pin varies by Raspbian version.
 We only give the formula for the current Raspbian here; you can
 find details about older versions at <<TAYLOR>>;
 
-{--config} On the Pi, edit /boot/config.txt to contain these options,
+{--config} Edit /boot/config.txt and add these lines to the end of the file,
 replacing '4' with the logical pin number for your HAT if it's not an
 Adafruit:
 
@@ -583,20 +583,30 @@ You must reboot your SBC for this change to take effect.  The
 clockmaker script will do this for you, but not before
 installing some packages needed for the next step.
 
+A small optimization can be added to the /boot/config.txt file that will
+make more memory available to your Pi, since you are running headless. Add
+the following to the end of the file:
+
+------------------------------------------------------------------------
+# Reduce GPU memory split
+gpu_mem=16
+------------------------------------------------------------------------
+
 Once you have fully configured, the last few lines of your
 /boot/config.txt file should look rather like this:
 
 ------------------------------------------------------------------------
-gpu_mem=16
 enable_uart=1
+# Disable Bluetooth so serial-tty speed is no longer tied to CPU speed
 dtoverlay=pi3-disable-bt
+# Get 1PPS from HAT pin
 dtoverlay=pps-gpio,gpiopin=4
+# Reduce GPU memory split
+gpu_mem=16
 ------------------------------------------------------------------------
 
 The number after "gpiopin=" may be different.  The order of the lines is
-not important.  The gpu_mem=16 line is just an optimization - this is the
-minimum GPU ram necessary to boot the Pi.  If any of the others are missing,
-your setup will probably not work.
+not important.
 
 == Optimize system performance ==
 
