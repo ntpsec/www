@@ -744,7 +744,7 @@ source 0 - assert 1461161753.267392352, sequence: 246 - clear  0.000000000, sequ
 
 Note, this will produce a false negative for PPS if the GPS has no fix yet -
 if you have not had your SBC powered-up for very long, that is not unusual.
-Don't worry overly if you do not have PPS output yet. 
+Don't worry overly if you do not have PPS output yet.
 
 == Live-test the GPS ==
 
