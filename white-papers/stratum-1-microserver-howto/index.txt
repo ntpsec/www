@@ -898,7 +898,7 @@ Internet time servers::
 
 === Smoke-test NTPsec ===
 
-Sudo to root and turn off the default time sync service running on your SBC
+Sudo to root and turn off the default Rasbian timesyncd service:
 
 ------------------------------------------------------------------------
 # systemctl stop systemd-timesyncd.service
@@ -915,9 +915,23 @@ Warning: systemd-timesyncd.service changed on disk. Run 'systemctl daemon-reload
 If so, just do as the warning states - type systemctl daemon-reload, then
 run the systemctl 'stop' and  'disable' again.
 
-Run gpsd, telling it to look at the GPS device
+Because Raspbian no longer includes ntpd, we need to add a user for ntpd
+to run as, and create a couple of directories ntpd needs in place before
+running.
 
 ------------------------------------------------------------------------
+# adduser --system --no-create-home --disabled-login --gecos '' ntp
+# addgroup --system ntp; addgroup ntp ntp
+# mkdir -p /var/lib/ntp /var/log/ntpstats
+# chown -R ntp:ntp /var/lib/ntp /var/log/ntpstats
+------------------------------------------------------------------------
+
+Run gpsd, telling it to look at the GPS device. Since gpsd may still be
+running from the Live test above which was done as user pi, we issue a
+"pkill" just for good measure.
+
+------------------------------------------------------------------------
+# pkill gpsd
 # cd /home/pi
 # ./gpsd/gpsd /dev/gpsd0
 ------------------------------------------------------------------------
@@ -925,15 +939,15 @@ Run gpsd, telling it to look at the GPS device
 Run your newly built ntpd, telling it to step time if required:
 
 ------------------------------------------------------------------------
-# ./ntpsec/build/main/ntpd/ntpd -g -c ntp.conf
+# ./ntpsec/build/main/ntpd/ntpd -g -c ntpsec/ntp.conf
 ------------------------------------------------------------------------
 
-Run ./ntpsec/build/main/ntpclients/ntpq -p and look at what it
-returns.  Be patient, as it can sometimes take a few seconds to
-complete.
+Run ntpq -p using the 'watch' command,
+and watch for ntpd to begin using your PPS as its reference. Be patient,
+it can sometimes take a few minutes to complete.
 
 ------------------------------------------------------------------------
-# ntpsec/build/main/ntpq/ntpq -p
+# watch ntpsec/build/main/ntpclients/ntpq -p
      remote           refid      st t when poll reach   delay   offset  jitter
 ==============================================================================
 -SHM(0)          .GPS.            0 l   15   64    1    0.000  -515.07   0.002
