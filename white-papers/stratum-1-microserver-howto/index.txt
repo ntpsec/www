@@ -43,7 +43,9 @@ assisted in the preparation of this document.
 
 This tutorial assumes some basic Unix competence.  You will not need to
 be a programmer or an expert system administrator; you will need to
-know your way around the command line a little and how to edit files.
+know your way around the command line a little and how to edit files. If
+you are a beginner, you'll want to use the 'nano' editor, e.g.
+"nano /boot/config.txt".
 
 Final note: if you're looking for instructions on setting up time
 service with a conventional PC and cable-attached GPS, see <<GPSD-SERVICE>>.
@@ -216,11 +218,12 @@ will be marked with "$".  Remember that you go root with the command
 
 Download the latest Raspbian Stretch Lite from <<RASPBIAN>> to your host.
 
-Use sha256sum to verify the correctness of the image.  For example:
+Use sha256sum to verify the correctness of the image. Remember to substitute
+the name of the current image zip file. For example:
 
 ------------------------------------------------------------------------
-$ sha256sum 2017-09-07-raspbian-stretch-lite.zip
-bd2c04b94154c9804cc1f3069d15e984c927b750056dd86b9d86a0ad4be97f12  2017-09-07-raspbian-stretch-lite.zip
+$ sha256sum 2018-06-27-raspbian-stretch-lite.zip
+3271b244734286d99aeba8fa043b6634cad488d211583814a2018fc14fdca313 2018-06-27-raspbian-stretch-lite.zip
 ------------------------------------------------------------------------
 
 The hex string this command returns should match the checksum on
@@ -264,17 +267,19 @@ depending on how many hard drives you have and how your reader firmware
 is set up.  If you're using a built-in SD reader port, e.g. on a laptop, the
 devicename might be something like '/dev/mmcblk0'
 
-First, unpack the zip file to get an img file:
+First, unpack the zip file to get an img file (remember to substitute the
+name of the current image zip file):
 
 ------------------------------------------------------------------------
-$ unzip 2016-03-18-raspbian-stretch-lite.zip
+$ unzip 2018-06-27-raspbian-stretch-lite.zip
 ------------------------------------------------------------------------
 
 To proceed manually, follow the directions at <<INSTALLATION>>, using dfcldd.
-Your command will look something like this:
+Your command will look something like this - again, using the current image
+name:
 
 ------------------------------------------------------------------------
-# dcfldd statusinterval=16 sizeprobe=if bs=4M if=2016-03-18-raspbian-stretch-lite.img of=/dev/sdd
+# dcfldd statusinterval=16 sizeprobe=if bs=4M if=2018-06-27-raspbian-stretch-lite.img of=/dev/sdd
 ------------------------------------------------------------------------
 
 For safety's sake, force pending I/O to the SD card before removing it.
