@@ -528,7 +528,7 @@ enter this:
 
 {--config} Create a symlink to the GPS device to make it easier to refer
 to.  Put the following in a new file /etc/udev/rules.d/10-pps.rules to
-accomplish this. A reboot will be required for this to take effect.
+accomplish this. 
 
 ------------------------------------------------------------------------
 KERNEL=="ttyAMA0", SYMLINK+="gpsd0"
@@ -579,8 +579,7 @@ Adafruit:
 dtoverlay=pps-gpio,gpiopin=4
 ------------------------------------------------------------------------
 
-You must reboot your SBC for this change to take effect.  The
-clockmaker script will do this for you, but not before
+The clockmaker script will do this for you, but not before
 installing some packages needed for the next step.
 
 A small optimization can be added to the /boot/config.txt file that will
@@ -652,6 +651,8 @@ is owned by some other privileged user than 'pi'.
 ------------------------------------------------------------------------
 # systemctl disable autologin@.service ; systemctl disable getty@tty1.service
 ------------------------------------------------------------------------
+
+You must reboot your SBC at this point for the changes above to take effect.
 
 == Smoke-test the GPS/HAT combination ==
 
