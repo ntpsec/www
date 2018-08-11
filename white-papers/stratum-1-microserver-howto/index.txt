@@ -473,15 +473,18 @@ patches and other fixes.
 
 === Enable the UART ===
 
-{--config} On the Pi, remove this from /boot/cmdline.txt in order to
-prevent it from spawning a login shell on the serial port your GPS
-will use.
+{--config} Edit the file /boot/cmdline.txt, and remove the following from
+the single line in the file:
 
 ------------------------------------------------------------------------
 console=serial0,115200 
 ------------------------------------------------------------------------
 
-{--config} On the Pi, edit /boot/config.txt to contain this option.
+This prevents it from spawning a login shell on the serial port that your GPS
+needs to use. Ensure that the text remain a single line.
+
+{--config} Edit the file /boot/config.txt, and add this line to the end
+of the file:
 
 ------------------------------------------------------------------------
 enable_uart=1
@@ -500,20 +503,22 @@ disable it and remap the devices.  Our instructions come from
 <<DOREY>>, which explains the problem in more detail.  We don't use
 some of his steps because this build is designed to run headless.
 
-{--config} Edit the /boot/config.txt file to append these lines:
+{--config} Edit the file /boot/config.txt again, and add these lines
+to the end of the file:
 
 ------------------------------------------------------------------------
 # Disable Bluetooth so serial-tty speed is no longer tied to CPU speed
 dtoverlay=pi3-disable-bt
 ------------------------------------------------------------------------
 
-This change restores the behavior of the Pi2 and earlier, in which the
+This change restores the behavior to that of the Pi2 and earlier, in which the
 serial device attached to the UART is /dev/ttyAMA0 rather than /dev/ttyS0.
 
 This change can effectively be reversed by commenting out the
 dtoverlay line.
 
-{--config} To go with the disabling of Bluetooth, do:
+{--config} To disable the Bluetooth daemon, since we've disabled the driver,
+enter this:
 
 ------------------------------------------------------------------------
 # systemctl disable hciuart
