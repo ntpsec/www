@@ -942,12 +942,12 @@ Run your newly built ntpd, telling it to step time if required:
 # ./ntpsec/build/main/ntpd/ntpd -g -c ntpsec/ntp.conf
 ------------------------------------------------------------------------
 
-Run ntpq -p using the 'watch' command,
-and watch for ntpd to begin using your PPS as its reference. Be patient,
-it can sometimes take a few minutes to complete.
+Run ntpq -p, and look for ntpd to begin using your PPS as its reference.
+Be patient, it can sometimes take a few minutes to complete. Simply run
+it repeatedly to watch it update.
 
 ------------------------------------------------------------------------
-# watch ntpsec/build/main/ntpclients/ntpq -p
+# ntpsec/build/main/ntpclients/ntpq -p
      remote           refid      st t when poll reach   delay   offset  jitter
 ==============================================================================
 -SHM(0)          .GPS.            0 l   15   64    1    0.000  -515.07   0.002
@@ -958,12 +958,14 @@ it can sometimes take a few minutes to complete.
 ------------------------------------------------------------------------
 
 You're hoping for a display similar to the above, with two local devices and
-three check sources.  A nonzero "reach" column on a source line
-indicates that your ntp is getting time notifications from that
-source.
+three check sources.  A nonzero "reach" column on a source line indicates that
+your ntp is getting time notifications from that source. You want your SHM(1)
+to have an asterisk next to it, meaning that it is the current timesource of
+your server.
 
 If the value under "reach" for the SHM lines remains zero, check again that
-gpsd is running and ntpshmmon reports fix lines.
+gpsd is running and ntpshmmon reports fix lines. Run through the live test
+steps again if necessary.
 
 === Installation and boot-time setup ===
 
