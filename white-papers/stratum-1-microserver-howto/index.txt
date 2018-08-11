@@ -865,6 +865,7 @@ script installs a slightly larger set of clock drivers].
 Exit root, and run this:
 
 ------------------------------------------------------------------------
+$ cd /home/pi
 $ git clone https://gitlab.com/NTPsec/ntpsec.git
 $ cd ntpsec
 $ ./waf configure --refclock=shm
@@ -903,6 +904,16 @@ Sudo to root and turn off the default time sync service running on your SBC
 # systemctl stop systemd-timesyncd.service
 # systemctl disable systemd-timesyncd.service
 ------------------------------------------------------------------------
+
+Note: As of the 2018-06-27 Raspian image, a bug may cause the following
+error output when you try to stop timesyncd -
+
+------------------------------------------------------------------------
+Warning: systemd-timesyncd.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+------------------------------------------------------------------------
+
+If so, just do as the warning states - type systemctl daemon-reload, then
+run the systemctl 'stop' and  'disable' again.
 
 Run gpsd, telling it to look at the GPS device
 
