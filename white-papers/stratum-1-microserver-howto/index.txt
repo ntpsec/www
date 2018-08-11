@@ -557,7 +557,8 @@ table:
 |======================================================================
 
 A handy resource with a display of the pin locations and ID's for the Adafruit
-and Uputronics HATs can be found here: https://pinout.xyz/boards#type=GPS[pinout.xyz]
+and Uputronics HATs can be found here:
+https://pinout.xyz/boards#type=GPS[pinout.xyz]
 
 There is a Linux kernel driver called pps-gpio which,
 given one of these pins, uses the signal from it to support an
