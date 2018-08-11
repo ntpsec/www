@@ -762,6 +762,9 @@ Install the following GPSD build prerequisites as follows {--config}:
 # apt install git scons libncurses-dev python-dev bc
 ------------------------------------------------------------------------
 
+Don't be alarmed if apt advises that additional packages will be installed -
+these are prerequisites of the prerequisites!
+
 Then do this (as user pi) {--build}:
 
 ------------------------------------------------------------------------
@@ -806,7 +809,7 @@ Sudo to root, then run this:
 
 Running gpsmon should give you a nice panel display with a scrolling
 window at the bottom showing the raw data and a top section showing
-the analyzed fix and time to the second.
+the analyzed fix and UTC time to the second.
 
 If you have a fix, you should also see bars denoting 1PPS once per
 second between sentence bursts.  If you have a fix and *don't* see
