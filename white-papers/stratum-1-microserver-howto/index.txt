@@ -1103,7 +1103,7 @@ for your daughterboard type.
 Don't be overly concerned if ntpq -p initially shows large jitter.
 This probably just means your clock was off by a few seconds - not
 uncommon on SBCs without a battery-backed real-time clock.  Initially,
-ntpd has no way to separate actual jitter from the clock offset
+ntpd has no way to separate actual jitter from the clock offset.
 This will probably fix itself in a few hours of operation once ntpd
 has pulled your system clock close to the PPS time.
 
