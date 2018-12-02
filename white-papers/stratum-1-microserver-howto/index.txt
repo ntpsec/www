@@ -854,7 +854,7 @@ lighter and more securely and can do more accurate time stepping.
 Install the build prerequisites {--config}:
 
 ------------------------------------------------------------------------
-# apt install bison libevent-dev libcap-dev libssl-dev libreadline-dev
+# apt install bison libcap-dev libssl-dev libreadline-dev
 ------------------------------------------------------------------------
 
 Build NTPsec {--build}.  The --refclock option says to include only
