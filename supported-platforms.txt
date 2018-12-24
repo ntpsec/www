@@ -77,7 +77,7 @@ The best-tested refclock on non-Linux systems is SHM,
 especially in combination with GPSD.
 
 We have an actively maintained port to Mac OS X 10.12
-footnote[Pre-10.12 versions of Mac OS X have a defective or
+footnote:[Pre-10.12 versions of Mac OS X have a defective or
 nonexistent clock API; we are no longer attempting to support
 these.]. Basic testing has been performed and we are looking for
 people with OS X skill and interest to help support this platform and
