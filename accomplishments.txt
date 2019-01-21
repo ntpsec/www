@@ -65,7 +65,7 @@ radios.
 Our ntpd can run in a fully autonomous mode using local clocks only::
 
 Legacy versions of NTP required synchronization to network check peers
-before they could use local reference clocks.  Ours does not, providing
+before they could use local reference clocks.  Ours does not, provided
 the refclock driver returns 4-digit years.
 
 We have implemented a simpler refclock configuration syntax::
