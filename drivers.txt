@@ -1,6 +1,6 @@
 = NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
-Version 1.14, 2017-09-17
+Version 1.15, 2019-02-05
 
 == Summary ==
 
@@ -74,7 +74,7 @@ REDUNDANT::
 INACCURATE::
 	Remove GPS drivers and time radios for which the hardware offers no
 	better source accuracy than a timing GPS available for less than
-	$75 in 2015; that is, about 5&micro;s.  (However, do not necessarily
+	$75 in 2015; that is, about 5ms.  (However, do not necessarily
 	remove poorer-performing GPS-conditioned *clocks*, as they continue
 	to supply time in holdover mode when the GPS cannot get satellite lock.)
 
@@ -706,6 +706,12 @@ Version 1.12, 2016-01-30::
 
 Version 1.13, 2017-05-13:
  	Remove JUPITER - can't have worked since 1999.
+
+Version 1.14, 2017-09-17:
+	Remove MAGNAVOX; discontinued and unavailable.
+
+Version 1.15, 2019-02-05:
+ 	Millisecond-microsecond correction.
 
 image::clocktower64.png[align="center"]
 
