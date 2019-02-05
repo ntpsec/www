@@ -41,11 +41,11 @@ Where this HOWTO says "I" it refers to the author's direct experience;
 "we" includes both the author and various technical experts who
 assisted in the preparation of this document.
 
-This tutorial assumes some basic Unix competence.  You will not need to
-be a programmer or an expert system administrator; you will need to
-know your way around the command line a little and how to edit files. If
-you are a beginner, you'll want to use the 'nano' editor, e.g.
-"nano /boot/config.txt".
+This tutorial assumes some basic Unix competence.  You will not need
+to be a programmer or an expert system administrator; you will need to
+know your way around the command line a little and how to edit
+files. footnote[If you are a beginner, you might want to use the
+'nano' editor, e.g. "nano /boot/config.txt".]
 
 Final note: if you're looking for instructions on setting up time
 service with a conventional PC and cable-attached GPS, see <<GPSD-SERVICE>>.
@@ -1352,7 +1352,7 @@ unstable to hand to newbies.  We may try again when it has matured.
      Update for Debian Stretch version of Raspbian.  We no longer need
      an entire raspi-config phase.
 
-1.5: 2018-07::
+1.5: 2018-07-31::
      Add recognition code for RasPi version 3B+.
 
 == Acknowledgements ==
