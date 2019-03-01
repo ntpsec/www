@@ -20,6 +20,14 @@ To prevent buffer overruns, we have replaced all unsafe string
 functions (strcpy/strcat/strtok/sprintf/vsprintf/gets) with safe
 versions that take a buffer bound.
 
+We have implemented Network Time Security::
+
+As of the beginning of March 2019 IETF does not yet have a final
+accepted standard for Network Time Security.  We are conformant to a
+late draft (17) and successfully interoperating with an academic test
+implementation.  We expect to be the first production NTP
+implementation to meet the final NTS specification.
+
 We have removed about a hundred seventy five thousand lines of obsolete code::
 
 Less code means less attack surface.  Here are some things we've found
