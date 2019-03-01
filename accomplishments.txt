@@ -37,10 +37,10 @@ to remove:
 |   2.0 KLOC (2%)    | Replacement of ntpdate by a shell wrapper around ntpdig
 |   4.0 KLOC (1%)    | Removal of Autokey.
 |   7.0 KLOC (3%)    | Replacement of C ntpq in Python
-|  17.0 KLOC (11%)   | Miscellaneous cruft
+|  10.0 KLOC (4%)    | Miscellaneous cruft
 |   2.0 KLOC (1%)    | Simplification of async-DNS lookup.
-| 171.0 KLOC (74%)   | _Total removed_
-|  57.0 KLOC (24%)   | _Total remaining_
+| 173.0 KLOC (74%)   | _Total removed_
+|  55.0 KLOC (24%)   | _Total remaining_
 | 231.0 KLOC (100%)  | _Total at conversion time_
 |==============================================================================
 +
@@ -50,7 +50,8 @@ https://gitlab.com/esr/loccount[loccount].)
 These removals include most of the bulk of ntpd, the most
 security-critical code.  And the numbers understate the size of the
 removals slightly because the way we counted "remaining" code includes
-some test code and features added since the repository conversion.
+some test code and features added since the repository conversion,
+notably Network Time Security.
 
 We have improved the accuracy of time stepping with real hardware by x10::
 
