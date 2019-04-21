@@ -1305,7 +1305,7 @@ unstable to hand to newbies.  We may try again when it has matured.
 
 - [[[MODMYPI-CASE]]] https://store.uputronics.com/index.php?route=product/product&product_id=90[ModMyPi Pi GPS Case (Matte Black)] also available direct from ModMyPi in https://www.modmypi.com/raspberry-pi/cases/modmypi-single-colour/gps-case-black[Matte Black] or https://www.modmypi.com/raspberry-pi/cases/modmypi-single-colour/gps-case[Clear]
 
-- [[[PI-PINOUT]]] https://www.element14.com/community/docs/DOC-73950/l/raspberry-pi-3-model-b-gpio-40-pin-block-pinout[Raspberry Pi 3 Model B GPIO 40 Pin Block Pinout]
+- [[[PI-PINOUT]]] https://pinout.xyz[Raspberry Pi 3 Model B GPIO 40 Pin Block Pinout]
 
 - [[[UART-ISSUE]]] https://www.raspberrypi.org/forums/viewtopic.php?uid=191178&f=28&t=148218&start=0[UART Issue]
 
