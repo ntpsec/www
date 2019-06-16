@@ -4,7 +4,6 @@
 :home: http://www.ntpsec.org/white-papers/stratum-1-microserver-howto/
 :adahat: https://learn.adafruit.com/adafruit-ultimate-gps-hat-for-raspberry-pi
 :upuhat: https://store.uputronics.com/index.php?route=product/product&path=60_64&product_id=81
-:dxhat: http://www.dx.com/p/add-on-gps-module-gps-hat-module-for-raspberry-pi-2-model-b-b-424254
 by Eric S. Raymond
 :toc:
 
@@ -64,19 +63,13 @@ You will need:
 | HAT type                                 | Battery | Build status
 | {adahat}[Adafruit GPS HAT]               | CR1220  | Tested
 | {upuhat}[Uputronics GPS Expansion Board] | CR2032  | Tested
-| {dxhat}[SKU 424254]                      |    -    | Tested
 |=======================================================================
 +
-Special note about the SKU 424254: despite vendor claims, the trace
-that should have connected GPIO5 to the GPS 1PPS was absent on the
-revision of the board I received.  To use it for time-service,
-link:bluewire.jpg[patch-wire the pad marked 'GPS' to physical pin 29 (GPIO05)].
 +
-Of these three, I prefer the Uputronics board.  The combination of a
+Of these, I prefer the Uputronics board.  The combination of a
 u-blox 8 and solderless assembly is tough to beat.
 
-* One 3.3-volt lithium button cell (except the SKU 424254, which is
-  powered by an on-board supercap, included).  The CR1220 is cheapest
+* One 3.3-volt lithium button cell.  The CR1220 is cheapest
   ordered from Adafruit along with the HAT, but note that this may slow
   delivery, as button cells prevent shipment by air. Alternatively you can
   buy compatible button cells at most places that carry hearing-aid batteries.
@@ -109,9 +102,8 @@ u-blox 8 and solderless assembly is tough to beat.
   the screws to match.
 
 The Adafruit and Uputronics HATs are shipped as two parts each, a circuit
-board and a 40-pin header.  The SKU 424254 comes presoldered.  The
-header on the Uputronics board snugs into an on-board fitting and does
-not require soldering.
+board and a 40-pin header. The header on the Uputronics board snugs into an 
+on-board fitting and does not require soldering.
 
 Note that if you're going to use a CR2032 with the Uputronics HAT, a
 jumper on the board needs to be desoldered.  It lives in a white box
@@ -153,11 +145,11 @@ Anything sold as a "Raspberry Pi" case ought to do for the Adafruit
 HAT, because a single HAT doesn't project above the USB & Ethernet
 connectors on the SBC.  The Raspberry Pi Foundation Case qualifies, but
 for functional reasons we recommend a transparent case.  The Adafruit
-2258 case <<2258>>, for example, should do nicely.  The Uputronics and
-SKU 424254 HATs, alas, have projecting SMA antenna jacks that won't
-fit in a stock case.  A bit of work with a Dremel tool will fix that.
-Alternatively, if you use the Uputronics HAT, both Uputronics and ModMyPi
-sell a case <<MODMYPI-CASE>> specifically designed for it.
+2258 case <<2258>>, for example, should do nicely.  The Uputronics HAT, alas, 
+has a projecting SMA antenna jacks that won't fit in a stock case.  A bit of 
+work with a Dremel tool will fix that. Alternatively, if you use the Uputronics 
+HAT, both Uputronics and ModMyPi sell a case <<MODMYPI-CASE>> specifically 
+designed for it.
 
 == Understanding the GPIO connector ==
 
@@ -553,7 +545,6 @@ table:
 | HAT        | Physical pin | RPi Logical pin   | Odroid C2 export pin
 | Adafruit   |      P-7     |   GPIO04          |    249
 | Uputronics |      P-12    |   GPIO18          |    238
-| SKU 424254 |      P-29    |   GPIO05          |    228
 |======================================================================
 
 A handy resource with a display of the pin locations and ID's for the Adafruit
@@ -790,7 +781,6 @@ intervals for the fix LED; "off" means the LED does not blink.
 | HAT type                        | No fix |  Fix
 | Adafruit GPS HAT                | 1      |  10
 | Uputronics GPS Expansion Board  | off    |  1
-| SKU 424254                      | 0.5    |  0.5
 |=======================================================================
 
 On first (cold) boot, the device may take 20-30 minutes to download a
@@ -1227,7 +1217,6 @@ HATs marked "assert edge" below do not require compensation.
 |Type           | Chipset    | 1PPS width  | pps-gpio detects
 |Adafruit HAT   | MTK3339    |   100ms     | assert edge
 |Uputronics HAT | Ublox 8    |   100ms     | assert edge
-|SKU 424254     | Ublox 6    |   100ms     | assert edge
 |===========================================================
 
 These details will become relevant whenever we qualify a new HAT
