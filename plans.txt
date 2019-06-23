@@ -26,12 +26,6 @@ move all code that isn't realtime-critical out of C to improve
 maintainability and decrease vulnerability to overrun bugs and other
 classic C snafus.
 
-== Support NTS ==
-
-The IETF has an effort under way to develop a standard for secured NTP
-traffic: Network Time Security.  One of our developers is a key figure
-in that effort.  We will be first or second interop when NTS is fielded.
-
 == Broaden community participation ==
 
 The NTP Classic project slid into decline, developing serious

@@ -24,7 +24,7 @@ We have implemented Network Time Security::
 
 As of the beginning of March 2019 IETF does not yet have a final
 accepted standard for Network Time Security.  We are conformant to a
-late draft (17) and successfully interoperating with an academic test
+late draft (17) and successfully interoperating with several test
 implementation.  We expect to be the first production NTP
 implementation to meet the final NTS specification.
 
