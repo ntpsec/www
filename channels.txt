@@ -1,12 +1,10 @@
-= Communications channels =
+= Communications channels
 
 The project Git repository: https://gitlab.com/NTPsec/ntpsec.git
 
 Mailing lists: http://lists.ntpsec.org/mailman/listinfo/
 
 Bugtracker: https://gitlab.com/NTPsec/ntpsec/issues
-
-Buildbot status page: https://buildbot.ntpsec.org/#/builders
 
 IRC channel: irc://chat.freenode.net/#ntpsec[#ntpsec at freenode]
 
