@@ -17,12 +17,9 @@ The Autokey public-key-based authentication system feature has been
 removed.  It has been reported to have been broken for some time, and
 added a significant amount of complexity.
 
-Autokey-like functionality will be provided by implementing
-the "Network Time Security" protocol, soon after the IETF advances
-draft-ietf-ntp-network-time-security-NN,
-draft-ietf-ntp-cms-for-nts-message-NN, and
-draft-ietf-ntp-using-nts-for-ntp-NN
-to full RFC status.
+Autokey-like functionality has been provided by implementing
+the "Network Time Security" protocol. We are tracking draft-ietf-ntp-using-nts-for-ntp-NN,
+as the IETF advances it to full RFC status.
 
 The ntpdc utility has been entirely removed.  (All its capabilities are
 available through ntpq with a similar user interface.)  Support for
