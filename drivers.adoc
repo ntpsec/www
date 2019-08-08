@@ -464,7 +464,7 @@ Disposition: SECURITY; already removed.
 The TriState and C-Dex devices this supports may still be live
 products, though little information seems to be available in English.
 
-Disposition: Move to refclockd.
+Disposition: Retain.
 
 === Type 41 (REFCLK_TT560): TrueTime 560 IRIG-B Decoder ===
 
