@@ -5,7 +5,7 @@ from waflib import Task
 from waflib.TaskGen import extension
 
 
-@extension('.txt')
+@extension('.adoc')
 def run_asciidoc(self, node):
 	out = node.change_ext(".html")
 	if 'white-papers' in node.abspath():
@@ -32,9 +32,9 @@ def configure(ctx):
 
 
 def build(ctx):
-	www_source = ctx.path.ant_glob("**/*.txt")
+	www_source = ctx.path.ant_glob("**/*.adoc")
 	img_source = [x.name for x in ctx.path.ant_glob('**/*.png')] + ["asciidoc.js", "asciidoc.css", "favicon.ico"] \
-		+ [x.relpath() for x in ctx.path.find_node('white-papers').ant_glob('**', excl=['**/*.txt','**/TODO'])]
+		+ [x.relpath() for x in ctx.path.find_node('white-papers').ant_glob('**', excl=['**/*.adoc','**/TODO'])]
 
 	ctx(
 		target	= "www",
