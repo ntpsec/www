@@ -489,11 +489,14 @@ Disposition: INTRINSIC; already removed.
 === Type 44 (NEOCLOCK4X): NeoClock4X - DCF77 / TDF serial line ===
 
 This is a radio clock synchronized to DCF77 and thus has 2ms jitter.
-I found a source page at http://www.linux-funkuhr.de/ that suggests it
+In 2015 I found a source page at http://www.linux-funkuhr.de/ that suggests it
 was written by a small software company "Linum Software GmbH" for
-Linux hosts.  It may still be available.
+Linux hosts. Unn 2019 that pafe was gone.  It ships only 2-digit
+yearsm suggesting a design predating thwe Y2K flap. Internal evidence in the
+NTP Classic revision history is that it has not had updates
+since 2004.
 
-Disposition: Retain.
+Disposition: DISCONTINUED (<2004), UNAVAILABLE; Remove.
 
 === Type 45 (TSYNCPCI): Spectracom TSync PCI ===
 
@@ -552,7 +555,7 @@ be determined cetainly but was almost certainly in the last century.
 | 41 | DEPRECATED, DISCONTINUED
 | 42 | -
 | 43 | INTRINSIC; REMOVED
-| 44 | -
+| 44 | DISCONTINUED (<2004), UNAVAILABLE; Remove.
 | 45 | SECURITY; REMOVED
 |===============================================================
 
@@ -715,6 +718,7 @@ Version 1.15, 2019-02-05::
 
 Version 1.16. 2019-08-08::
 	The REFCLOCKD proposal has been abandoned.
+	The neoclock4x driver's vendor is gone.
 
 image::clocktower64.png[align="center"]
 
