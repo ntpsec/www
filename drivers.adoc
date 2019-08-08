@@ -1,6 +1,6 @@
 = NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
-Version 1.15, 2019-02-05
+Version 1.16, 2019-08-08
 
 == Summary ==
 
@@ -87,7 +87,7 @@ methods for peer time-source programs in ntpd itself.
 
 == First-round triage ==
 
-The following lists the drivers in ntpd4, categorizes them, and
+The following lists the drivers in ntpd, categorizes them, and
 recommends a disposition for each. It's based on the master list
 from the NTP Classic documentation.
 
@@ -106,7 +106,7 @@ Disposition: Fails tests DEPRECATED and INACCURATE; Remove.
 
 === Type 2 (GPS_TRAK):  Trak 8820 GPS Receiver
 
-This driver still existed only as one mention in the ntp4
+This driver still existed only as one mention in the ntpd
 documentation.  There is no refclock implementation for it.
 
 Web searches reach one copy of the technical manual dating from 1994
@@ -158,7 +158,7 @@ However, the Spectracom 9300 (still in production and support)
 is a GPS clock that can emit the type 0 and 2 formats recognized
 by this driver.
 
-Disposition: Move to refclockd.
+Disposition: Retain.
 
 === Type 5 (TRUETIME): TrueTime GPS/GOES/OMEGA Receivers ===
 
@@ -236,7 +236,7 @@ Arbiter systems is still alive at http://www.arbiter.com/
 With 100ns worst-case accuracy relative to 1PPS this is still a viable
 time source.
 
-Disposition: Move to refclockd.
+Disposition: Retain.
 
 === Type 12 (IRIG_TPRO): KSI/Odetics TPRO/S IRIG Interface ===
 
@@ -296,7 +296,7 @@ http://tycho.usno.navy.mil/modem_time.html
 It claims 4ms jitter (before propagation delays in the POTS network).
 Retain because it might be useful in holdover mode.
 
-Disposition: Move to refclockd.
+Disposition: Retain.
 
 === Type 19 (WWV_HEATH): Heath WWV/WWVH Receiver ===
 
@@ -478,7 +478,7 @@ Disposition: DEPRECATED and DISCONTINUED; already removed.
 
 Live product with a supporting vendor.  100ns accuracy.
 
-Disposition: Move to refclockd.
+Disposition: Retain.
 
 === Type 43 (RIPENCC): RIPE NCC interface for Trimble Palisade ===
 
@@ -493,7 +493,7 @@ I found a source page at http://www.linux-funkuhr.de/ that suggests it
 was written by a small software company "Linum Software GmbH" for
 Linux hosts.  It may still be available.
 
-Disposition: Move to refclockd.
+Disposition: Retain.
 
 === Type 45 (TSYNCPCI): Spectracom TSync PCI ===
 
@@ -704,14 +704,17 @@ Version 1.11, 2016-08-22::
 Version 1.12, 2016-01-30::
         Remove DUMBCLOCK (refclock 33).
 
-Version 1.13, 2017-05-13:
+Version 1.13, 2017-05-13::
  	Remove JUPITER - can't have worked since 1999.
 
-Version 1.14, 2017-09-17:
+Version 1.14, 2017-09-17::
 	Remove MAGNAVOX; discontinued and unavailable.
 
-Version 1.15, 2019-02-05:
+Version 1.15, 2019-02-05::
  	Millisecond-microsecond correction.
+
+Version 1.16. 2019-08-08::
+	The REFCLOCKD proposal has been abandoned.
 
 image::clocktower64.png[align="center"]
 
