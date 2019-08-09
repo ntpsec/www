@@ -44,20 +44,13 @@ The NTPsec Project Blog is at (http://blog.ntpsec.org).
 
 == Contact Information ==
 
-For more information, contacts are:
+For more information, contact:
 
 Mark Atwood +
 Project Manager pro-tem +
 NTP Security Project +
 mailto:mark.atwood@ntpsec.org[mark.atwood@ntpsec.org]
 
-and
-
-John D. Bell +
-Evangelism, Outreach, and Training Coordinator +
-Internet Civil Engineering Institute (https://icei.org[ICEI]) +
-+1-567-343-0164 +
-mailto:outreach@icei.org[outreach@icei.org]
 
 image::clocktower64.png[align="center"]
 
