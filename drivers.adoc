@@ -489,10 +489,10 @@ Disposition: INTRINSIC; already removed.
 === Type 44 (NEOCLOCK4X): NeoClock4X - DCF77 / TDF serial line ===
 
 This is a radio clock synchronized to DCF77 and thus has 2ms jitter.
-In 2015 I found a source page at http://www.linux-funkuhr.de/ that suggests it
+In 2015, I found a source page at http://www.linux-funkuhr.de/ that suggests it
 was written by a small software company "Linum Software GmbH" for
-Linux hosts. In 2019 that page was gone.  It ships only 2-digit
-years suggesting a design predating the Y2K flap. Internal evidence in the
+Linux hosts. In 2019, that site was gone.  The device ships only 2-digit
+years, suggesting a design predating the Y2K flap. Internal evidence in the
 NTP Classic revision history is that it has not had updates
 since 2004.
 
