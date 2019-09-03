@@ -1,4 +1,4 @@
-= NTPD driver retention analysis =
+=ci NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
 Version 1.16, 2019-08-08
 
@@ -211,7 +211,7 @@ Disposition: Move to refclockd.
 
 A line of GPSes produced by Magnavox, discontinued in 1994, with
 the surplus stock marketed by Leica Geosystems.  Leica no longer
-sells them.  They shipped 1PPS.  I ciuld find only two units at
+sells them.  They shipped 1PPS.  I could find only two units at
 dodgy surplus houses; even eBay doesn't have them.
 
 Disposition: DISCONTINUED, UNAVAILABLE; already removed.
@@ -491,8 +491,8 @@ Disposition: INTRINSIC; already removed.
 This is a radio clock synchronized to DCF77 and thus has 2ms jitter.
 In 2015 I found a source page at http://www.linux-funkuhr.de/ that suggests it
 was written by a small software company "Linum Software GmbH" for
-Linux hosts. Unn 2019 that pafe was gone.  It ships only 2-digit
-yearsm suggesting a design predating thwe Y2K flap. Internal evidence in the
+Linux hosts. In 2019 that page was gone.  It ships only 2-digit
+years suggesting a design predating the Y2K flap. Internal evidence in the
 NTP Classic revision history is that it has not had updates
 since 2004.
 
