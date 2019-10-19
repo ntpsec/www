@@ -43,7 +43,7 @@ class RaspberryPi:
 
     def __init__(self):
         self.name = "Raspberry Pi"
-        self.gpsdev = "ttyAMA0"	# Don't prefix with /dev! That confuses udev
+        self.gpsdev = "ttyAMA0"   # Don't prefix with /dev! That confuses udev
         self.default_login = "pi"
         #   GPIO04      |      P1-7     | Adafruit
         #   GPIO18      |      P1-12    | Uputronics
@@ -176,6 +176,7 @@ def pinprompt(pin_pairs):
     return newpin
 
 # End common code
+
 
 sbc = None
 
@@ -443,9 +444,9 @@ def secure():
     if os.environ.get('SUDO_USER'):
         sudo_user = os.environ.get('SUDO_USER')
         ssh_path = os.path.join("/home", sudo_user, ".ssh")
-        print ("ssh_path is %s" % ssh_path)
+        print("ssh_path is %s" % ssh_path)
     else:
-        print ("Unable to determine where to look for .ssh directory...")
+        print("Unable to determine where to look for .ssh directory...")
         raise SystemExit(1)
 
     if not os.path.isdir(ssh_path):
@@ -497,6 +498,7 @@ def strip():
     os.system("apt-get -y purge bluez triggerhappy")
     os.system("apt-get -y autoremove")
 
+
 if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] not in ("--config", "--build",
                                                 "--install", "--mask",
@@ -531,4 +533,3 @@ if __name__ == "__main__":
         strip()
 
 # end
-
