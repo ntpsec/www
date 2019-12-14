@@ -759,7 +759,7 @@ these are prerequisites of the prerequisites!
 Then do this (as user pi) {--build}:
 
 ------------------------------------------------------------------------
-$ git clone git://git.savannah.nongnu.org/gpsd.git
+$ git clone https://gitlab.com/gpsd/gpsd.git
 $ cd gpsd
 $ scons timeservice=yes magic_hat=yes nmea0183=yes ublox=yes mtk3301=yes fixed_port_speed=9600 fixed_stop_bits=1
 ------------------------------------------------------------------------
