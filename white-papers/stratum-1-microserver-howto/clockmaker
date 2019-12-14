@@ -326,7 +326,7 @@ def build(clobber):
         raise SystemExit(0)
 
     if not os.path.isdir("gpsd"):
-        os.system("git clone git://git.savannah.nongnu.org/gpsd.git")
+        os.system("git clone https://gitlab.com/gpsd/gpsd.git")
     else:
         os.system("(chdir gpsd; git pull)")
     os.chdir("gpsd")
