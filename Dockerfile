@@ -1,4 +1,4 @@
 FROM alpine
 
 RUN apk update
-RUN apk add asciidoc findutils gzip
+RUN apk add python3 asciidoc findutils gzip

@@ -2,7 +2,7 @@ pages:
   stage: build
   image: $CI_REGISTRY_IMAGE
   script:
-    - python ./waf configure --prefix=`pwd`/public/ build install
+    - python3 ./waf configure --prefix=`pwd`/public/ build install
     - find public -type f -iregex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -execdir gzip -f --keep {} \;
   artifacts:
     paths:
