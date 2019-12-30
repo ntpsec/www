@@ -1,6 +1,3 @@
-# Use thuis to perform a local rebuild of asciidoc files so they can be
-# viewd in-tree without publishing.
-
 from waflib import Task
 from waflib.TaskGen import extension
 
