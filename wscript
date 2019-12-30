@@ -14,7 +14,7 @@ def run_asciidoc(self, node):
 
 class asciidoc(Task.Task):
 	color   = "BLUE"
-	run_str = '${BIN_ASCIIDOC} -b html5 -a linkcss ${ASCIIDOC_FLAGS} -o ${TGT[0].name} ${SRC[0].abspath()}'
+	run_str = '${BIN_ASCIIDOC} -b html5 -a linkcss -o ${TGT[0].name} ${SRC[0].abspath()}'
 	ext_out = ".html"
 
 
