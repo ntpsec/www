@@ -24,21 +24,6 @@ the co-owner of an industrial-art makerspace.
 
 When he is not traveling, he makes his home in Seattle.
 
-== Jason Azze ==
-
-Jason is on the systems administrator team and helps with CI/CD operations.
-
-Jason is a Senior Development Systems Administrator for Siemens PLM where
-he helps provide infrastructure and dev tools to a small army of physicists
-and aeronautical engineers who have been tricked into writing C++. He has
-been administering Linux systems since he installed Debian slink on an old
-Mac LC back in 1999.
-
-When not behind the keyboard, Jason trains in various martial arts
-including Muay Thai, grappling, and "shooting stuff". He would also be
-willing to argue about what the best edition of D&D is if there were any
-other edition than 1st.
-
 == John D. Bell ==
 
 John is our systems administrator and infrastructure gnome.
