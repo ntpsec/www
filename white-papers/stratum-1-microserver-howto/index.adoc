@@ -88,7 +88,7 @@ u-blox 8 and solderless assembly is tough to beat.
   standard charger for smartphones) or a USB-to-Micro-USB cable that
   can take power from the host machine.
 
-* A USB keyboard and DVI-capable display display.  You'll do most of
+* A USB keyboard and HDMI-capable display.  You'll do most of
   the software installation and configuration via ssh from your host
   machine, but you need to be off-net for the next step.
 
@@ -108,8 +108,9 @@ on-board fitting and does not require soldering.
 Note that if you're going to use a CR2032 with the Uputronics HAT, a
 jumper on the board needs to be desoldered.  It lives in a white box
 outline near the + pole of the battery cradle.  As shipped, it is
-covered by a small dome of solder.  The latest version of the Uputronics HAT
-uses a supercapacitor instead of a battery, so no soldering is required.
+covered by a small dome of solder.  The latest versions of the Uputronics HAT
+uses a supercapacitor (or two) instead of a battery, so no soldering is
+required.
 
 The header on the assembled HAT will fit down over the double row of pins
 on one edge of the SBC, such that when fully assembled the SBC and HAT will
