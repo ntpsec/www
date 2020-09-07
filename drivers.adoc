@@ -18,8 +18,8 @@ NTP's driver inventory contains several different classes of precision
 time sources.  The software is now around 40 years old, and some of
 those classes are now obsolescent or semi-obsolescent.
 
-See http://www.catb.org/gpsd/time-service-intro.html["Introduction to
-Time Service"] for terminology, device classes, and accuracy.  The
+See https://gpsd.gitlab.io/gpsd/gpsd-time-service-howto.html["Introduction
+to Time Service"] for terminology, device classes, and accuracy.  The
 summary version is that inexpensive 1PPS-capable GPS devices have a
 nearly overwhelming cost-effectiveness advantage over older time source
 types, and the utility of supporting those older types is accordingly

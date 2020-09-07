@@ -1100,8 +1100,8 @@ has pulled your system clock close to the PPS time.
 
 For more about performance tuning and how to fudge your configuration,
 see
-http://www.catb.org/gpsd/gpsd-time-service-howto.html#_performance_tuning[the
-GPSD Time Service HOWTO's section on tuning].
+https://gpsd.gitlab.io/gpsd/gpsd-time-service-howto.html#_performance_tuning
+[the GPSD Time Service HOWTO's section on tuning].
 
 == Simplification and optimization ==
 
@@ -1287,7 +1287,7 @@ unstable to hand to newbies.  We may try again when it has matured.
 
 [bibliography]
 
-- [[[GPSD-SERVICE]]] http://www.catb.org/gpsd/gpsd-time-service-howto.html[GPSD Time Service HOWTO]
+- [[[GPSD-SERVICE]]] https://gpsd.gitlab.io/gpsd/gpsd-time-service-howto.html[GPSD Time Service HOWTO]
 
 - [[[STANDOFFS]]] https://www.adafruit.com/product/2336[Brass M2.5 Standoffs for Pi]
 
