@@ -22,11 +22,11 @@ versions that take a buffer bound.
 
 We have implemented Network Time Security::
 
-As of the beginning of March 2019 IETF does not yet have a final
-accepted standard for Network Time Security.  We are conformant to a
-late draft (17) and successfully interoperating with several test
-implementation.  We expect to be the first production NTP
-implementation to meet the final NTS specification.
+On 2020-09-30 the IETF released RFC8915 "Network Time Security for the
+Network Time Protocol".  We implemented NTS as of draft 17, and
+tracked changes to each draft to remain conformat.  We successfully
+interoperate with several test implementations.
+
 
 We have removed about a hundred seventy five thousand lines of obsolete code::
 

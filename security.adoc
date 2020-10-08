@@ -22,13 +22,22 @@ You may GPG encrypt your report. Our GPG key can be found on the well
 known keyservers, and has the following id and fingerprint:
 
 ----------------------------------------------------------------
+pub   rsa4096 2020-10-06 [SC] [expires: 2025-10-05]
+      E57235D22764129FA4F2F4D17F52608ED0E49D76
+uid NTPsec Security Reporting <security@ntpsec.org>
+uid NTPsec Contact <contact@ntpsec.org>
+----------------------------------------------------------------
+
+The following key is older but still valid:
+
+----------------------------------------------------------------
 pub   3072D/161C3978 2018-06-08 [expires: 2022-06-07]
 Key fingerprint = B482 3776 1A26 9022 2C99  5F44 5A22 E330 161C 3978
 uid NTPsec Contact <contact@ntpsec.org>
 uid NTPsec Security Reporting <security@ntpsec.org>
 ----------------------------------------------------------------
 
-The following key is still valid, but will expire within the next year:
+The following key was expired on 2019-04-14:
 
 ----------------------------------------------------------------
 pub   4096R/477C7528 2016-04-14 [expires: 2019-04-14]
