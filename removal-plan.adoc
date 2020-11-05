@@ -18,8 +18,7 @@ removed.  It has been reported to have been broken for some time, and
 added a significant amount of complexity.
 
 Autokey-like functionality has been provided by implementing
-the "Network Time Security" protocol. We are tracking draft-ietf-ntp-using-nts-for-ntp-NN,
-as the IETF advances it to full RFC status.
+the RFC8915 "Network Time Security" protocol.
 
 The ntpdc utility has been entirely removed.  (All its capabilities are
 available through ntpq with a similar user interface.)  Support for
