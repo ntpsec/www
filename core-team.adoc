@@ -116,6 +116,10 @@ In his spare time, Eric trains in kung fu and Western sword, shoots
 pistols, http://esr.ibiblio.org/[writes a blog], and reads science
 fiction.
 
+== Matt Selsky ==
+
+Matt Selsky is our Release Manager and project infrastructure Reliability Engineer.
+
 == Susan Sons ==
 
 Susan is the team's InfoSec specialist emeritus.
