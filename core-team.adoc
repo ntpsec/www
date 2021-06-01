@@ -45,8 +45,7 @@ science fiction.
 
 Ian is our Python prodigy.
 
-Ian works as a developer/trainee for the http://icei.org/[Internet
-Civil Engineering Institute].  Since mid-2017 he has been the primary
+Since mid-2017 he has been the primary
 maintainer of the Python parts of the NTPsec codebase, and is slowly
 getting to know the C side.
 
