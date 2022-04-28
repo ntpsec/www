@@ -118,7 +118,17 @@ fiction.
 
 == Matt Selsky ==
 
-Matt Selsky is our Release Manager and project infrastructure Reliability Engineer.
+Matt Selsky is our Release Manager and project infrastructure Reliability
+Engineer.
+
+Outside of NTPsec, Matt is the team lead on the Platform Reliability
+Engineering team at https://www.twosigma.com/open-source/[Two Sigma], a
+financial sciences company. One of his team’s many responsibilities at Two
+Sigma is high precision timekeeping for the low-latency trading environment.
+
+Matt holds a BS in Computer Science from Columbia University School of
+Engineering and Applied Science. In his free time, Matt has been going down a
+Jack Reacher rabbit-hole.
 
 == Susan Sons ==
 
