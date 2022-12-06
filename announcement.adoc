@@ -56,6 +56,6 @@ Team] page.
 image::clocktower64.png[align="center"]
 
 Have questions? Email us at  mailto:contact@ntpsec.org[contact@ntpsec.org],
-or via IRC at Freenode channel #ntpsec.
+or via IRC at Libera Chat channel #ntpsec.
 
 // end
