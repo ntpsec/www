@@ -28,7 +28,7 @@ uid NTPsec Security Reporting <security@ntpsec.org>
 uid NTPsec Contact <contact@ntpsec.org>
 ----------------------------------------------------------------
 
-The following key is older but still valid:
+The following key expired on 2022-06-07:
 
 ----------------------------------------------------------------
 pub   3072D/161C3978 2018-06-08 [expires: 2022-06-07]
