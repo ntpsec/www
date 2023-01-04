@@ -43,7 +43,7 @@ assisted in the preparation of this document.
 This tutorial assumes some basic Unix competence.  You will not need
 to be a programmer or an expert system administrator; you will need to
 know your way around the command line a little and how to edit
-files. footnote[If you are a beginner, you might want to use the
+files. footnote:[If you are a beginner, you might want to use the
 'nano' editor, e.g. "nano /boot/config.txt".]
 
 Final note: if you're looking for instructions on setting up time
