@@ -1,0 +1,49 @@
+= Chapter 1: After first ship (2017-2018) =
+
+link:history-chapter0.html[Previous: How NTPsec came to be] | link:history.html[Contents] | link:history-chapter2.html[Next: Network Time Security]
+
+The day 1.0.0 shipped, Eric posted a reflection titled "After first
+ship."  It had taken us two and a half years to get there.  We had
+removed roughly three quarters of the bulk of the NTP Classic codebase
+- from about 231,000 lines down to 55,000 lines of C plus a growing
+body of Python - and, almost as a side effect of that removal, we had
+become immune to around three out of four of the CVEs that were still
+being disclosed against NTP Classic.  Less code, less attack surface;
+it really was that simple, and it really did work.
+
+The funding picture had already changed by then, though we did not
+talk about it much.  The Linux Foundation's Core Infrastructure
+Initiative grant that had carried the early sprint was not renewed for
+2017.  In its place, in early 2017, the Mozilla Foundation's Secure
+Open Source program funded an independent security audit by Cure53 and
+then paid for the remediation of what the audit found; we shipped
+those fixes in 0.9.7.  An honest footnote: when the auditors later
+compared the three modern NTP implementations, chrony - written from a
+clean sheet rather than carved out of the old code - came out ahead of
+both NTP Classic and us on raw defect count.  We took the lesson and
+kept cutting and hardening.  We had set out to make the old code
+safe, not to pretend it had been born safe.
+
+The releases of this period were the work of a project settling into
+its adult life.  1.1.0 (March 2018) dropped broadcast server support
+and, almost routinely now, dodged a fresh batch of NTP Classic CVEs.
+1.1.1 (June 2018) started putting the year into log timestamps - a
+small thing that turns out to matter enormously when you are debugging
+a clock.  1.1.2 (August 2018) added AES-128-CMAC authentication
+(RFC 8573) and an implementation of client data minimization, the
+IETF draft Daniel Franke had been shepherding to keep NTP clients from
+leaking more about themselves than they needed to.
+
+The team roster shifted the way mature teams do.  Ian Bruene, who had
+quietly become our principal Python hand, joined formally in 2018; so
+did Jason Azze on the systems-administration and CI side.  The
+mailing list told the story of a project at its busy, healthy peak:
+the development list had carried something like 2,600 messages in 2016
+and again in 2017, the loud, argumentative traffic of people building
+something together.
+
+image::clocktower64.png[align="center"]
+
+link:history-chapter0.html[Previous: How NTPsec came to be] | link:history.html[Contents] | link:history-chapter2.html[Next: Network Time Security]
+
+//end

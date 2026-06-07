@@ -1,0 +1,42 @@
+= Chapter 3: The standard lands (2020) =
+
+link:history-chapter2.html[Previous: Network Time Security] | link:history.html[Contents] | link:history-chapter4.html[Next: The long plateau]
+
+2020 was the year the world caught up to the code.
+
+In March the disambiguation label we used to derive NTS keys had to
+change to match the working group's final consensus - a small string,
+"EXPORTER-network-time-security", but changing it broke
+interoperability with everything that had shipped the older draft.
+That is the unglamorous cost of being early: you get to help finish
+the standard, and then you get to be incompatible with your own past
+selves.  Some of that pain echoed for years, because long-lived
+distributions like Ubuntu 20.04 froze an early draft version in
+amber.
+
+We moved NTS Key Establishment onto its newly assigned port, 4460, and
+stopped squatting on port 123 for it.  1.1.9 (May 2020) dropped TLS
+1.2 entirely and required OpenSSL 1.1.1 with TLS 1.3 - we were not
+going to ship security theater on an obsolete transport.
+
+In September 2020 the IETF published RFC 8915, "Network Time Security
+for the Network Time Protocol."  Daniel Franke was its lead author,
+with Dieter Sibold, Kristof Teichel, Marcus Dansarie, and Ragnar
+Sundblad.  A few weeks later, on October 6th, we shipped 1.2.0 - the
+version bump itself was the announcement, a single increment to say:
+this is the real, standardized thing now, not a draft.  We cut a fresh
+GPG key for the occasion and got on with it.
+
+In the IETF NTP working group, NTPsec people were respected regulars
+through these years - Franke as an author, Hal Murray as the voice of
+hard-won operational reality on questions of packet sizing and cookie
+formats, Mark on the architecture of authentication.  The list traffic
+there peaked in 2020 and 2021, exactly as NTS finished and the
+conversation began turning toward a more dangerous question: whether
+there should ever be an NTPv5 at all, and what it should be.
+
+image::clocktower64.png[align="center"]
+
+link:history-chapter2.html[Previous: Network Time Security] | link:history.html[Contents] | link:history-chapter4.html[Next: The long plateau]
+
+//end

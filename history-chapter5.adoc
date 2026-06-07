@@ -1,0 +1,35 @@
+= Chapter 5: Father Time (2024) =
+
+link:history-chapter4.html[Previous: The long plateau] | link:history.html[Contents] | link:history-chapter6.html[Next: Embers, and a return]
+
+On January 17th, 2024, Dr. David L. Mills died at his home in Newark,
+Delaware, at the age of 85.
+
+He had invented the Network Time Protocol in the early 1980s, written
+and maintained its reference implementation for decades, and in doing
+so had quietly made it possible for the entire Internet to agree on
+what time it was.  Every clock that ticks in step across the network
+ticks, in some lineage, from his work.  Our entire project existed
+because that work was too important to let decay - we had forked his
+code, argued with his successor about how to steward it, deleted great
+swaths of it, and hardened the rest, all out of a kind of fierce
+respect.
+
+On January 21st we posted a memorial.  We wrote that the more we had
+read of his sources, the more we had come to see his insight, his
+technical reach, and his hope that a little "inter-network experiment"
+might grow to span the world.  It had.  We ended it the only way it
+could end: the clocks of the world tick together in time, in large
+part, because of you.
+
+It was, by the raw numbers, the quietest year in the project's
+history - the development list carried just over a hundred messages
+all year, its lowest ebb.  There is something fitting, if sad, in the
+fork of NTP going still in the year its creator's clock finally
+stopped.
+
+image::clocktower64.png[align="center"]
+
+link:history-chapter4.html[Previous: The long plateau] | link:history.html[Contents] | link:history-chapter6.html[Next: Embers, and a return]
+
+//end

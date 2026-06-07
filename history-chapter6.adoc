@@ -1,0 +1,54 @@
+= Chapter 6: Embers, and a return (2025-2026) =
+
+link:history-chapter5.html[Previous: Father Time] | link:history.html[Contents]
+
+The embers were not out.
+
+In April 2025 we shipped 1.2.4 - the waf build system brought up to
+2.1.4, the daemon taught to run on FIPS-mode systems, clock fuzzing
+removed at last, Linux armhf supported, and a genuinely useful new
+trick: the ability to listen on a second port so that NTS could slip
+past the ISPs that filter port 123.  And the development list, against
+the trend of years, woke up: over four hundred messages in 2025, more
+than triple the year before.  Most of it was the hard, necessary
+conversation of a project deciding how to keep living - whether anyone
+still ran the old waf, whether Python 2 could finally be buried,
+whether the daemon should at last be rewritten in Go or Rust, and the
+small indignity of the mailing-list certificate expiring yet again.
+Even the IETF work crept forward: NTS for the public pool, long
+thought impossible, started to come together in a new key-exchange
+draft, and in early 2026 NTS-with-pool finally worked.
+
+Through all of this the project manager who had stepped up in late
+September 2015 had grown steadily quieter, pulled away by the rest of
+a working life - encryption, the Linux distribution world, the slow
+gravity of other things.  The project ran on the steady hands of the
+people who had always kept it running: Hal, Gary, Ian, Matt, Richard,
+the regulars.
+
+Then, on June 7th, 2026, a message went out to the development list
+with the subject "Back to active participation."  After some years
+away, Mark wrote, he was back, and meant to actively take part in
+NTPsec again - useful, these days, around TLS, crypto, and the
+distributions.  Barely an hour later Gary Miller replied from Bend,
+Oregon, signed as always with his GPG key: "Yo Mark!  Welcome back!"
+And then, because Gary has never once let a welcome stand without
+work attached to it, he pointed at the open problems waiting in the
+NTP working group - NTS in the pool, and the unresolved question of
+NTPv5.
+
+That is where this telling stops, because that is where the present
+is.  The big idea has shipped and been standardized.  The founder of
+the protocol has been laid to rest.  The project is older, smaller,
+and quieter than it was at its noisy peak, and it is still here -
+packaged in every serious distribution, keeping accurate, secure time
+for whoever wants it, with most of its original crew still answering
+the list.
+
+The rest of the story has, once again, yet to be written.
+
+image::clocktower64.png[align="center"]
+
+link:history-chapter5.html[Previous: Father Time] | link:history.html[Contents]
+
+//end

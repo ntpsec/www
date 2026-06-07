@@ -1,0 +1,61 @@
+= Chapter 2: Network Time Security (2019) =
+
+link:history-chapter1.html[Previous: After first ship] | link:history.html[Contents] | link:history-chapter3.html[Next: The standard lands]
+
+For years the dream had been the same: time you could not just read off
+the network, but actually trust.  NTP had been authenticated only by a
+creaky shared-symmetric-key scheme and the long-dead Autokey
+misadventure that we had ripped out early.  The IETF had been working
+on a real answer - Network Time Security - since at least 2016, when
+Daniel Franke stood up at the working group and laid out the design
+space.  By the start of 2019 the specification was stable enough to
+build against, the codebase was finally clean enough to build *in*,
+and we had found a sponsor.  On January 2nd, 2019, we announced that
+Cisco was funding the work.  Internally we called the effort "Good
+Secure Times."
+
+What happened next still reads, in the commit log, like a sprint that
+got out of hand in the best way.  Eric broke ground on January 27th.
+James Browning laid the foundations of the NTS record library in early
+February.  Hal Murray took on the Key Establishment client and server
+- the new TLS-based handshake that bootstraps the whole thing - and
+had both halves talking to each other within days.  Matt Selsky
+imported the AES-SIV library that does the actual authenticated
+encryption.  Ian Bruene wrote the unit tests.  On February 19th, just
+twenty-three days after breaking ground, NTS packets flowed in both
+directions for the first time.
+
+Then came the test that mattered.  On March 1st, Hal got our
+implementation talking to Martin Langer's independent server - the
+descendant of the original Ostfalia University prototype that had
+first shown NTS was even possible.  Two implementations written by
+people who had never shared a line of code, agreeing on the wire about
+how to prove the time: that is the moment a draft protocol becomes
+real.  We updated our documentation that same week to describe NTS not
+as planned but as implemented.
+
+Version 1.1.4 shipped on the summer solstice, June 21st, 2019, the
+first production release of NTPsec with working NTS.  By happy
+coincidence it was almost the same day that Cloudflare lit up
+time.cloudflare.com with NTS during its Crypto Week; Netnod in Sweden
+followed in October.  The point worth stating plainly is this: we
+shipped working, interoperable, cryptographically secured time to
+real users more than a year before the standard that described it was
+finished.  The implementation was not chasing the RFC; in a real
+sense the implementations, ours among the first, were how the RFC got
+written.
+
+NTS was demanding code, and it showed us new bugs.  1.1.5 went out
+nine days after 1.1.4 to fix an overrun and add the ALPN negotiation
+the draft now required; through the rest of 2019 we cut releases
+almost weekly - 1.1.6, 1.1.7, 1.1.8 - chasing interoperability,
+certificate handling, and key-rotation details.  The development list
+swelled back to over 2,200 messages for the year, nearly all of it
+NTS.  It was the last great feature push of the project, and we knew
+it even then.
+
+image::clocktower64.png[align="center"]
+
+link:history-chapter1.html[Previous: After first ship] | link:history.html[Contents] | link:history-chapter3.html[Next: The standard lands]
+
+//end

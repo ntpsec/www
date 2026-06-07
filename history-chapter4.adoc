@@ -1,0 +1,56 @@
+= Chapter 4: The long plateau (2021-2023) =
+
+link:history-chapter3.html[Previous: The standard lands] | link:history.html[Contents] | link:history-chapter5.html[Next: Father Time]
+
+Here the rhythm of the story changes, because the rhythm of the
+project changed.
+
+With NTS shipped and standardized, the great motivating problem was
+solved, and the development list told the tale in numbers: from 2,266
+messages in 2019 it fell to 595 in 2020, then settled into a trough of
+two to three hundred a year.  This was not death; it was maintenance,
+which is what most of a long-lived project's life actually is.  Matt
+Selsky took on the Release Manager role in 2021 and Mark's title
+finally lost its four-year-old "pro-tem."  The Internet Civil
+Engineering Institute, one of our funders, dissolved that same year,
+and we quietly removed it from the plans.
+
+The releases grew further apart but did not stop.  1.2.1 (June 2021)
+fixed a key-generation flaw (CVE-2021-22212), dropped the ancient
+non-conformant NTPv1, and cut the default client's server count to be
+a better citizen of the public pool.  1.2.2 (December 2022) added
+OpenSSL 3.0 support, NTS wildcard certificates, and - thoughtfully -
+ten days of retained cookie keys so that a client which only checks in
+once a day need not hammer the Key Establishment server.  1.2.2a
+(August 2023) was a quick security patch for a crash when an NTS
+request arrived at a server with NTS disabled (CVE-2023-4012).  1.2.3
+(December 2023) made AES the default for the query protocol, retiring
+MD5, and added per-hour NTS statistics logging.
+
+Two recurring conversations defined the plateau.  One was the
+perennial dream, revived almost annually on the list, of moving the
+daemon out of C and into Go or Rust - never quite funded, never quite
+abandoned.  The other was attrition of the old world underneath us:
+Python 2 dying, OpenSSL 1.1 aging out, the AsciiDoc toolchain
+fracturing, glibc changing the width of time_t.  We integrated
+continuous fuzzing through OSS-Fuzz and kept the Coverity reports at
+zero.  The work was real, but it was custodial.
+
+And the competitive landscape, which we had once nearly owned, closed
+in.  chrony - clean-sheet, fast, and by now sporting its own NTS -
+became the default time daemon almost everywhere that mattered: Red
+Hat and Fedora years earlier, SUSE, and eventually Ubuntu.  Debian, in
+the bookworm release of 2023, finally retired the classic +ntp+
+package in favor of ntpsec - a real vote of confidence, carried in no
+small part by Richard Laager, who maintained the package while
+contributing upstream - even as systemd-timesyncd became what most
+Debian desktops actually ran.  We were packaged nearly everywhere and
+the default almost nowhere: the security-hardened, feature-complete,
+standards-faithful choice for people who knew exactly what they
+wanted, which is an honorable place to be and a quiet one.
+
+image::clocktower64.png[align="center"]
+
+link:history-chapter3.html[Previous: The standard lands] | link:history.html[Contents] | link:history-chapter5.html[Next: Father Time]
+
+//end

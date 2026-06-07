@@ -1,118 +1,49 @@
-= How NTPsec came to be =
-
-The prehistory of the NTPsec project goes back to 2013, when one of
-the team members offered to help migrate the NTP Classic history out
-of BitKeeper to git or hg - anything that might increase community
-access and participation.  Said member (ESR) was then, and still is,
-the open-source community's go-to guy for large, messy repository
-conversions.  Harlan Stenn, the lead of NTP Classic, was determined to
-hold on to BitKeeper and refused the offer.
-
-In late 2014 another founding member - Susan Sons - became aware
-that NTP Classic instances were routinely being used as amplifiers
-for DDoS attacks.  Investigating, she became concerned with what
-she learned about the state of NTP Classic.  When she communicated
-the results of her research to her superiors at the Center for Applied
-Cybersecurity Research, they contacted the National Science Foundation
-- which became so alarmed that it approved funding for a rescue
-intervention (something it had never done before) in _two days_.
-
-Grant approval in hand, Susan needed a technical team.  She recruited
-ESR, who recruited Gary Miller and Hal Murray.  Some technical plans
-and the broad direction of the project began to take shape.  Amar
-Takhar, who had been a system administrator for the NTP Classic
-project, joined the conversation in mid-February.
-
-In Hal and Amar, Susan's team included two prominent members of NTP
-Classic's user and developer community.  Gary and ESR, though not
-directly members themselves, had ties to that community through their
-time-service work on the GPSD project.  The ideal outcome for all of
-us and the NSF would have been to re-invigorate the NTP Classic
-codebase within the organizational framework of Harlan Stenn's Network
-Time Foundation.  We negotiated with Harlan Stenn towards this end.
-
-A meeting of minds should have been possible.  Stenn had been
-complaining for years that NTP development was held up by
-lack of skilled developer time and a support budget. The NSF's
-rescue intervention offered both.
-
-It was not to be.  Stenn insisted that development must remain on
-BitKeeper, a choice which the rescue team felt would continue to wall
-off the NTP Classic codebase from the wider open-source community and
-thus perpetuate its dangerously stagnant state.
-
-Following the collapse of negotiations, Amar Takhar made the decision
-to initiate a project fork, and invited the rescue team members to
-help it happen.  ESR and Gary signed on immediately, Hal a few weeks
-later.  After considering other candidates to be the new project's
-security officer, Amar asked Susan to join up in that role and she
-accepted.  Subsequently Amar recruited Chris Johns from the RTEMS
-project. Gary Miller assisted with the repository migration and
-some early cleanup work, but resigned from the team before launch.
-
-Forking a project, especially a mature and well-established project
-like NTP, is never a decision to be made lightly.  The team regrets the
-necessity, but we felt that NTP is far too important a part of the
-Internet infrastructure to be allowed to fall further into decay.
-
-The team began work to fulfill the NSF's grant terms, migrating the
-history to git and showing measurable progress towards
-security-hardening the code. We also began to quietly prepare for a
-public project launch.  In June 2015 we gained funding from the Linux
-Foundation's Core Infrastructure Initiative.  Around the same time
-Dr. Joel Sherrill, learning of our effort and its goals, resigned from
-the Network Time Foundation board and joined our team.
-
-Through the late summer and fall of 2015 the team worked on the
-massive cleanup required to remove obsolete code, fix documentation,
-and live-test the results.  We removed over half the bulk of the
-NTP Classic codebase and significantly security-hardened what was
-left.  We changed build systems from autoconf to waf for a dramatic
-improvement in build times and repeatability.
-
-In late September Mark Atwood stepped up to manage the project,
-freeing Amar to concentrate on his technical work.  Shortly after that
-we began active cooperation with three different security-research
-groups to find and fix NTP vulnerabilities, and Daniel Franke joined
-the team as our crypto expert.
-
-In early October we began planning for an 0.90 beta release, which
-shipped on November 21st 2015.
-
-Over the next two years, we released 9 more tagged versions.  Over
-that time, we had successes and failures, we drained many swamps of
-bad code, and we discovered many more.  Some team members dropped out
-for other pursuits, or were awarded emeritus status, and new talented
-team members have joined us.
-
-Working with Software in the Public Interest, we were able to keep
-working due to generous grant support from multiple donors and companies.
-
-Working with the Mozilla Foundation Secure Open Source project, we were
-subject to one of several security audits, and then we were supported
-with a grant to remediate the handful of problems that the audit found.
-
-Working with the Internet Civil Engineering Institute, we were able to
-keep working due generous grant support from the Thiel Foundation, for
-which we are very grateful.
-
-We wrote a step by step HOWTO on how to run NTPsec on a Raspberry Pi
-single board computer with a GPS receiver, allowing hackers and
-hobbyists to easily build and run their very own Stratum 1 NTP
-server.  Talented volunteers have stepped up to maintain that document
-as the Raspberry Pi platform has evolved.
-
-We had two annual face to face meetings hosted at the Penguicon
-conference near the city of Detroit, Michigan, where the core team was
-able to meet, socialize, exchange GPG keys, and plan for more work.
-We plan on having the next face to face meeting in June 2018 at the South
-East Linux Fest conference in Charlotte North Carolina.
-
-Finally, on October 10th 2017, as the team gathered and watched on IRC,
-we finally released version 1.0.0.
-
-The rest of the story has yet to be written.
+= The story of NTPsec =
 
 image::clocktower64.png[align="center"]
+
+This is the history of the NTPsec project, told in chapters.
+
+The first telling ended on October 10th, 2017, with the words: "The
+rest of the story has yet to be written."  We watched 1.0.0 go out on
+IRC, and then we went back to work.  What follows is some of what
+happened next - the years of a project growing up, of a big idea
+shipped, of a long quiet plateau, of a death in the family of the
+Internet, and of a return.
+
+It is a less dramatic story than the founding.  Founding a project is
+all crisis and rescue; keeping one alive for a decade is mostly
+discipline, and discipline does not make headlines.  But it is the
+truer half of any engineering story, and it is worth writing down
+before the details fade out of the mailing-list archives.
+
+== Chapters ==
+
+* link:history-chapter0.html[Chapter 0: How NTPsec came to be (2013-2017)] +
+  The prehistory, the DDoS scare, the NSF rescue, the fork, the great
+  cleanup, and the road to 1.0.0.
+
+* link:history-chapter1.html[Chapter 1: After first ship (2017-2018)] +
+  Settling into adult life: three quarters of the old code gone, the
+  Mozilla/Cure53 audit, and a project at its busy, healthy peak.
+
+* link:history-chapter2.html[Chapter 2: Network Time Security (2019)] +
+  The "Good Secure Times" sprint, interop with Ostfalia, and shipping
+  working NTS a year before the standard was finished.
+
+* link:history-chapter3.html[Chapter 3: The standard lands (2020)] +
+  The key-exporter break, port 4460, RFC 8915, and the 1.2.0 release.
+
+* link:history-chapter4.html[Chapter 4: The long plateau (2021-2023)] +
+  Maintenance, the Go/Rust dream, chrony winning the defaults, and
+  Debian retiring +ntp+ for ntpsec.
+
+* link:history-chapter5.html[Chapter 5: Father Time (2024)] +
+  David L. Mills dies, the memorial, and the quietest year in the
+  project's history.
+
+* link:history-chapter6.html[Chapter 6: Embers, and a return (2025-2026)] +
+  1.2.4, NTS for the pool, the list waking up, and a return to active
+  participation.
 
 //end
