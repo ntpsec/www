@@ -1,4 +1,4 @@
-=ci NTPD driver retention analysis =
+= NTPD driver retention analysis =
 Eric S. Raymond <esr@thyrsus.com>
 Version 1.16, 2019-08-08
 
