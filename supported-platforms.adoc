@@ -42,17 +42,15 @@ Our primary development platforms are Linux and FreeBSD.
 NTPsec builds cleanly on at least the following systems:
 
 * Alpine latest, edge (x86_64)
-* CentOS latest (x86_64)
+* CentOS Stream 9 (x86_64)
 * Debian oldstable, stable, testing, unstable (amd64)
-* Debian stable (i386)
-* Debian wheezy on BeagleBone Black ARM v7
-* Fedora latest, Rawhide (x86_64)
-* FreeBSD 11, 12 (amd64)
-* Gentoo standard, hardened (x86_64)
-* macOS latest (x86_64)
-* NetBSD 7.0.1 on x86_64 and 7.0.1 on i386
-* Raspbian jessie on ARM v6 and v7 (Pi, Pi 2, and Pi 3)
-* Ubuntu latest, devel, rolling (x86_64)
+* Fedora latest (x86_64)
+* FreeBSD latest (amd64)
+* Gentoo standard (x86_64)
+* macOS latest (arm64)
+* openSUSE Leap (x86_64)
+* Rocky 9 (x86_64)
+* Ubuntu latest, devel, rolling (amd64)
 
 Some of these systems have minor build quirks; see the INSTALL file
 in the distribution root directory for details
