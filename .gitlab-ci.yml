@@ -1,6 +1,11 @@
+variables:
+  # Registry for the CI image. Forks that build their own image can
+  # set IMAGE_REGISTRY to $CI_REGISTRY_IMAGE in CI/CD settings.
+  IMAGE_REGISTRY: $CI_REGISTRY/ntpsec/www
+
 pages:
   stage: build
-  image: $CI_REGISTRY_IMAGE
+  image: $IMAGE_REGISTRY
   script:
     - python3 ./waf configure --prefix=`pwd`/public/ build install
     - find public -type f -iregex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -execdir gzip -f --keep {} \;
