@@ -47,7 +47,7 @@ NTPsec builds cleanly on at least the following systems:
 * Fedora latest (x86_64)
 * FreeBSD latest (amd64)
 * Gentoo standard (x86_64)
-* macOS latest (arm64)
+* macOS latest (universal binary, arm64 + x86_64)
 * openSUSE Leap (x86_64)
 * Rocky 9 (x86_64)
 * Ubuntu latest, devel, rolling (amd64)
